@@ -1,0 +1,94 @@
+form{
+    display: inline-block;
+}
+
+/* Style pour le conteneur d'offres */
+
+
+/* Style pour chaque offre */
+.offre {
+    display: inline-block;  /* Assurez-vous que chaque offre est un élément en ligne */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: #DCDCDC;
+    margin-top: 0;
+}
+
+.offre:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Style pour le bouton "Ajouter un étudiant à cette offre" */
+.offre input[type="submit"] {
+    background-color: floralwhite;
+    color: black;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%;
+}
+
+/* Style pour la liste des étudiants qui ont déjà postulé */
+.offre label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.boutons{
+    background-color: white;
+}
+
+#offres-container {
+    min-height: 160px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#btnRechercherOffre, #btnRetour{
+    width: fit-content;
+    margin-top: 1%;
+    margin-left: 2%;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: none;
+    background-color: #0f9bb4;
+    padding: 10px;
+    font-weight: bold;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+#btnRechercherOffre:hover , #btnRetour:hover{
+    text-decoration: none;
+    color: black;
+    border: none;
+    background-color: #0f9bb4;
+    padding: 10px;
+    font-weight: bold;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 0 10px #333333;
+}
+
+#btnRetour{
+    margin-left: 6%;
+}

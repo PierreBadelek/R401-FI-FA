@@ -1,0 +1,72 @@
+/* Ajustements pour la pop-up d'ajout du personnel */
+#popUpPerso .popup-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Ajustements pour le formulaire d'ajout du personnel */
+#popUpPerso form {
+    width: 400px;
+    margin: 20px auto; /* Ajoutez une barre de défilement au besoin */
+    height: 100vh;
+}
+
+
+/* Supprimer les puces des listes à puces dans la pop-up d'ajout du personnel */
+#popUpPerso ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.input-field,
+textarea,
+.select-field,
+.file-input,
+.checkbox-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.label-text {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+.titre1 {
+    color: #0f9bb4;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#popUpPerso #ajoutPersonnel {
+    background-color: #0f9bb4;
+    color: #fff; /* Ajoutez une couleur de texte pour une meilleure lisibilité */
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 45px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 38%;
+    font-weight: bold;
+}
+
+#popUpPerso #ajoutPersonnel:hover {
+    background-color: #0f9bb4;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    border-radius: 45px;
+    box-shadow: 0 0 10px #333333;
+    transition: box-shadow 0.3s ease;
+    font-weight: bold;
+
+}

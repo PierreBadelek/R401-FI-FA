@@ -1,0 +1,182 @@
+
+.notification {
+    position: relative;
+    display: inline-block;
+
+}
+
+
+
+.millieu button {
+    /* Vos styles pour les boutons ici */
+    display: inline-block;
+    margin:  60px; /* Espacement entre les boutons */
+}
+.millieu {
+    display: flex;
+    justify-content: space-around; /* Aligne les éléments à distance égale */
+    margin-top: 20px; /* Espacement depuis le haut */
+}
+
+.millieu button {
+
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.millieu button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.icon-bell {
+    width: 25px;
+    height: 25px;
+    background-image: url('../img/notification.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 12px;
+}
+
+.red-badge {
+    background-color: red;
+}
+
+
+
+#validationButton {
+    padding: 10px 20px;
+    background-color: #6cb2eb; /* Bleu clair */
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Transition pour effet au survol */
+    display: block; /* Pour occuper la largeur disponible */
+    margin: 0 auto; /* Centre horizontalement */
+    margin-top: 50px;
+}
+
+
+#validationButton:hover {
+    background-color: #4a9ad8; /* Bleu légèrement plus foncé au survol */
+}
+
+#burgerMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow: scroll;
+    transition: 1s;
+    z-index: 3;
+}
+/* Style pour les sections de notifications */
+#hlu,
+#hnonlu {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: #366286; /* Couleur de fond pour la section lue */
+    padding: 10px;
+}
+
+#hnonlu {
+    background-color: #586f9c; /* Couleur de fond pour la section non lue */
+}
+
+/* Style pour masquer initialement les sections */
+#readNotificationList{
+    display: none ;
+}
+#hlu {
+    display: none;
+    text-align: center;
+
+}
+.notification-unread,
+.notification-read {
+    /* Vos styles pour chaque notification */
+    background-color: #fff; /* Couleur de fond pour les notifications non lues */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; /* Organiser les éléments en colonne */
+}
+
+.notification-unread p,
+.notification-read p {
+    display: block;
+    margin: 5px 0;
+}
+
+#hnonlu {
+    display: block;
+    text-align: center;
+}
+
+#unreadNotificationList {
+    display: block;
+
+}
+
+
+#showUnreadButton,
+#showReadButton {
+    background-color: #007bff; /* Couleur de fond pour les boutons */
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+}
+
+#showUnreadButton:hover,
+#showReadButton:hover {
+    background-color: #0056b3; /* Couleur de fond pour les boutons au survol */
+}
+
+#validationButton {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+#validationButton:hover {
+    background-color: #2980b9;
+}

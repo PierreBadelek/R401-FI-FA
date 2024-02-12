@@ -1,0 +1,89 @@
+/* Style de base pour le formulaire */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#formulaire {
+    width: 400px;
+    margin: 20px auto;
+}
+
+/* Style pour les étiquettes de champ */
+label {
+    font-weight: bold;
+    display: block; /* Afficher les étiquettes sur une nouvelle ligne */
+    margin-bottom: 5px; /* Ajouter un peu d'espace entre les étiquettes */
+}
+
+/* Style des champs de saisie */
+input {
+    width: 400px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Ajouter une bordure aux champs */
+    border-radius: 5px; /* Ajouter des coins arrondis */
+}
+
+/* Style des champs de saisie */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.button {
+    text-align: center; /* Centrer le contenu du conteneur */
+    margin-top: 20px; /* Ajouter un espace au-dessus du bouton si nécessaire */
+}
+/* Style pour le bouton d'enregistrement */
+#ajoutEntreprise {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Supprimer les puces des listes à puces */
+ul {
+    list-style: none;
+    padding: 10px;
+}
+
+#formulaireAjoutEtudiant {
+    position: absolute;
+    top: 10px;
+}
+
+h3 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.error-message {
+    color: red;
+}
