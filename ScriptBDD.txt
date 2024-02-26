@@ -1,4 +1,4 @@
-Drop table if exists administration, entreprise, etudiant, offre, poste, recrute, postule, reponse CASCADE;
+Drop table if exists administration, entreprise, etudiant, offre, poste, recrute, postule, reponse, notification, cv CASCADE;
 
 CREATE TABLE Administration(
 
