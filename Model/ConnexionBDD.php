@@ -1,6 +1,11 @@
 <?php
 
 namespace Model;
+
+use PDO;
+use PDOException;
+
+
 class Conn
 {
     private static $instance = null;
