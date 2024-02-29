@@ -17,6 +17,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
     <link rel="stylesheet" type="text/css" href="../asserts/css/AffichageEntreprise.css">
     <link rel="stylesheet" type="text/css" href="../asserts/css/Cloche.css">
     <link rel="icon" href="../asserts/img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="../asserts/js/AdminMain.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
