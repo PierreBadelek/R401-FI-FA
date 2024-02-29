@@ -6,7 +6,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .header {
@@ -22,7 +22,7 @@
     position: relative;
     margin-bottom: 20%;
 }
-
+f
 .logo-container {
     order: 1;
 }
@@ -72,11 +72,6 @@
     height: 25px;
     margin-bottom: 10px;
     margin-left: 15px;
-}
-
-.footer {
-    height: 250px;
-    background-color: rgba(0, 110, 135, 0.9);
 }
 
 @media only screen and (max-width: 768px) {
@@ -142,15 +137,14 @@
 
 
 .rectangle-mid {
-    width: 880px;
+    width: 70%;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 15px;
     position: absolute;
-    top: calc(20% + 30px);
-    left: 835px;
-    margin-left: -450px;
+    margin-left: 10%;
     margin-bottom: 10%;
+    margin-top: 20px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -339,12 +333,14 @@ ul {
 
 /* Style général du pied de page */
 .footer {
-    background-color: rgba(0, 110, 135, 0.9);
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    position: static;
+    position: absolute;
+    margin-top: 50%;
+    flex-shrink: 0;
     bottom: 0;
+    left: 0;
 }
 
 /* Style du contenu du pied de page */
@@ -352,6 +348,7 @@ ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    background-color: rgba(0, 110, 135, 0.9);
 }
 
 /* Style des sections du pied de page */

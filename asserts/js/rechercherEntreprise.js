@@ -7,11 +7,7 @@
  */
 
 function rechercherEntreprises() {
-
-    document.getElementById("footer").style.display = "none";
-
     //Ces variables récuperent les éléments de recherche
-
     var nom = document.getElementById('nomEntreprise').value;
     var ville = document.getElementById('ville').value;
     var codepostal = document.getElementById("codepostal").value;
