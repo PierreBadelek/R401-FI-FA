@@ -1,13 +1,19 @@
-form{
-    display: inline-block;
+.offres-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Style pour le conteneur d'offres */
-
+#offres-container {
+    min-height: 160px;
+    background-color: white;
+    list-style: none;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
 
 /* Style pour chaque offre */
-.offre {
-    display: inline-block;  /* Assurez-vous que chaque offre est un élément en ligne */
+#offres-container li {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 10px;
@@ -15,7 +21,9 @@ form{
     transition: all 0.3s ease;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     background-color: #DCDCDC;
-    margin-top: 0;
+    margin-top: 1%;
+    margin-bottom: 10%;
+    overflow: scroll;
 }
 
 .offre:hover {
@@ -27,10 +35,10 @@ form{
 .offre input[type="submit"] {
     background-color: floralwhite;
     color: black;
-    padding: 8px 12px;
+    padding: 5% 10%;
     border: none;
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: 2%;
     width: 100%;
 }
 
@@ -43,18 +51,6 @@ form{
 
 .boutons{
     background-color: white;
-}
-
-#offres-container {
-    min-height: 160px;
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding-top: 2%;
-    padding-bottom: 2%;
 }
 
 #btnRechercherOffre, #btnRetour{
@@ -91,4 +87,23 @@ form{
 
 #btnRetour{
     margin-left: 6%;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .offre input[type="submit"] {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .offre input[type="submit"] {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .offre input[type="submit"] {
+        font-size: 6px;
+    }
 }

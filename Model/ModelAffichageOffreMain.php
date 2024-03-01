@@ -45,7 +45,6 @@ foreach ($resultat2 as $res2):
                 $etudiants = $selectnom->fetchAll(PDO::FETCH_ASSOC);
                 ?>
                 <form action="../Controller/ControllerAjoutEtudiantOffre.php" method="post" name="formAjoutEtu_<?php echo $count; ?>">
-                    <ul class="offres-container">
                         <li class="offre">
                             <strong>Nom :</strong> <?php echo $res2['nom']; ?><br>
                             <strong>Domaine : </strong><?php echo $res2['domaine']; ?><br>
@@ -63,7 +62,6 @@ foreach ($resultat2 as $res2):
                             }
                             ?>
                         </li>
-                    </ul>
                 </form>
                 <?php
                 $count++;

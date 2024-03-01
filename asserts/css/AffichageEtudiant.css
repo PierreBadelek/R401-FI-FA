@@ -22,11 +22,12 @@
     background-color: 	#DCDCDC;
     margin-top: 1%;
     margin-bottom: 0;
+    overflow: scroll;
 }
 
 #etudiants-container li:hover {
     transform: scale(1.05);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
 #etudiants-container li strong {
