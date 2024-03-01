@@ -183,11 +183,17 @@ function redirectWithAjax(url) {
 
 document.addEventListener("DOMContentLoaded", function () {
     var photo = document.getElementById("photo");
+    var photo2 = document.getElementById("photo2");
     var dropdown = document.getElementById("account-dropdown");
+    var dropdown2 = document.getElementById("account-dropdown2");
 
     photo.addEventListener("click", function (event) {
-        event.stopPropagation(); // Empêche la propagation du clic à d'autres éléments parents
+        event.stopPropagation();
         dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    });
+    photo2.addEventListener("click", function (event) {
+        event.stopPropagation();
+        dropdown2.style.display = (dropdown2.style.display === "block") ? "none" : "block";
     });
 
     // Ajout d'un écouteur d'événements sur le document pour fermer le menu s'il est ouvert et que l'on clique en dehors
@@ -195,8 +201,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (dropdown.style.display === "block" && !event.target.closest('#account-photo')) {
             dropdown.style.display = "none";
         }
+        if (dropdown2.style.display === "block" && !event.target.closest('#account-photo2')) {
+            dropdown2.style.display = "none";
+        }
     });
 });
+
 
 
 

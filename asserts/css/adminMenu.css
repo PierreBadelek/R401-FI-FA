@@ -14,15 +14,12 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     padding: 30px;
 }
 
 
-.logo-container {
-    order: 1;
-}
 
 .menu-container {
     order: 2;
@@ -33,15 +30,20 @@
     display: flex;
 }
 
-.vertical-menu {
+.vertical-menu, .vertical-menu-burger {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
 
-.vertical-menu li {
+.vertical-menu li, .vertical-menu-burger li {
     margin-right: 13px;
+}
+
+.vertical-menu-burger li{
+    padding-top: 10%;
+    display: inline-block;
 }
 
 .btnCreation {
@@ -56,6 +58,9 @@
     max-width: 100%;
     height: auto;
     max-height: 70px;
+    position: absolute;
+    left: 0;
+    top: 15px;
 }
 
 .rectangle-haut {
@@ -338,13 +343,13 @@
     cursor: pointer;
 }
 
-#account-photo {
+#account-photo, #account-photo2 {
     cursor: pointer;
     position: relative;
     display: inline-block;
 }
 
-#account-dropdown {
+#account-dropdown, #account-dropdown2 {
     display: none;
     position: absolute;
     top: 30px;
@@ -356,7 +361,7 @@
     z-index: 999;
 }
 
-#account-dropdown input {
+#account-dropdown input, #account-dropdown2 input {
     display: block;
     padding: 10px;
     text-decoration: none;
@@ -368,12 +373,12 @@
 }
 
 
-#account-dropdown input:hover {
+#account-dropdown input:hover, #account-dropdown2 input:hover {
     background-color: rgb(128, 128, 128);
 }
 
 
-#account-dropdown img {
+#account-dropdown img, #account-dropdown2 img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -448,6 +453,46 @@
 }
 
 
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 9999;
+    text-align: center;
+}
+
+.menu li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.vertical-menu-burger{
+    display: none;
+}
+
+
 @media only screen and (max-width: 1280px) {
     .titreAppli{
         margin-top: 15%;
@@ -509,8 +554,23 @@
     .AjRapide {
         font-size: 15px;
     }
-}
 
+    .vertical-menu {
+        display: none;
+    }
+
+    .vertical-menu-burger{
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-container {
+        display: none;
+    }
+}
 
 @media only screen and (max-width: 680px) {
     .vertical-menu li {
