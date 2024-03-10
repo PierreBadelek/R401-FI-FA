@@ -48,6 +48,24 @@ function selectEtuWhereEmail($conn, $email): array
 
     return $result;
 }
+function selectEtuCodeMail($conn, $email): array
+{
+    $req = "SELECT codemail FROM Etudiant where email = ?";
+    $req2 = $conn->prepare($req);
+    $req2->execute(array($email));
+    $result = $req2->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+function updateEtuCodeMail($conn, $email,$code): array
+{
+    $req = "update Etudiant set codemail = ? where email = ?";
+    $req2 = $conn->prepare($req);
+    $req2->execute(array($code,$email));
+    $result = $req2->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
 
 function selectidWhereEmail($conn, $email)
 {

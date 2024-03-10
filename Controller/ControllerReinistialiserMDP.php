@@ -5,24 +5,32 @@ use Model\Conn;
 include '../Model/ConnexionBDD.php';
 include '../Model/ModelReinitialiserMdp.php';
 include '../Model/ModelMail.php';
+include '../Model/ModelInscriptionEtu.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $db = Conn::GetInstance();
-setcookie("email", $_POST['email'], time() + 3600, "/");
-$verif = array();
+$code = generationToken();
+$codeEtu = selectEtuCodeMail($db,$_COOKIE['email'] );
 
 if(isset($_POST["envoieCode"])){
-    envoieMail($_POST['email'],'supersae59@gmail.com','SAE', 'MDP', 'code');
-    $verif = selectCodeEtuWhereEmail($db,$_POST['email']);}
+    envoieMail($_POST['email'],'supersae59@gmail.com','SAE', 'MDP', $code);
+    updateEtuCodeMail($db,$_POST['email'],$code);
+    setcookie("email", $_POST['email'], time() + 3600, "/");
+    header('location: ../View/ViewOubliMotDePasseCode.php');}
 
-if(isset($_POST["confirmationCode"])){
+if(isset($_POST["confirmationCode"])  ){
+    if ($_POST['code'] === $codeEtu['codemail']) {
     $nouveauMDP = password_hash($_POST['mdp'],PASSWORD_DEFAULT);
-    if (implode($verif)==$_POST["confirmationCode"]){
         reinitialiserMDP($db,$nouveauMDP,$_COOKIE['email']);
-        echo 'yess';
-    } else {
-        echo "mince";
+        header('location: ../View/ViewConnexion.html');
+    }else {
+        echo $codeEtu['codemail'];
     }
 }
 
-echo 'mot de passe reset';
+
+
 
 

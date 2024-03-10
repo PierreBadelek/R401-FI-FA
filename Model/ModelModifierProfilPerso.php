@@ -89,7 +89,7 @@ function updateEmailPerso($conn, $email, $id){
  * @return void
  */
 function updateMpPerso($conn, $motdepasse, $id){
-    $req = "UPDATE Administration SET motdepasse = ? WHERE ine = ?";
+    $req = "UPDATE Administration SET motdepasse = ? WHERE idprofil = ?";
     $req2 = $conn->prepare($req);
     $req2->execute(array($motdepasse, $id));
 }

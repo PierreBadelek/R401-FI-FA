@@ -17,6 +17,15 @@ function selectEmailMDPRoleAdmin($conn, $email){
     return $result;
 }
 
+function selectEmailMDPRoleAdminid($conn, $id){
+    $req = "SELECT email, motdepasse, role FROM Administration WHERE idprofil = ?";
+    $req2 = $conn->prepare($req);
+    $req2->execute(array($id));
+    $result = $req2->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 /**
  * Vérifier si les identifiants correspondent à une personne de la base de donnée
  *
