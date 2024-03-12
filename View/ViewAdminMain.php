@@ -374,7 +374,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
                         <span class="badge" id="notificationBadge"> </span>
                     </div>
                 </div>
-                <div class="burger-menu" id="burgerMenu" style="display: none;">
+                <div class="burger-menu" id="burgerMenu2" style="display: none;">
                     <button type="button" id="validationButton" class="validationButton" onclick="fermerNotifications()">Fermer</button>
 
                     <div class="millieu">
