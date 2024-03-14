@@ -33,7 +33,7 @@ function selectNbrPersonnel($conn){
 
 function selectNbrOffre($conn){
 
-    $sql = "SELECT COUNT(*) FROM offre";
+    $sql = "SELECT COUNT(*) FROM offre WHERE visible = true";
     $req = $conn->prepare($sql);
     $req->execute();
     return $req->fetchColumn();
