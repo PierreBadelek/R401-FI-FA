@@ -55,7 +55,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
 <div id="popUpEtu" class="popupEtu">
 
     <div class="popup-content" id="formulaireAjoutEtudiant">
-        <form action="../Controller/ControllerAjoutEtudiant.php" method="post" id="formulaireAjoutEtudiant">
+        <form action="../Controller/Etudiant/ControllerAjoutEtudiant.php" method="post" id="formulaireAjoutEtudiant">
             <h1 class="titre1"> Création d'un étudiant </h1>
             <ul>
                 <li>
@@ -145,7 +145,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
 <div id="popUpOffre" class="popupEtu">
     <div class="popup-content">
 
-        <form action="../Controller/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre">
+        <form action="../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre">
             <h1 class="titre1"> Création d'une offre </h1>
             <p class="label-text">
                 Nom de l'offre :
@@ -224,7 +224,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
 <div id="popUpPerso" class="popupEtu">
     <div class="popup-content">
 
-        <form action="../Controller/ControllerAjoutAdministration.php" method="POST">
+        <form action="../Controller/Personnel/ControllerAjoutAdministration.php" method="POST">
             <h1 class="titre1"> Création d'un membre du personnel </h1>
             <ul>
                 <li>
@@ -292,7 +292,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
 
     <div class="menu-container">
         <nav>
-            <form method="post" action="../Controller/ControllerBtnDeco.php">
+            <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
                     <li>
                         <button type="button" onclick="window.location.href ='ViewAdminMain.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
@@ -312,7 +312,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
                     <li id="account-photo">
                         <img id="photo" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                         <div id="account-dropdown">
-                            <form method="post" action="../Controller/ControllerBtnDeco.php">
+                            <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
                                 <input class="" name="compte" type="submit" value="Mon compte">
                                 <input class="" name="deco" type="submit" value="Se déconnecter">
                             </form>
@@ -353,7 +353,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
     </div>
 
 
-    <form method="post" action="../Controller/ControllerBtnDeco.php">
+    <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
         <ul class="vertical-menu-burger">
             <li>
                 <a href="../english/View/ViewAdminMainEn.php"> <img src="../asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
@@ -362,7 +362,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
             <li id="account-photo2">
                 <img id="photo2" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                 <div id="account-dropdown2">
-                    <form method="post" action="../Controller/ControllerBtnDeco.php">
+                    <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
                         <input class="" name="compte" type="submit" value="Mon compte">
                         <input class="" name="deco" type="submit" value="Se déconnecter">
                     </form>

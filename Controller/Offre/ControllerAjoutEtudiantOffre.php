@@ -4,14 +4,14 @@ use Model\Conn;
 
 session_start();
 
-include_once '../Model/ConnexionBDD.php';
+include_once '../../Model/ConnexionBDD.php';
 
 $conn = Conn::getInstance();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if (isset($_POST['BoutonRetour'])) {
-    header('Location: ../View/ViewAfficherPlusOffre.php');
+    header('Location: ../../View/ViewAfficherPlusOffre.php');
     exit();
 }
 
@@ -38,7 +38,7 @@ if ($sqlTousEtudiants->execute()) {
     if ($result) {
         ?>
         <head>
-            <link rel="stylesheet" type="text/css" href="../asserts/css/AjoutEtudiantOffre.css">
+            <link rel="stylesheet" type="text/css" href="../../asserts/css/AjoutEtudiantOffre.css">
         </head>
         <button onclick="retourPage()" class="btnRetour">Retour</button>
 
@@ -135,7 +135,7 @@ if ($sqlTousEtudiants->execute()) {
 
 
 
-        <script src="../asserts/js/rechercheEtuOffre.js"></script>
+        <script src="../../asserts/js/rechercheEtuOffre.js"></script>
 
         <form action="ControllerAjoutEtudiantOffre.phpp echo $nomOffre; ?>" method="post">
             <div class="result" id="result"> </div>

@@ -4,8 +4,8 @@ use Model\Conn;
 
 session_start();
 ob_start();
-include '../Model/ModelConnexionAdmin.php';
-include '../Model/ConnexionBDD.php';
+include '../../Model/ModelConnexionAdmin.php';
+include '../../Model/ConnexionBDD.php';
 
 $conn = Conn::getInstance();
 
@@ -22,7 +22,7 @@ if ( isset($_POST["valider"])) {
 }
 
 if (isset($_POST['btnRetour'])){
-    header('Location: ../View/ViewAvConnexionAdmin.php');
+    header('Location: ../../View/ViewAvConnexionAdmin.php');
 }
 
 

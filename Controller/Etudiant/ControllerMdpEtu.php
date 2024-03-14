@@ -26,6 +26,6 @@ if ($_POST['token'] && $_COOKIE['token']) {
     // Gestion des erreurs si le token est manquant
     echo "Le lien de réinitialisation du mot de passe est incorrect ou a expiré.";
     suppEtu($conn,$email);
-    header('location: ../View/ViewNouvCompte.php');
+    header('location: ../../View/ViewNouvCompte.php');
     exit;
 }

@@ -2,8 +2,8 @@
 
 use Model\Conn;
 
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelRechercheEtu.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelRechercheEtu.php';
 
 $conn = Conn::getInstance();
 

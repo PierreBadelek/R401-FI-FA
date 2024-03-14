@@ -2,8 +2,8 @@
 
 use Model\Conn;
 
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelAjout.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelAjout.php';
 $conn = Conn::getInstance();
 
 $nom = $_POST['nom'];
@@ -16,5 +16,5 @@ $role = $_POST['role'];
 
 if(isset($_POST["valider"])) {
     ajoutAdministration($conn, $nom, $prenom, $formation, $email, $mdp, $role);
-    header('Location: ../View/ViewAdminAdministration.php');
+    header('Location: ../../View/ViewAdminAdministration.php');
 }

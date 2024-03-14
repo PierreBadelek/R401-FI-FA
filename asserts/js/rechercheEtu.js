@@ -41,7 +41,7 @@ function rechercherEtudiants() {
     }
 
 
-    var apiUrl = '../Controller/ControllerRechercheEtudiant.php?' +
+    var apiUrl = '../Controller/Etudiant/ControllerRechercheEtudiant.php?' +
         '&nom=' + nom +
         '&prenom=' + prenom +
         '&ine=' + ine +
@@ -213,7 +213,7 @@ afficherChamps();
  */
 function obtenirTousLesEtudiants(ine) {
     // Construction de l'URL de l'API pour obtenir toutes les informations de l'étudiant
-    var tousLesEtudiantsUrl = '../Controller/ControllerRechercheEtudiant.php';
+    var tousLesEtudiantsUrl = '../Controller/Etudiant/ControllerRechercheEtudiant.php';
 
     console.log("URL de l'API (Obtenir tous les étudiants):", tousLesEtudiantsUrl);
 
@@ -241,7 +241,7 @@ function redirectModifierProfil() {
     var urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get('ine');
     if (id !== null) {
-        window.location.href = '../Controller/ControllerModifierProfilEtu.php?ine=' + id;
+        window.location.href = '../Controller/Etudiant/ControllerModifierProfilEtu.php?ine=' + id;
     }
 }
 

@@ -12,7 +12,7 @@ function toggleNotifications() {
 
 
 function nb() {
-    fetch('../../Controller/ControlleurNotif.php')
+    fetch('../../Controller/Notification/ControlleurNotif.php')
         .then(response => response.json())
         .then(data => {
             const notificationBadge = document.getElementById('notificationBadge');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function fetchNotifications() {
-    fetch('../../Controller/ControlleurNotif.php')
+    fetch('../../Controller/Notification/ControlleurNotif.php')
         .then(response => response.json())
         .then(data => {
             const unreadNotificationList = document.getElementById('unreadNotificationList');
@@ -154,7 +154,7 @@ function fetchNotifications() {
 
 function updateNotification(params, listItem, checkbox, rappel,className) {
 
-    fetch('../Controller/ControllerUpdateNotification.php', {
+    fetch('../Controller/Notification/ControllerUpdateNotification.php', {
         method: 'POST',
         body: params
     })
@@ -174,7 +174,7 @@ function fermerMenuBurger(data) {
     // Cacher le menu burger
     var menuBurger = document.getElementById('burgerMenu');
     menuBurger.style.display = 'none';
-    fetch('../../Controller/ControlleurNotif.php')
+    fetch('../../Controller/Notification/ControlleurNotif.php')
         .then(response => response.json())
         .then(data => {
             const notificationBadge = document.getElementById('notificationBadge');

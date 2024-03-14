@@ -23,7 +23,7 @@
 
     <div class="menu-container">
         <nav>
-            <form method="post" action="../Controller/ControllerBtnDeco.php">
+            <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
                     <li><button type="button" onclick="window.location.href ='../View/View<?php echo $_SESSION['role']; ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">Accueil</button><li>
                     <li>
@@ -109,7 +109,7 @@
     <div class = "container-content">
         <h1>Mon Profil</h1>
 
-        <form method="post" action="../Controller/ControllerModifierProfilPerso.php">
+        <form method="post" action="../Controller/Personnel/ControllerModifierProfilPerso.php">
             <div class="information">
 
                 <div>

@@ -21,7 +21,7 @@ function rechercherEntreprises() {
     var numtel = document.getElementById('numtel').value;
 
     console.log("reussis");
-    var apiUrl = '../Controller/ControllerRechercherEntreprise.php?' +
+    var apiUrl = '../Controller/Entreprise/ControllerRechercherEntreprise.php?' +
         'nom=' + nom +
         '&ville=' + ville +
         '&codepostal=' + codepostal +

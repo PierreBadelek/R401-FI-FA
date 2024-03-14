@@ -2,8 +2,8 @@
 
 use Model\Conn;
 
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelFiltres.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelFiltres.php';
 
 $conn = Conn::getInstance();
 

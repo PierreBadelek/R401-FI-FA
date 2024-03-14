@@ -5,9 +5,9 @@ use Model\Conn;
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include '../Model/ModelMail.php';
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelAjout.php';
+include '../../Model/ModelMail.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelAjout.php';
 
 $db = Conn::getInstance();
 
@@ -42,11 +42,13 @@ if(isset($_POST["ajoutEtudiant"])) {
         {
             echo $result;
         }
-        header('Location: ../Model/ModelVerifMail.php');
+        header('Location: ../../Model/ModelVerifMail.php');
     }
     else {
         $erreur = "Adresse mail déjà utilisée !";
     }
 
-    header('Location: ../View/ViewAdminEtu.php');
+    header('Location: ../../View/ViewAdminEtu.php');
 }
+
+?>

@@ -10,14 +10,14 @@ if (isset($_POST['deco'])){
     session_unset();
     session_destroy();
 
-    header('Location: ../View/ViewAvConnexion.html');
+    header('Location: ../../View/ViewAvConnexion.html');
     exit;
 
 }
 
 if (isset($_POST['compte'])){
 
-    header('Location: ../Controller/ControllerModifierProfilPerso.php');
+    header('Location: ../ControllerModifierProfilPerso.php');
     exit;
 
 }

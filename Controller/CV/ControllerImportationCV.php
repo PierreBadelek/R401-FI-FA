@@ -2,9 +2,9 @@
 
 use Model\Conn;
 
-include '../Model/ModelMail.php';
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelInscriptionEtu.php';
+include '../../Model/ModelMail.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelInscriptionEtu.php';
 
 session_start();
 
@@ -13,13 +13,13 @@ $db = Conn::getInstance();
 $email = $_SESSION['email'];
 $id = selectidWhereEmail($db, $email);
 
-include '../View/ViewImportationCV.php';
+include '../../View/ViewImportationCV.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['Importer'])) {
         if (isset($_FILES["fichier"]) && $_FILES["fichier"]["error"] == UPLOAD_ERR_OK) {
 
-            $dossier_destination = "../Controller/";
+            $dossier_destination = "../../Controller/";
             $chemin_fichier_destination = $dossier_destination . basename($_FILES["fichier"]["name"]);
 
             if (move_uploaded_file($_FILES["fichier"]["tmp_name"], $chemin_fichier_destination)) {
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     if (isset($_POST['NePasImporter'])){
-        header('Location: ../View/ViewEtuMain.php');
+        header('Location: ../../View/ViewEtuMain.php');
     }
 }
 ?>
