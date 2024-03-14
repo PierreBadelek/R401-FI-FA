@@ -8,7 +8,7 @@
     <link rel="icon" href="../asserts/img/logo.png" type="image/x-icon">
 </head>
 <body>
-<form action="../Controller/ControllerAjouOffre.php" method="post" id="formulaire">
+<form action="../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire">
     <p>
         Nom de l'offre :
     </p>

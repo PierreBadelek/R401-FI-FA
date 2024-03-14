@@ -190,7 +190,7 @@
 
 .titreAjout {
     color: white;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     font-size: 24px;
 
 }
@@ -570,6 +570,10 @@
     .menu-container {
         display: none;
     }
+
+    .main-rectangle {
+        padding-top: 5%;
+    }
 }
 
 @media only screen and (max-width: 680px) {
@@ -590,7 +594,7 @@
      }
 
     .titreAjout {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .AjRapide {

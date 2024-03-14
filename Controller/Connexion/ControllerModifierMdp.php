@@ -3,9 +3,9 @@
 use Model\Conn;
 
 
-include '../Model/ModelConnexion.php';
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelModifierProfilPerso.php';
+include '../../Model/ModelConnexion.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelModifierProfilPerso.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -22,7 +22,7 @@ if ($user) {
             echo "Le nouveau mot de passe est identique à l'ancien.";
         } else {
             updateMpPerso($conn,  password_hash($motDePasseAfter, PASSWORD_DEFAULT), $id);
-            header('location: ../View/ViewAdminMain.php');
+            header('location: ../../View/ViewAdminMain.php');
         }
     } else {
         echo "Ancien mot de passe incorrect.";

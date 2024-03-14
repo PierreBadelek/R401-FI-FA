@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../asserts/css/OubliMDP.css">
 </head>
 <body>
-<form action="../Controller/ControllerReinistialiserMDP.php" method="POST">
+<form action="../Controller/Connexion/ControllerReinistialiserMDP.php" method="POST">
     <ul>
         <li>
             <label for="code">Code de confirmation:</label>

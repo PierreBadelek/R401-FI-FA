@@ -2,8 +2,8 @@
 
 use Model\Conn;
 
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelVerifMail.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelVerifMail.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);

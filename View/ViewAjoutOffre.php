@@ -21,7 +21,7 @@
     }
 </script>
 
-<form action="../Controller/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre" onsubmit="return validateForm()">
+<form action="../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre" onsubmit="return validateForm()">
     <h1 class="titre1"> Création d'une offre </h1>
     <p class="label-text">
         Nom de l'offre :

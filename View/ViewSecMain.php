@@ -38,7 +38,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
     <div class="popup-content" id="formulaireAjoutEtudiant">
 
 
-        <form action="../Controller/ControllerAjoutEtudiant.php" method="post" >
+        <form action="../Controller/Etudiant/ControllerAjoutEtudiant.php" method="post" >
             <ul>
                 <li>
                     <label for="nom">Nom:</label>
@@ -126,7 +126,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
 
     <div class="menu-container">
         <nav>
-            <form method="post" action="../Controller/ControllerBtnDeco.php">
+            <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
                     <li>
                         <button type="button" onclick="window.location.href ='ViewSecMain.php'" name="accueil" value="Accueil" class="btnCreation">  Acceuil </button>
@@ -140,7 +140,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
                     <li id="account-photo">
                         <img id="photo" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                         <div id="account-dropdown">
-                            <form method="post" action="../Controller/ControllerBtnDeco.php">
+                            <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
                                 <input class="" name="compte" type="submit" value="Mon compte">
                                 <input class="" name="deco" type="submit" value="Se déconnecter">
                             </form>

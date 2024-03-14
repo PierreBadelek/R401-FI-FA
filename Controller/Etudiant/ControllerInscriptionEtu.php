@@ -5,9 +5,9 @@ use Model\Conn;
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include '../Model/ModelMail.php';
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelInscriptionEtu.php';
+include '../../Model/ModelMail.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelInscriptionEtu.php';
 
 $db = Conn::getInstance();
 
@@ -40,7 +40,7 @@ if (isset($_POST["valider"])) {
         }
         session_start();
         $_SESSION['email'] = $email;
-        header('Location: ControllerImportationCV.php');
+        header('Location: ../CV/ControllerImportationCV.php');
     } else {
         $erreur = "Adresse mail déjà utilisée !";
     }

@@ -25,6 +25,10 @@
     overflow: scroll;
 }
 
+#entreprises-container li::-webkit-scrollbar {
+    display: none;
+}
+
 #entreprises-container li:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
@@ -74,4 +78,20 @@
 
 #btnRetour{
     margin-left: 6%;
+}
+
+
+.page{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page li{
+    display: inline-block;
+    width: 15%;
+}
+
+.page ul{
+    padding: 0;
 }

@@ -2,8 +2,8 @@
 
 use Model\Conn;
 
-include('../Model/ModelConnexion.php');
-include ('../Model/ConnexionBDD.php');
+include('../../Model/ModelConnexion.php');
+include('../../Model/ConnexionBDD.php');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -33,10 +33,10 @@ $users = selectEmailMDPEtu($conn,$email);
         if (authenticatedEtu($users, $email, $motDePasse)) {
             $_SESSION['etu'] = true;
             $_SESSION['email'] = $users['email'];
-            header("location: ../View/ViewEtuMain.php");
+            header("location: ../../View/ViewEtuMain.php");
         } else {
             $_SESSION['essai']++;
-            header('location: ../View/ViewConnexion.html');
+            header('location: ../../View/ViewConnexion.html');
         }
 
     }
@@ -49,6 +49,6 @@ $users = selectEmailMDPEtu($conn,$email);
             role($users);
         } else {
             $_SESSION['essai']++;
-            header('location: ../View/ViewConnexion.html');
+            header('location: ../../View/ViewConnexion.html');
         }
 }

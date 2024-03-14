@@ -2,8 +2,8 @@
 
 use Model\Conn;
 
-include '../Model/ModelAjout.php';
-include_once '../Model/ConnexionBDD.php';
+include '../../Model/ModelAjout.php';
+include_once '../../Model/ConnexionBDD.php';
 
 
 $conn = Conn::getInstance();
@@ -43,5 +43,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $req->execute(array(':idoffre' => $idoffre, ':identreprise' => $entreprise));
 
 
-    header('Location: ../View/ViewAdminMain.php');
+    header('Location: ../../View/ViewAdminMain.php');
 }

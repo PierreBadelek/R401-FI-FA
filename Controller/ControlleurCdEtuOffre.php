@@ -27,7 +27,7 @@ include "../Controller/ControllerVerificationDroit.php"
 
     <div class="menu-container">
         <nav>
-            <form method="post" action="ControllerBtnDeco.php">
+            <form method="post" action="Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
                     <?php
                     if ($_SESSION['role'] === 'admin') {
@@ -51,7 +51,7 @@ include "../Controller/ControllerVerificationDroit.php"
                     <li id="account-photo">
                         <img id="photo" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                         <div id="account-dropdown">
-                            <form method="post" action="ControllerBtnDeco.php">
+                            <form method="post" action="Connexion/ControllerBtnDeco.php">
                                 <input class="" name="compte" type="submit" value="Mon compte">
                                 <input class="" name="deco" type="submit" value="Se déconnecter">
 
