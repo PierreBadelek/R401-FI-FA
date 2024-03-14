@@ -23,6 +23,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <script src="../asserts/js/script.js"></script>
+    <script src="../asserts/js/affichageListe.js"></script>
 
     <script>
         // Écouteur d'événements pour le bouton d'ouverture
