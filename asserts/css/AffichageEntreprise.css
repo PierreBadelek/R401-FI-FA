@@ -79,3 +79,19 @@
 #btnRetour{
     margin-left: 6%;
 }
+
+
+.page{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page li{
+    display: inline-block;
+    width: 15%;
+}
+
+.page ul{
+    padding: 0;
+}

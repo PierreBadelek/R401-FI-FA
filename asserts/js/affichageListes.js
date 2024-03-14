@@ -80,7 +80,6 @@ function redirectWithAjax(url) {
         },
         error: function (error) {
             console.error('Erreur AJAX :', error);
-            // Gérer les erreurs si nécessaire
         }
     });
 }
