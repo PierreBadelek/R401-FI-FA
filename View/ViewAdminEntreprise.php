@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>OffreEntreprise</title>
+    <title>Offres et Entreprises</title>
     <link rel="stylesheet" type="text/css" href="../asserts/css/adminEntreprise.css">
     <script src="../asserts/js/AdminEntreprise.js"></script>
     <script src="../asserts/js/rechercheOffre.js"></script>
@@ -97,7 +97,6 @@
             });
         });
 
-
     </script>
 
 </header>
@@ -105,7 +104,7 @@
 <div class="body-container">
 
 
-    <div class="rectangle-mid">
+    <div class="rectangle-mid" id="affichage_lst">
         <form action="" method="post">
             <button name="btnAjoutEntreprise" onclick="window.location.href ='ViewAjoutEntreprise.php'" class="btnAjoutEntreprise" type="button">Ajouter une entreprise</button>
             <button name="btnAjoutOffre" onclick="window.location.href ='ViewDemandeAjoutOffre.php'" class="btnAjoutOffre" type="button">Ajouter une offre</button>
@@ -152,7 +151,7 @@
             </div>
 
             <input type="hidden" name="selectedOffer" id="selectedOffer" value="">
-            <input type="button" value="Rechercher une offre" onclick="rechercherOffres()" class="rechercheOffre">
+            <input type="button" value="Rechercher une offre" onclick="rechercherOffres()" class="rechercheOffre" id="searchOffres">
         </form>
 
         <ul id="resultatsOffre" class="result">
@@ -210,7 +209,7 @@
                     <input type="text" name="numtel" id="numtel" placeholder="Numéro de téléphone">
                 </div>
 
-                <input type="button" value="Rechercher une entreprise" onclick="rechercherEntreprises()" class="rechercheEntreprise">
+                <input type="button" value="Rechercher une entreprise" onclick="rechercherEntreprises()" class="rechercheEntreprise" id="searchEntreprises">
             </form>
 
             <ul id="resultatsEntreprise" class="result">
@@ -221,20 +220,6 @@
 
     </div>
 </div>
-
-<script>
-    window.addEventListener('load', function () {
-        <?php
-        // Vérifiez la session pour afficher la popup
-        session_start();
-        if (isset($_SESSION['afficher_popup']) && $_SESSION['afficher_popup'] === true) {
-            echo 'afficherPopup();';
-            // Réinitialisez l'indicateur pour qu'il ne s'affiche qu'une fois.
-            $_SESSION['afficher_popup'] = false;
-        }
-        ?>
-    });
-</script>
 
 <footer class="footer" id="footer">
     <div class="footer-content">
