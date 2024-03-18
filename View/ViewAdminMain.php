@@ -19,37 +19,12 @@ include "../Controller/ControllerRechercheNbr.php"?>
     <link rel="icon" href="../asserts/img/logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="../asserts/js/AdminMain.js"></script>
+    <script src="../asserts/js/AdminMain.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <script src="../asserts/js/script.js"></script>
     <script src="../asserts/js/affichageListes.js"></script>
     <script src="../asserts/js/menuBurger.js" defer></script>
-
-    <script>
-        // Écouteur d'événements pour le bouton d'ouverture
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('AjEtu').addEventListener('click', function () {
-                openPopup('popUpEtu');
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('AjOffre').addEventListener('click', function () {
-                openPopup('popUpOffre');
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('AjPerso').addEventListener('click', function () {
-                openPopup3();
-            });
-        });
-
-        function fermerNotifications() {
-            document.getElementById('burgerMenu').style.display = 'none';
-        }
-    </script>
 </head>
 <body class="body">
 

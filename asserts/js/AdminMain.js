@@ -98,5 +98,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Écouteur d'événements pour le bouton d'ouverture
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('AjEtu').addEventListener('click', function () {
+        openPopup('popUpEtu');
+    });
+});
 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('AjOffre').addEventListener('click', function () {
+        openPopup('popUpOffre');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('AjPerso').addEventListener('click', function () {
+        openPopup3();
+    });
+});
+
+function fermerNotifications() {
+    document.getElementById('burgerMenu').style.display = 'none';
+}
 
