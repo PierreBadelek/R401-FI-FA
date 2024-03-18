@@ -12,7 +12,7 @@ if (isset($_SESSION['formation'])) {
 } else {
     $sql2 .= " ORDER BY idoffre DESC";
 }
-$sql2 .= " LIMIT 2";
+$sql2 .= " LIMIT 4";
 
 $req = $db->prepare($sql2);
 if (!empty($userFormation)) {
@@ -48,19 +48,8 @@ foreach ($resultat2 as $res2):
                         <li class="offre">
                             <strong>Nom :</strong> <?php echo $res2['nom']; ?><br>
                             <strong>Domaine : </strong><?php echo $res2['domaine']; ?><br>
-                            <strong>Missions : </strong><?php echo $res2['mission']; ?><br>
                             <strong>Nombre d'étudiants :</strong> <?php echo $res2['nbetudiant']; ?><br>
                             <strong>Parcours :</strong> <?php echo $res2['parcours']; ?><br>
-                            <input type="hidden" name="nomOffre" value="<?php echo $nomOffre; ?>">
-                            <input type="submit" name="BtAjoutEtudiant" value="Ajouter un étudiant à cette offre">
-                            <label> Les étudiants qui ont déjà postulés :</label><br>
-                            <?php
-                            if ($etudiants) {
-                                foreach ($etudiants as $etudiant) {
-                                    echo " - " . $etudiant['nom'] . ' ' . $etudiant['prenom'] . '<br>';
-                                }
-                            }
-                            ?>
                         </li>
                 </form>
                 <?php
