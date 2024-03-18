@@ -17,7 +17,7 @@ if (isset($_POST['deco'])){
 
 if (isset($_POST['compte'])){
 
-    header('Location: ../ControllerModifierProfilPerso.php');
+    header('Location: ../Personnel/ControllerModifierProfilPerso.php');
     exit;
 
 }
