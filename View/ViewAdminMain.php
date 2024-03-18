@@ -21,10 +21,6 @@ include "../Controller/ControllerRechercheNbr.php"?>
 
     <script src="../asserts/js/AdminMain.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <script src="../asserts/js/script.js"></script>
-    <script src="../asserts/js/affichageListes.js"></script>
-    <script src="../asserts/js/menuBurger.js" defer></script>
 </head>
 <body class="body">
 

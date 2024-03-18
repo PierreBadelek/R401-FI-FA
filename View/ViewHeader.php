@@ -134,4 +134,8 @@
         </div>
     </div>
 
+    <script src="../asserts/js/script.js" defer></script>
+    <script src="../asserts/js/affichageListes.js" defer></script>
+    <script src="../asserts/js/menuBurger.js" defer></script>
+
 </header>
