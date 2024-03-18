@@ -34,12 +34,15 @@ $users = selectEmailMDPEtu($conn,$email);
             $_SESSION['etu'] = true;
             $_SESSION['email'] = $users['email'];
             header("location: ../../View/ViewEtuMain.php");
-        } else {
-            $_SESSION['essai']++;
-            header('location: ../../View/ViewConnexion.html');
+            exit;
         }
-
+        else {
+            $_SESSION['essai']++;
+            header('location: ../../View/ViewConnexion.html?error=1');
+            exit;
+        }
     }
+
     $users = selectEmailMDPRoleAdmin($conn, $email);
     if ($users) {
         if (authenticatedAdmin($users, $email, $motDePasse)) {
@@ -49,6 +52,13 @@ $users = selectEmailMDPEtu($conn,$email);
             role($users);
         } else {
             $_SESSION['essai']++;
-            header('location: ../../View/ViewConnexion.html');
+            $_SESSION['error_message'] = "Adresse e-mail ou mot de passe incorrect.";
+            header('location: ../../View/ViewConnexion.html?error=1');
+            exit;
         }
-}
+    }
+    else {
+        $_SESSION['essai']++;
+        header('location: ../../View/ViewConnexion.html?error=1');
+        exit;
+    }

@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="../asserts/css/connexionEtu.css">
     <link rel="icon" href="../asserts/img/logo.png" type="image/x-icon">
+    <script src="../asserts/js/connexion.js" defer></script>
 </head>
 <body class="body">
 <header class="header">
@@ -22,7 +23,7 @@
                     <img src="../asserts/img/perso2.png" class="perso2" alt="Petit perso id">
                 </div>
                 <label>
-                    <input type="text" name="Email" placeholder="Email" class="input-mail">
+                    <input type="text" name="Email" id="email" placeholder="Email" class="input-mail">
                 </label>
             </div>
 
@@ -31,7 +32,7 @@
                     <img src="../asserts/img/cadena.png" class="cadena" alt="Petit cadenas mdp">
                 </div>
                 <label>
-                    <input type="password" name="MotDePasse" placeholder="Mot de passe" class="input-mdp">
+                    <input type="password" name="MotDePasse" id="mdp" placeholder="Mot de passe" class="input-mdp">
                 </label>
             </div>
 
@@ -39,10 +40,11 @@
                 <p class="mdp-oublie">Mot de passe oublié ?</p>
             </a>
 
-            <input type="submit" name="valider" value="Connexion" class="btnConnexion">
+            <input type="submit" name="valider" value="Connexion" id="btnConnexion" class="btnConnexion">
 
 
         </form>
+
     </div>
 
 </header>
@@ -52,5 +54,6 @@
     <button name="btnRetour" onclick="window.location.href= 'ViewAvConnexion.html'" class="btnRetour"> Retour </button>
 
 
+<div id="error-message" class="error-message"></div>
 </body>
 </html>

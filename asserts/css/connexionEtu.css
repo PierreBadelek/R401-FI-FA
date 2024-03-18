@@ -298,9 +298,12 @@ div.rec-connection {
 
 }
 
-/* Ajoutez ces media queries à la fin de votre fichier CSS */
+.error-message{
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
 
-/* Media Query pour les écrans de taille maximale de 768px (téléphones) */
 @media only screen and (max-width: 768px) {
 
 
@@ -435,6 +438,10 @@ div.rec-connection {
 
     }
 
-
+    .error-message{
+        width: 100%;
+        text-align: center;
+        margin-top: 20%;
+    }
 
 }

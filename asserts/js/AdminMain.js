@@ -37,6 +37,49 @@ function closePopup3() {
     document.getElementById('popUpPerso').style.display = 'none';
 }
 
+// Affichage des messages d'erreur
+document.getElementById('ajoutPersonnel').addEventListener('click', function(event) {
+    var nom = document.getElementById('nom').value.trim();
+    var prenom = document.getElementById('prenom').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var mdp = document.getElementById('mdp').value.trim();
+
+    if (nom === '' || prenom === '' || email === '' || mdp === '') {
+        event.preventDefault(); // Empêche l'envoi du formulaire
+        alert('Tous les champs doivent être remplis.');
+    }
+});
+
+document.getElementById('enregistreroffre').addEventListener('click', function(event) {
+    var offre = document.getElementById('offre').value.trim();
+    var domaine = document.getElementById('domaine').value.trim();
+    var mission = document.getElementById('mission').value.trim();
+    var nbetudiant = document.getElementById('nbetudiant').value.trim();
+
+    if (offre === '' || domaine === '' || mission === '' || nbetudiant === '') {
+        event.preventDefault(); // Empêche l'envoi du formulaire
+        alert('Tous les champs doivent être remplis.');
+    }
+});
+
+document.getElementById('ajoutEtudiant').addEventListener('click', function(event) {
+    var nom = document.getElementById('nom').value.trim();
+    var prenom = document.getElementById('prenom').value.trim();
+    var dateDeNaissance = document.getElementById('dateDeNaissance').value.trim();
+    var adresse = document.getElementById('adresse').value.trim();
+    var ville = document.getElementById('ville').value.trim();
+    var codePostal = document.getElementById('codePostal').value.trim();
+    var ine = document.getElementById('ine').value.trim();
+    var anneeEtude = document.getElementById('anneeEtude').value.trim();
+    var email = document.getElementById('email').value.trim();
+
+    if (nom === '' || prenom === '' || dateDeNaissance === '' || adresse === '' || ville === '' || codePostal === '' || ine === '' || anneeEtude === '' || email === '') {
+        event.preventDefault(); // Empêche l'envoi du formulaire
+        alert('Tous les champs doivent être remplis.');
+    }
+});
+
+
 // Écouteur d'événements pour le bouton d'ouverture
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('AjEtu').addEventListener('click', function () {

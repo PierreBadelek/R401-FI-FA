@@ -134,12 +134,12 @@ include "../Controller/ControllerRechercheNbr.php"?>
             <label for="domaine"></label><input type="text" name="Domaine" id="domaine" class="input-field">
 
             <p class="label-text">
-                Mission :
+                Missions :
             </p>
             <label for="mission"></label><textarea name="Mission" id="mission" class="zoneText input-field"></textarea>
 
             <p class="label-text">
-                Nombre d'étudiant :
+                Nombre d'étudiants :
             </p>
             <label for="nbetudiant"></label><input type="text" name="NbEtudiant" id="nbetudiant" class="input-field"><br>
 
