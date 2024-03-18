@@ -5,7 +5,7 @@
  */
 function rechercherEtudiants() {
 
-    document.getElementById("footer").style.display = "none";
+    //document.getElementById("footer").style.display = "none";
 
     var nom = document.getElementById('nom').value;
     var prenom = document.getElementById('prenom').value;
