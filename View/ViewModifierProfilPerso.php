@@ -109,7 +109,7 @@
     <div class = "container-content">
         <h1>Mon Profil</h1>
 
-        <form method="post" action="../Controller/Personnel/ControllerModifierProfilPerso.php">
+        <form method="post" action="../../Controller/Personnel/ControllerModifierProfilPerso.php">
             <div class="information">
 
                 <div>
