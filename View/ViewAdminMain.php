@@ -20,6 +20,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="../asserts/js/AdminMain.js" defer></script>
+    <script src="../asserts/js/affichageListes.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body class="body">
