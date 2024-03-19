@@ -1,7 +1,7 @@
 var retourAdminButton = document.getElementById('retour-admin');
 if (retourAdminButton) {
     retourAdminButton.addEventListener('click', function () {
-        window.location.href = '../View/ViewAdminAdministration.php'; // Remplacez 'AdminMain.php' par l'URL du menu de l'administrateur
+        window.location.href = '../../View/Personnel/ViewAdminAdministration.php'; // Remplacez 'AdminMain.php' par l'URL du menu de l'administrateur
     });
 
     // Affichez le bouton uniquement si l'utilisateur est un administrateur (placez cette logique où cela est approprié)

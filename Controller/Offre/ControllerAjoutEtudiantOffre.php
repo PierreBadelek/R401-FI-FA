@@ -137,7 +137,7 @@ if ($sqlTousEtudiants->execute()) {
 
         <script src="../../asserts/js/rechercheEtuOffre.js"></script>
 
-        <form action="ControllerAjoutEtudiantOffre.phpp echo $nomOffre; ?>" method="post">
+        <form action="../Offre/ControllerAjoutEtudiantOffre.php"<?php echo $nomOffre; ?>" method="post">
             <div class="result" id="result"> </div>
             <input type="submit" name="buttonValider" value="Valider">
             <input type="submit" name="BoutonRetour" value="Retour aux offres">

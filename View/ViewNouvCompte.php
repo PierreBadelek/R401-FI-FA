@@ -201,7 +201,7 @@
         </form>
     </div>
     <p class="info">Si vous possédez déjà un compte veuillez vous connecter en appuyant ici :</p>
-    <a href="ViewConnexion.html" class="lien"><p class="lien-info">Connexion</p></a>
+    <a href="Connexion/ViewConnexion.html" class="lien"><p class="lien-info">Connexion</p></a>
 </header>
 </body>
 </html>

@@ -43,5 +43,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $req->execute(array(':idoffre' => $idoffre, ':identreprise' => $entreprise));
 
 
-    header('Location: ../../View/ViewAdminMain.php');
+    header('Location: ../../View/Main/ViewAdminMain.php');
 }

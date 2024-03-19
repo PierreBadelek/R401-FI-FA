@@ -22,7 +22,7 @@ if ($user) {
             echo "Le nouveau mot de passe est identique à l'ancien.";
         } else {
             updateMpPerso($conn,  password_hash($motDePasseAfter, PASSWORD_DEFAULT), $id);
-            header('location: ../../View/ViewAdminMain.php');
+            header('location: ../../View/Main/ViewAdminMain.php');
         }
     } else {
         echo "Ancien mot de passe incorrect.";

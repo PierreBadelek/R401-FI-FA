@@ -38,7 +38,7 @@ if (isset($_POST["SubmitForm2"])) {
     $updateOffre->bindParam(':nom', $_POST['nomOffre'], PDO::PARAM_STR);
 
         if ($updateOffre->execute()) {
-            header('Location: ../../View/ViewAdminEntreprise.php');
+            header('Location: ../../View/Entreprise/ViewAdminEntreprise.php');
             exit;
         } else {
             // Gérer une éventuelle erreur de mise à jour

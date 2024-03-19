@@ -17,7 +17,7 @@ $email = $_SESSION['email'];
 $id = selectId($conn, $email);
 $perso = selectPersoId($conn, $id);
 
-include("../../View/ViewModifierProfilPerso.php");
+include("../../View/Personnel/ViewModifierProfilPerso.php");
 
 if (isset($_POST['modifier_profil'])){
     $nom = $_POST['nouveau_nom'];

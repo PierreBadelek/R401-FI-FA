@@ -48,7 +48,7 @@ if(isset($_POST["ajoutEtudiant"])) {
         $erreur = "Adresse mail déjà utilisée !";
     }
 
-    header('Location: ../../View/ViewAdminEtu.php');
+    header('Location: ../../View/Etudiant/ViewAdminEtu.php');
 }
 
 ?>

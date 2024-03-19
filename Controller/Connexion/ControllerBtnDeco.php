@@ -10,7 +10,7 @@ if (isset($_POST['deco'])){
     session_unset();
     session_destroy();
 
-    header('Location: ../../View/ViewAvConnexion.html');
+    header('Location: ../../View/Connexion/ViewAvConnexion.html');
     exit;
 
 }

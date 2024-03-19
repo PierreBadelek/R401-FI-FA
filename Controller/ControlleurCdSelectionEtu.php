@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if (isset($_POST['BoutonRetour'])) {
-    header('Location: ../View/ViewAfficherPlusOffre.php');
+    header('Location: ../View/Offre/ViewAfficherPlusOffre.php');
     exit();
 }
 

@@ -41,7 +41,7 @@ function rechercherEtudiants() {
     }
 
 
-    var apiUrl = '../Controller/Etudiant/ControllerRechercheEtudiant.php?' +
+    var apiUrl = '../../Controller/Etudiant/ControllerRechercheEtudiant.php?' +
         '&nom=' + nom +
         '&prenom=' + prenom +
         '&ine=' + ine +

@@ -13,7 +13,7 @@ $conn = Conn::getInstance();
 $id = $_GET['ine'];
 $etu = selectEtudiantIne($conn, $id);
 
-include("../../View/ViewModifierProfilEtu.php");
+include("../../View/Etudiant/ViewModifierProfilEtu.php");
 
 if (isset($_POST['modifier_nom'])){
     $nom = $_POST['nouveau_nom'];

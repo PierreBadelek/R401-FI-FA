@@ -23,7 +23,7 @@ if(isset($_POST["confirmationCode"])  ){
 if ($_POST['code'] === $codeEtu['codemail']) {
 $nouveauMDP = password_hash($_POST['mdp'],PASSWORD_DEFAULT);
 reinitialiserMDP($db,$nouveauMDP,$_COOKIE['email']);
-header('location: ../   ../View/ViewConnexion.html');
+header('location: ../../View/Connexion/ViewConnexion.html');
 }else {
 echo $codeEtu['codemail'];
 }

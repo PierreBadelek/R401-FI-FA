@@ -20,5 +20,5 @@ if(isset($_POST["ajoutEntreprise"])) {
 
     ajoutEntreprise($db, $nom, $adresse, $ville, $codePostal, $num, $secteur, $email) ;
 
-    header('Location: ../../View/ViewAdminMain.php');
+    header('Location: ../../View/Main/ViewAdminMain.php');
 }

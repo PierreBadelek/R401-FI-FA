@@ -164,7 +164,7 @@ function afficherPopup() {
 }
 
     document.getElementById('redirigerVersAjoutEntreprise').addEventListener('click', function() {
-    window.location.href = '../View/ViewAjoutEntreprise.php';
+    window.location.href = '../../View/Entreprise/ViewAjoutEntreprise.php';
 });
 
 

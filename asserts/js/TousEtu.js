@@ -1,6 +1,6 @@
 function etu() {
     $.ajax({
-        url: '../Model/ModelAfficherPlusEtu.php',
+        url: '../../Model/ModelAfficherPlusEtu.php',
         type: 'GET',
         dataType: 'html',
         data: {

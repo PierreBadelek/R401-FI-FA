@@ -2,8 +2,8 @@
 
 use Model\Conn;
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+error_reporting(E_ERROR | E_PARSE);
+ini_set('display_errors', 0);
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -11,8 +11,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 ob_start();
 
-include_once '../Model/ConnexionBDD.php';
-include '../Model/ModelRechercheNbr.php';
+$root = basename($_SERVER['DOCUMENT_ROOT']);
+
+include_once $_SERVER['DOCUMENT_ROOT'].'/Model/ConnexionBDD.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Model/ModelRechercheNbr.php';
 
 $conn = Conn::getInstance();
 

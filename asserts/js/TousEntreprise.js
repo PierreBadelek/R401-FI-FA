@@ -1,6 +1,6 @@
 function entreprise() {
     $.ajax({
-        url: '../Model/ModelAfficherPlusEntreprise.php',
+        url: '../../Model/ModelAfficherPlusEntreprise.php',
         type: 'GET',
         dataType: 'html',
         data: {

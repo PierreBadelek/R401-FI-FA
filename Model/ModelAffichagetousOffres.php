@@ -76,7 +76,7 @@ foreach ($resultat2 as $res2):
     ?>
     <meta charset="UTF-8">
     <title>Offres</title>
-    <link rel="stylesheet" type="text/css" href="/asserts/css/adminMenuTest.css">
+    <link rel="stylesheet" type="text/css" href="../asserts/css/adminMenuTest.css">
     <link rel="stylesheet" type="text/css" href="../asserts/css/AffichageOffre.css">
     <script src="../asserts/js/Offres.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

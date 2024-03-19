@@ -13,7 +13,7 @@ $db = Conn::getInstance();
 $email = $_SESSION['email'];
 $id = selectidWhereEmail($db, $email);
 
-include '../../View/ViewImportationCV.php';
+include '../../View/Etudiant/ViewImportationCV.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['Importer'])) {
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     if (isset($_POST['NePasImporter'])){
-        header('Location: ../../View/ViewEtuMain.php');
+        header('Location: ../../View/Etudiant/ViewEtuMain.php');
     }
 }
 ?>
