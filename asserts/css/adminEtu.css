@@ -474,15 +474,21 @@ ul {
     margin: 0;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 530px) {
     .header {
         padding-left: 10px;
         padding-right: 10px;
     }
+    .vertical-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .vertical-menu li {
         margin-right: 5px;
     }
-    .logo {
+    .logo, .logo-container {
+        width: 0;
         visibility: hidden;
     }
     .utilisateur {
