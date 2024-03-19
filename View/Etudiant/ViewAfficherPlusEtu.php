@@ -23,7 +23,7 @@ include "../../Controller/ControllerVerificationDroit.php"
 <?php include("../Main/ViewHeader.php"); ?>
 
 <div class="boutons">
-    <input type="button" onclick="window.location.href = 'View<?php echo $_SESSION['role']; ?>Main.php'" name="Retour" value="Retour" id="btnRetour">
+    <input type="button" onclick="window.location.href = '../Main/View<?php echo $_SESSION['role']; ?>Main.php'" name="Retour" value="Retour" id="btnRetour">
     <input type="button" onclick="window.location.href ='View<?php echo $_SESSION['role']; ?>Etu.php'" value="Rechercher des étudiants" id="btnRechercherEtu">
 </div>
 <div  id="etudiants-container" class="etudiants-container"></div>

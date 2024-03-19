@@ -15,91 +15,11 @@
 
 <body>
 
-<header class="header">
-    <div class="logo-container">
-        <img src="../../asserts/img/logo.png" class="logo">
-    </div>
+<?php
+$root = $_SERVER['DOCUMENT_ROOT'];
 
-    <div class="menu-container">
-        <nav>
-            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                <ul class="vertical-menu">
-                    <li><button type="button" onclick="window.location.href ='../../View/Main/View<?php echo $_SESSION['role']; ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">Accueil</button><li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='../../View/Etudiant/View<?php echo $_SESSION['role']; ?>Etu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='../../View/Entreprise/View<?php echo $_SESSION['role']; ?>Entreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
-                    </li>
-                    <?php
-                    if ($_SESSION['role'] === 'admin') {
-                        echo '<li><button type="button" onclick="window.location.href =\'../../View/View' . $_SESSION['role'] . 'Administration.php\'" name="administration" value="Administration" class="btnCreation">Administration</button></li>';
-                    }
-                    ?>
-                    <li id="account-photo">
-                        <img id="photo" src="../../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
-                        <div id="account-dropdown">
-                            <button type="submit" name="compte" class="">Mon compte</button>
-                            <button type="submit" name="deco" class="">Se déconnecter</button>
-
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="notification">
-                            <div class="icon-bell" onclick="toggleNotifications()">
-                                <span class="badge" id="notificationBadge"> </span>
-                            </div>
-                        </div>
-                        <div class="burger-menu" id="burgerMenu" style="display: none;">
-                            <div class="millieu">
-                                <button type="button" id="showUnreadButton">Notifications non lues</button>
-                                <button type="button" id="showReadButton">Notifications lues</button>
-                            </div>
-
-                            <div>
-                                <h2 id="hnonlu">Notifications non lues</h2>
-                                <ul id="unreadNotificationList" ></ul>
-
-                            </div>
-                            <div>
-                                <h2 id="hlu">Notifications lues</h2>
-                                <ul id="readNotificationList"></ul>
-                            </div>
-
-                            <button type="button" id="validationButton" class="validationButton" ">Valider</button>
-
-                        </div>
-                    </li>
-                </ul>
-            </form>
-        </nav>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var photo = document.getElementById("photo");
-            var dropdown = document.getElementById("account-dropdown");
-
-            photo.addEventListener("click", function (event) {
-                event.stopPropagation(); // Empêche la propagation du clic à d'autres éléments parents
-                dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-            });
-
-            // Ajout d'un écouteur d'événements sur le document pour fermer le menu s'il est ouvert et que l'on clique en dehors
-            document.addEventListener("click", function (event) {
-                if (dropdown.style.display === "block" && !event.target.closest('#account-photo')) {
-                    dropdown.style.display = "none";
-                }
-            });
-        });
-
-
-    </script>
-
-</header>
-
-
+include $root.'/View/Main/ViewHeader.php';
+?>
 
 <div class="content">
 

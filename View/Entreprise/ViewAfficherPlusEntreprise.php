@@ -20,7 +20,7 @@ include "../../Controller/ControllerVerificationDroit.php"
 </head>
 <body class="body">
 
-<?php include("ViewHeader.php"); ?>
+<?php include("../Main/ViewHeader.php"); ?>
 
 
 <div class="boutons">

@@ -88,22 +88,22 @@ function redirectWithAjax(url) {
 document.addEventListener("DOMContentLoaded", function () {
     // Ajoutez un écouteur d'événements au bouton "Afficher Plus" des offres
     document.getElementById('afficherOffres').addEventListener('click', function () {
-        var urlOffres = 'ViewAfficherPlusOffre.php';
+        var urlOffres = '../Offre/ViewAfficherPlusOffre.php';
         redirectWithAjax(urlOffres);
     });
 
     document.getElementById('afficherEtudiants').addEventListener('click', function () {
-        var urlOffres = 'ViewAfficherPlusEtu.php';
+        var urlOffres = '../Etudiant/ViewAfficherPlusEtu.php';
         redirectWithAjax(urlOffres);
     });
 
     document.getElementById('afficherEntreprises').addEventListener('click', function () {
-        var urlOffres = 'ViewAfficherPlusEntreprise.php';
+        var urlOffres = '../Entreprise/ViewAfficherPlusEntreprise.php';
         redirectWithAjax(urlOffres);
     });
 
     document.getElementById('redirigerVersAjoutEntreprise').addEventListener('click', function () {
-        var urlOffres = 'ViewAjoutEntreprise.php';
+        var urlOffres = '../Entreprise/ViewAjoutEntreprise.php';
         redirectWithAjax(urlOffres);
     });
 });
