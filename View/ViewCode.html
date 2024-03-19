@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verification code</title>
+    <link rel="icon" href="../asserts/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../asserts/css/OubliMDP.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<form id="passwordResetForm" action="../Controller/ControllerVerifCode.php" method="POST">
+    <ul>
+        <li>
+            <label for="code">Code de confirmation:</label>
+            <input type="text" id="code" name="code"> </li>
+        <span class="error" id="codeError"></span>
+        </li>
+    </ul>
+    <button type="submit" id="confirmation" name="confirmation">Valider </button>
+</form>
+<script src="../asserts/js/VerifCode.js"> </script>
+
+</body>
+</html>

@@ -166,7 +166,7 @@
         if (isset($_GET['id'])) {
             ?>
             <div>
-                <button type="button" onclick="window.location.href ='../View/ViewModifierMdp.html?id=<?php echo htmlspecialchars($_GET['id'])?>'" name="modifier_mdp" class="AjRapide"> Modifier votre mot de passe </button>
+                <button type="button" onclick="window.location.href ='../View/ViewOubliMotDePasse.php''" name="modifier_mdp" class="AjRapide"> Modifier votre mot de passe </button>
             </div>
             <?php
         }

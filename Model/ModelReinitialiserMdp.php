@@ -11,10 +11,36 @@
  */
 function reinitialiserMDP($conn, $mdp, $email): void
 {
-    $req = "UPDATE Etudiant SET motDePasse = ? WHERE email = ?";
-    $req2 = $conn->prepare($req);
-    $req2->execute(array($mdp, $email));
+    $reqEtudiant = "SELECT COUNT(*) AS count FROM Etudiant WHERE email = ?";
+    $stmtEtudiant = $conn->prepare($reqEtudiant);
+    $stmtEtudiant->execute([$email]);
+    $resultEtudiant = $stmtEtudiant->fetch(PDO::FETCH_ASSOC);
+    $countEtudiant = $resultEtudiant['count'];
+
+    $reqAdmin = "SELECT COUNT(*) AS count FROM Administration WHERE email = ?";
+    $stmtAdmin = $conn->prepare($reqAdmin);
+    $stmtAdmin->execute([$email]);
+    $resultAdmin = $stmtAdmin->fetch(PDO::FETCH_ASSOC);
+    $countAdmin = $resultAdmin['count'];
+
+    if ($countEtudiant > 0) {
+        $reqUpdate = "UPDATE Etudiant SET motDePasse = ? WHERE email = ?";
+        $stmtUpdate = $conn->prepare($reqUpdate);
+        $stmtUpdate->execute([$mdp, $email]);
+    }
+    elseif ($countAdmin > 0) {
+        $reqUpdate = "UPDATE Administration SET motDePasse = ? WHERE email = ?";
+        $stmtUpdate = $conn->prepare($reqUpdate);
+        $stmtUpdate->execute([$mdp, $email]);
+    }
+    // Si l'email n'est pas trouvé dans aucune des deux tables
+    else {
+        // Gérer l'erreur ou afficher un message approprié
+        // Par exemple :
+        throw new Exception("L'email n'existe dans aucune des deux tables.");
+    }
 }
+
 
 /**
  * Récuperer de la base de donnée, le code de confirmation de l'étudiant ayant cette adresse email
