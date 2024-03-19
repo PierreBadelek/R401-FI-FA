@@ -1,14 +1,12 @@
 /* Styles généraux */
 .body {
     font-family: Arial;
-    overflow-y: scroll;
-    overflow-x: none;
+    overflow: scroll;
     background: linear-gradient(to right, rgba(0, 110, 135, 1), rgba(0, 140, 173, 0.75), rgba(0, 150, 186, 0.51), rgba(0, 163, 227, 0.19));
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
-    font-size: 100% ;
+    min-height: 100vh;
 }
 
 .header {
@@ -22,9 +20,8 @@
 .body-container {
     flex-grow: 1;
     position: relative;
-    margin-bottom: 20%;
 }
-f
+
 .logo-container {
     order: 1;
 }
@@ -75,6 +72,11 @@ f
     margin-bottom: 10px;
     margin-left: 15px;
 }
+
+/*.footer {*/
+/*    height: 250px;*/
+/*    background-color: rgba(0, 110, 135, 0.9);*/
+/*}*/
 
 @media only screen and (max-width: 768px) {
     .menu-container {
@@ -139,12 +141,14 @@ f
 
 
 .rectangle-mid {
+    margin-top: 150px;
     width: 70%;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 15px;
+    top: calc(20% + 30px);
     margin-left: 10%;
-    margin-top: 20px;
+    margin-bottom: 100px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -333,13 +337,11 @@ ul {
 
 /* Style général du pied de page */
 .footer {
+    margin-top: 20%;
+    background-color: rgba(0, 110, 135, 0.9);
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    flex-shrink: 0;
-    top: 1%;
-    bottom: 0;
-    left: 0;
 }
 
 /* Style du contenu du pied de page */
@@ -347,7 +349,6 @@ ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: rgba(0, 110, 135, 0.9);
 }
 
 /* Style des sections du pied de page */
@@ -388,16 +389,45 @@ ul {
     margin: 0;
 }
 
+@media only screen and (max-width: 530px) {
+    .header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .vertical-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .vertical-menu li {
+        margin-right: 5px;
+    }
+    .logo, .logo-container {
+        width: 0;
+        visibility: hidden;
+    }
+}
+
 @media only screen and (max-width: 400px) {
-    .body {
+    .header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .vertical-menu li {
+        margin-right: 5px;
+    }
+    .logo {
+        visibility: hidden;
+    }
+    .utilisateur {
+        margin-left: 5px;
+    }
+    h2 {
         font-size: 18px;
     }
-
-    h2{
-        font-size: 18px;
-    }
-
-    p{
+    p {
         font-size: 14px;
     }
 }
