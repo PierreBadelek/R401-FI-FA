@@ -1,11 +1,13 @@
+<link rel="stylesheet" href="/asserts/css/header.css">
+
 <header class="header">
     <div class="logo-container">
-        <img src="../asserts/img/logo.png" class="logo">
+        <img src="/asserts/img/logo.png" class="logo">
     </div>
 
     <div class="menu-container">
         <nav>
-            <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
+            <form method="post" action="/Controller/Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
                     <li>
                         <button type="button" onclick="window.location.href ='ViewAdminMain.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
@@ -20,12 +22,12 @@
                         <button type="button" onclick="window.location.href ='ViewAdminAdministration.php'" name="adminitrsation" class="btnCreation"> Administration </button>
                     </li>
                     <li>
-                        <a href="../english/View/ViewAdminMainEn.php"> <img src="../asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
+                        <a href="/english/View/ViewAdminMainEn.php"> <img src="/asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
                     </li>
                     <li id="account-photo">
-                        <img id="photo" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
+                        <img id="photo" src="/asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                         <div id="account-dropdown">
-                            <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
+                            <form method="post" action="/Controller/Connexion/ControllerBtnDeco.php">
                                 <input class="" name="compte" type="submit" value="Mon compte">
                                 <input class="" name="deco" type="submit" value="Se déconnecter">
                             </form>
@@ -67,16 +69,16 @@
 
 
     <div class="menu-container2">
-        <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
+        <form method="post" action="/Controller/Connexion/ControllerBtnDeco.php">
             <ul class="vertical-menu-burger">
                 <li>
-                    <a href="../english/View/ViewAdminMainEn.php"> <img src="../asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
+                    <a href="/english/View/ViewAdminMainEn.php"> <img src="/asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
                 </li>
 
                 <li id="account-photo2">
-                    <img id="photo2" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
+                    <img id="photo2" src="/asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                     <div id="account-dropdown2">
-                        <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
+                        <form method="post" action="/Controller/Connexion/ControllerBtnDeco.php">
                             <input class="" name="compte" type="submit" value="Mon compte">
                             <input class="" name="deco" type="submit" value="Se déconnecter">
                         </form>
@@ -134,7 +136,10 @@
         </div>
     </div>
 
-    <script src="../asserts/js/script.js" defer></script>
-    <script src="../asserts/js/header.js" defer></script>
+    <script src="/asserts/js/script.js" defer></script>
+    <script src="/asserts/js/header.js" defer></script>
+    <link rel="icon" href="../asserts/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../asserts/css/Cloche.css">
+    <script src="../asserts/js/script.js"></script>
 
 </header>

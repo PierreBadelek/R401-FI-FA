@@ -12,70 +12,8 @@ include "../Controller/ControllerRechercheNbr.php"?>
 </head>
 <body class="body">
 
-<header class="header">
-    <div class="logo-container">
-        <img src="../asserts/img/logo.png" class="logo">
-    </div>
 
-    <div class="menu-container">
-        <nav>
-            <form method="post" action="../Controller/Connexion/ControllerBtnDeco.php">
-                <ul class="vertical-menu">
-                    <li>
-                        <button type="button" onclick="window.location.href ='View<?php echo $_SESSION['role']; ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminEtu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminEntreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
-                    </li>
-                    <?php
-                    if ($_SESSION['role'] === 'admin') {
-                        echo '<li><button type="button" onclick="window.location.href =\'View' . $_SESSION['role'] . 'Administration.php\'" name="administration" value="Administration" class="btnCreation">Administration</button></li>';
-                    }
-                    ?>
-                    <li id="account-photo">
-                        <img id="photo" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
-                        <div id="account-dropdown">
-                            <button type="submit" name="compte" class="">Mon compte</button>
-                            <button type="submit" name="deco" class="">Se déconnecter</button>
-
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="notification">
-                            <div class="icon-bell" onclick="toggleNotifications()">
-                                <span class="badge" id="notificationBadge"> </span>
-                            </div>
-                        </div>
-                        <div class="burger-menu" id="burgerMenu" style="display: none;">
-                            <div class="millieu">
-                                <button type="button" id="showUnreadButton">Notifications non lues</button>
-                                <button type="button" id="showReadButton">Notifications lues</button>
-                            </div>
-
-                            <div>
-                                <h2 id="hnonlu">Notifications non lues</h2>
-                                <ul id="unreadNotificationList" ></ul>
-
-                            </div>
-                            <div>
-                                <h2 id="hlu">Notifications lues</h2>
-                                <ul id="readNotificationList"></ul>
-                            </div>
-
-                            <button type="button" id="validationButton" class="validationButton" ">Valider</button>
-
-                        </div>
-                    </li>
-                </ul>
-            </form>
-        </nav>
-    </div>
-
-</header>
+<?php include("ViewHeader.php"); ?>
 
 
 <div class="body-container">
