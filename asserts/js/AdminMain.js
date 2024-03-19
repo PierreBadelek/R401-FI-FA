@@ -37,6 +37,49 @@ function closePopup3() {
     document.getElementById('popUpPerso').style.display = 'none';
 }
 
+// Affichage des messages d'erreur
+document.getElementById('ajoutPersonnel').addEventListener('click', function(event) {
+    var nom = document.getElementById('nom').value.trim();
+    var prenom = document.getElementById('prenom').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var mdp = document.getElementById('mdp').value.trim();
+
+    if (nom === '' || prenom === '' || email === '' || mdp === '') {
+        event.preventDefault(); // Empêche l'envoi du formulaire
+        alert('Tous les champs doivent être remplis.');
+    }
+});
+
+document.getElementById('enregistreroffre').addEventListener('click', function(event) {
+    var offre = document.getElementById('offre').value.trim();
+    var domaine = document.getElementById('domaine').value.trim();
+    var mission = document.getElementById('mission').value.trim();
+    var nbetudiant = document.getElementById('nbetudiant').value.trim();
+
+    if (offre === '' || domaine === '' || mission === '' || nbetudiant === '') {
+        event.preventDefault(); // Empêche l'envoi du formulaire
+        alert('Tous les champs doivent être remplis.');
+    }
+});
+
+document.getElementById('ajoutEtudiant').addEventListener('click', function(event) {
+    var nom = document.getElementById('nom').value.trim();
+    var prenom = document.getElementById('prenom').value.trim();
+    var dateDeNaissance = document.getElementById('dateDeNaissance').value.trim();
+    var adresse = document.getElementById('adresse').value.trim();
+    var ville = document.getElementById('ville').value.trim();
+    var codePostal = document.getElementById('codePostal').value.trim();
+    var ine = document.getElementById('ine').value.trim();
+    var anneeEtude = document.getElementById('anneeEtude').value.trim();
+    var email = document.getElementById('email').value.trim();
+
+    if (nom === '' || prenom === '' || dateDeNaissance === '' || adresse === '' || ville === '' || codePostal === '' || ine === '' || anneeEtude === '' || email === '') {
+        event.preventDefault(); // Empêche l'envoi du formulaire
+        alert('Tous les champs doivent être remplis.');
+    }
+});
+
+
 // Écouteur d'événements pour le bouton d'ouverture
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('AjEtu').addEventListener('click', function () {
@@ -70,143 +113,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // AdminMain.js
 
-// Écouteur d'événements pour le chargement du document
+// Écouteur d'événements pour le bouton d'ouverture
 document.addEventListener('DOMContentLoaded', function () {
-    // Appel de la fonction pour afficher les étudiants lors du chargement initial
-    loadStudents();
-
-    // Appel de la fonction pour afficher les offres lors du chargement initial
-    loadOffers();
-
-    loadCompanies();
-
-});
-
-// Fonction pour charger les étudiants via AJAX
-function loadStudents() {
-    $.ajax({
-        url: '../../Model/ModelAfficherEtuMain.php',
-        type: 'GET',
-        dataType: 'html',
-        data: {
-            page: 1
-        },
-        success: function (result) {
-            // Met à jour le contenu du conteneur des étudiants
-            $('#etudiants-container').html(result);
-        },
-        error: function (error) {
-            console.error('Erreur lors du chargement des étudiants :', error);
-        }
-    });
-}
-
-// Fonction pour charger les offres via AJAX
-function loadOffers() {
-    $.ajax({
-        url: '../../Model/ModelAffichageOffreMain.php',
-        type: 'GET',
-        dataType: 'html',
-        data: {
-            page: 1
-        },
-        success: function (result) {
-            // Met à jour le contenu du conteneur des offres
-            $('#offres-container').html(result);
-        },
-        error: function (error) {
-            console.error('Erreur lors du chargement des offres :', error);
-        }
-    });
-}
-
-// Fonction pour charger les entreprises via AJAX
-function loadCompanies() {
-    $.ajax({
-        url: '../../Model/ModelAfficherEntrepriseMain.php',
-        type: 'GET',
-        dataType: 'html',
-        data: {
-            page: 1
-        },
-        success: function (result) {
-            // Met à jour le contenu du conteneur des entreprises
-            $('#entreprises-container').html(result);
-        },
-        error: function (error) {
-            console.error('Erreur lors du chargement des entreprises :', error);
-        }
-    });
-}
-
-
-
-function redirectWithAjax(url) {
-    $.ajax({
-        url: url,
-        type: 'GET',
-        dataType: 'html',
-        success: function () {
-            // Redirection après le succès de la requête AJAX
-            window.location.replace(url);
-        },
-        error: function (error) {
-            console.error('Erreur AJAX :', error);
-            // Gérer les erreurs si nécessaire
-        }
-    });
-}
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-    // Ajoutez un écouteur d'événements au bouton "Afficher Plus" des offres
-    document.getElementById('afficherOffres').addEventListener('click', function () {
-        var urlOffres = 'ViewAfficherPlusOffre.php';
-        redirectWithAjax(urlOffres);
-    });
-
-    document.getElementById('afficherEtudiants').addEventListener('click', function () {
-        var urlOffres = 'ViewAfficherPlusEtu.php';
-        redirectWithAjax(urlOffres);
-    });
-
-    document.getElementById('afficherEntreprises').addEventListener('click', function () {
-        var urlOffres = 'ViewAfficherPlusEntreprise.php';
-        redirectWithAjax(urlOffres);
-        });
-
-    document.getElementById('redirigerVersAjoutEntreprise').addEventListener('click', function () {
-        var urlOffres = 'ViewAjoutEntreprise.php';
-        redirectWithAjax(urlOffres);
+    document.getElementById('AjEtu').addEventListener('click', function () {
+        openPopup('popUpEtu');
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var photo = document.getElementById("photo");
-    var photo2 = document.getElementById("photo2");
-    var dropdown = document.getElementById("account-dropdown");
-    var dropdown2 = document.getElementById("account-dropdown2");
-
-    photo.addEventListener("click", function (event) {
-        event.stopPropagation();
-        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-    });
-    photo2.addEventListener("click", function (event) {
-        event.stopPropagation();
-        dropdown2.style.display = (dropdown2.style.display === "block") ? "none" : "block";
-    });
-
-    // Ajout d'un écouteur d'événements sur le document pour fermer le menu s'il est ouvert et que l'on clique en dehors
-    document.addEventListener("click", function (event) {
-        if (dropdown.style.display === "block" && !event.target.closest('#account-photo')) {
-            dropdown.style.display = "none";
-        }
-        if (dropdown2.style.display === "block" && !event.target.closest('#account-photo2')) {
-            dropdown2.style.display = "none";
-        }
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('AjOffre').addEventListener('click', function () {
+        openPopup('popUpOffre');
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('AjPerso').addEventListener('click', function () {
+        openPopup3();
+    });
+});
 
-
+function fermerNotifications() {
+    document.getElementById('burgerMenu').style.display = 'none';
+}
 

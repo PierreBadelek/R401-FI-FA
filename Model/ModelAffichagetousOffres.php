@@ -27,7 +27,7 @@ foreach ($resultat2 as $res2):
     $selectnom->execute();
     $etudiants = $selectnom->fetchAll(PDO::FETCH_ASSOC);
     ?>
-    <form action="../Controller/ControllerAjoutEtudiantOffre.php?nomOffre=<?php echo $res2['nom'];?> " method="post" name="formAjoutEtu_<?php echo $count; ?>">
+    <form action="../Controller/Offre/ControllerAjoutEtudiantOffre.php?nomOffre=<?php echo $res2['nom'];?> " method="post" name="formAjoutEtu_<?php echo $count; ?>">
         <ul class="offres-container">
             <li class="offre">
                 <strong>Nom :</strong> <?php echo $res2['nom']; ?><br>

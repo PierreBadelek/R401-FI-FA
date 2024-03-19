@@ -20,7 +20,7 @@
 </script>
 
 
-<form action="../Controller/ControllerAjoutEtudiant.php" method="post" id="formulaireAjoutEtudiant" onsubmit="return validateForm()">
+<form action="../Controller/Etudiant/ControllerAjoutEtudiant.php" method="post" id="formulaireAjoutEtudiant" onsubmit="return validateForm()">
     <h1 class="titre1"> Création d'un étudiant </h1>
     <ul>
         <li>

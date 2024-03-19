@@ -73,7 +73,7 @@ function chargerEntreprises() {
     const selectEntreprise = document.getElementById("entreprise");
 
     // Faites une requête GET à votre API PHP pour récupérer la liste des entreprises
-    fetch("../../Controller/ControllerAjouOffre.php")
+    fetch("../../Controller/Offre/ControllerAjouOffre.php")
         .then(response => response.json())
         .then(data => {
 

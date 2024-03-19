@@ -55,7 +55,7 @@ include "../../Controller/ControllerVerificationDroit.php"
     <div class="popup-content" id="formulaireAjoutEtudiant">
 
 
-        <form action="../../Controller/ControllerAjoutEtudiant.php" method="post" >
+        <form action="../../Controller/Etudiant/ControllerAjoutEtudiant.php" method="post" >
             <ul>
                 <li>
                     <label for="nom">Name:</label>
@@ -139,7 +139,7 @@ include "../../Controller/ControllerVerificationDroit.php"
 <div id="popUpOffre" class="popupEtu">
     <div class="popup-content">
 
-        <form action="../../Controller/ControllerAjouOffre.php" method="post" id="formulaire">
+        <form action="../../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire">
 
             <p>
                 Offer name :
@@ -219,7 +219,7 @@ include "../../Controller/ControllerVerificationDroit.php"
 <div id="popUpPerso" class="popupEtu">
     <div class="popup-content">
 
-        <form action="../../Controller/ControllerAjoutAdministration.php" method="POST">
+        <form action="../../Controller/Personnel/ControllerAjoutAdministration.php" method="POST">
             <ul>
                 <li>
                     <label for="nom">Name:</label>
@@ -286,7 +286,7 @@ include "../../Controller/ControllerVerificationDroit.php"
 
     <div class="menu-container">
         <nav>
-            <form method="post" action="../../Controller/ControllerBtnDeco.php">
+            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
                     <li>
                         <button type="button" onclick="window.location.href ='ViewAdminMainTestEn.php'" name="accueil" value="Accueil" class="btnCreation">Homepage</button>
@@ -306,7 +306,7 @@ include "../../Controller/ControllerVerificationDroit.php"
                     <li id="account-photo">
                         <img id="photo" src="../../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                         <div id="account-dropdown">
-                            <form method="post" action="../../Controller/ControllerBtnDeco.php">
+                            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
                                 <input class="" name="compte" type="submit" value="Mon compte">
                                 <input class="" name="deco" type="submit" value="Se déconnecter">
 

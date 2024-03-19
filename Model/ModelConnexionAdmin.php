@@ -42,7 +42,7 @@ function authenticatedAdmin ($user,$email,$motDePasse)
                 header('Location: RsMain.php');
                 break;
             case 'Administrateur':
-                header('Location: /View/ViewAdminAdministration.php');
+                header('Location: ../View/ViewAdminAdministration.php');
                 break;
             // Ajoutez d'autres cas selon les rôles et les pages correspondantes
             default:

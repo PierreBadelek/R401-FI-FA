@@ -7,7 +7,7 @@
     <link rel="icon" href="../asserts/img/logo.png" type="image/x-icon">
 </head>
 <body>
-<form action="../Controller/ControllerReinistialiserMDP.php" method="POST">
+<form action="../Controller/Connexion/ControllerReinistialiserMDP.php" method="POST">
     <ul>
         <li>
             <label for="email">Votre e-mail:</label>

@@ -2,8 +2,8 @@
 
 use Model\Conn;
 
-include '../Model/ModelAjout.php';
-include '../Model/ConnexionBDD.php';
+include '../../Model/ModelAjout.php';
+include '../../Model/ConnexionBDD.php';
 
 $db = Conn::getInstance();
 
@@ -20,5 +20,5 @@ if(isset($_POST["ajoutEntreprise"])) {
 
     ajoutEntreprise($db, $nom, $adresse, $ville, $codePostal, $num, $secteur, $email) ;
 
-    header('Location: ../View/ViewAdminMain.php');
+    header('Location: ../../View/ViewAdminMain.php');
 }

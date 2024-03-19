@@ -298,9 +298,150 @@ div.rec-connection {
 
 }
 
+.error-message{
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+@media only screen and (max-width: 768px) {
 
 
+    .cercle {
+        width: 75px; /* Largeur du cercle */
+        height: 75px; /* Hauteur du cercle (même que la largeur pour un cercle parfait) */
+        background-color: #0f9bb4; /* Couleur de fond du cercle */
+        border-radius: 50%; /* Utilisation de border-radius pour créer un cercle */
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Pour centrer parfaitement */
+        z-index: 2;
+
+    }
+    .perso{
+
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%; /* Centrer verticalement */
+        left: 50%; /* Centrer horizontalement */
+        transform: translate(-50%, -50%); /* Pour centrer parfaitement */
+        z-index: 1;
+    }
+
+    .princi-rectangle {
+        width: 300px; /* Largeur du rectangle (ajustez selon vos besoins) */
+        height: 200px; /* Hauteur du rectangle (ajustez selon vos besoins) */
+        background-color: rgb(255, 255, 255, 0.3); /* Couleur de fond du rectangle */
+        position: absolute;
+        top: 50%; /* Centrer verticalement */
+        left: 50%; /* Centrer horizontalement */
+        transform: translate(-50%, -50%); /* Pour centrer parfaitement */
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        z-index: 0;
+    }
+    p.mdp-oublie{
+
+        font-size: 8px;
+        position: absolute;
+        top: 90%; /* Centrer verticalement */
+        left: 50%; /* Centrer horizontalement */
+        transform: translate(-50%, -50%); /* Pour centrer parfaitement */
+    }
+    .btnConnexion{
+
+        text-decoration: none;
+        border: none;
+        color: inherit;
+        background-color: transparent;
+        transform: translate(-50%,-50%);
+        position: absolute;
+        top: 83%;
+        left: 50%;
+
+    }
+    .mdp-rectangle{
+
+        width: 250px; /* Largeur du rectangle (ajustez selon vos besoins) */
+        height: 50px; /* Hauteur du rectangle (ajustez selon vos besoins) */
+        background-color: rgba(0, 150, 186, 0.51); /* Couleur de fond du rectangle */
+        position: absolute;
+        top: 65%; /* Centrer verticalement */
+        left: 50%; /* Centrer horizontalement */
+        transform: translate(-50%, -50%); /* Pour centrer parfaitement */
+
+    }
+    .id-rectangle{
+
+        width: 250px; /* Largeur du rectangle (ajustez selon vos besoins) */
+        height: 50px; /* Hauteur du rectangle (ajustez selon vos besoins) */
+        background-color: rgba(0, 150, 186, 0.51); /* Couleur de fond du rectangle */
+        position: absolute;
+        top: 35%; /* Centrer verticalement */
+        left: 50%; /* Centrer horizontalement */
+        transform: translate(-50%, -50%); /* Pour centrer parfaitement */
 
 
+    }
+
+    .input-mail{
+        height: 40px;
+        width: 180px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 58%;
+        background-color: rgba(0, 163, 227, 0.19); /* Couleur de fond du rectangle */
+        border: none; /* Supprimez les bordures par défaut */
+        border-radius: 10px; /* Arrondissez les coins comme le rectangle */
+        padding: 5px; /* Ajoutez un peu d'espacement interne */
+        color: white;
 
 
+    }
+
+    .input-mdp{
+        height: 40px;
+        width: 180px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 58%;
+        background-color: rgba(0, 163, 227, 0.19); /* Couleur de fond du rectangle */
+        border: none; /* Supprimez les bordures par défaut */
+        border-radius: 10px; /* Arrondissez les coins comme le rectangle */
+        padding: 5px; /* Ajoutez un peu d'espacement interne */
+        color: white;
+
+    }
+    .btnRetour{
+
+        text-decoration: none;
+        border: none;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        height: 30px;
+        width: 80px;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.3); /* Couleur grise transparente */
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 5%;
+        left: 15%;
+        font-size: 12px;
+
+    }
+
+    .error-message{
+        width: 100%;
+        text-align: center;
+        margin-top: 20%;
+    }
+
+}

@@ -11,9 +11,9 @@ class Conn
     private static $instance = null;
     private $connexion;
     private static $host = 'localhost';
-    private static $dbname = 'postgres';
+    private static $dbname = 'SaeS4';
     private static $username = 'postgres';
-    private static $password = 'admin';
+    private static $password = 'Dorian2004';
 
     private function __construct()
     {

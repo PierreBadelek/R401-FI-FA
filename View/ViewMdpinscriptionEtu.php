@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form action="../Controller/ControllerMdpEtu.php" method="post" onsubmit="return ValidationMdp();">
+<form action="../Controller/Etudiant/ControllerMdpEtu.php" method="post" onsubmit="return ValidationMdp();">
     <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
     <label for="mdp"></label><input type="password" name="mdp" id = "mdp" placeholder=" Veuillez saisir votre code">
     <label for="mdpVerif"></label><input type="password" name="mdpVerif" id = "mdpVerif" placeholder=" Veuillez saisir votre code" required>

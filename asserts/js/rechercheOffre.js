@@ -20,7 +20,7 @@ function rechercherOffres() {
 
     console.log("reussis");
 
-    var apiUrl = '../Controller/ControllerRechercherOffre.php?' +
+    var apiUrl = '../Controller/Offre/ControllerRechercherOffre.php?' +
         'nom=' + nom +
         '&domaine=' + domaine +
         '&mission=' + mission +
@@ -40,7 +40,7 @@ function rechercherOffres() {
                     if (resultats.length > 0) {
 
                         resultats.forEach(function (offre, index) {
-                            resultatsHTML += '<form  method="post" action="../Controller/ControllerAjoutEtudiantOffre.php?nomOffre=' + encodeURI(offre.nom) + '"> <ul>';
+                            resultatsHTML += '<form  method="post" action="../Controller/Offre/ControllerAjoutEtudiantOffre.php?nomOffre=' + encodeURI(offre.nom) + '"> <ul>';
 
                             var offreHTML = '<li class="offre">';
                             offreHTML += 'Nom : ' + (offre.nom || '') + '<br>';

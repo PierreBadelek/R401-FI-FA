@@ -9,7 +9,7 @@
     <script src="../asserts/js/ajoutAdministration.js"></script>
 </head>
 <body>
-<form action="../Controller/ControllerAjoutAdministration.php" method="POST" onsubmit="return validateForm()">
+<form action="../Controller/Personnel/ControllerAjoutAdministration.php" method="POST" onsubmit="return validateForm()">
     <ul>
         <li>
             <label for="nom">Nom:</label>

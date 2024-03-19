@@ -19,42 +19,16 @@ include "../Controller/ControllerRechercheNbr.php"?>
     <link rel="icon" href="../asserts/img/logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="../asserts/js/AdminMain.js"></script>
+    <script src="../asserts/js/AdminMain.js" defer></script>
+    <script src="../asserts/js/affichageListes.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <script src="../asserts/js/script.js"></script>
-
-    <script>
-        // Écouteur d'événements pour le bouton d'ouverture
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('AjEtu').addEventListener('click', function () {
-                openPopup('popUpEtu');
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('AjOffre').addEventListener('click', function () {
-                openPopup('popUpOffre');
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('AjPerso').addEventListener('click', function () {
-                openPopup3();
-            });
-        });
-
-        function fermerNotifications() {
-            document.getElementById('burgerMenu').style.display = 'none';
-        }
-    </script>
 </head>
 <body class="body">
 
 <div id="popUpEtu" class="popupEtu">
 
     <div class="popup-content" id="formulaireAjoutEtudiant">
-        <form action="../Controller/ControllerAjoutEtudiant.php" method="post" id="formulaireAjoutEtudiant">
+        <form action="../Controller/Etudiant/ControllerAjoutEtudiant.php" method="post" id="formulaireAjoutEtudiant">
             <h1 class="titre1"> Création d'un étudiant </h1>
             <ul>
                 <li>
@@ -144,7 +118,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
 <div id="popUpOffre" class="popupEtu">
     <div class="popup-content">
 
-        <form action="../Controller/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre">
+        <form action="../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre">
             <h1 class="titre1"> Création d'une offre </h1>
             <p class="label-text">
                 Nom de l'offre :
@@ -157,12 +131,12 @@ include "../Controller/ControllerRechercheNbr.php"?>
             <label for="domaine"></label><input type="text" name="Domaine" id="domaine" class="input-field">
 
             <p class="label-text">
-                Mission :
+                Missions :
             </p>
             <label for="mission"></label><textarea name="Mission" id="mission" class="zoneText input-field"></textarea>
 
             <p class="label-text">
-                Nombre d'étudiant :
+                Nombre d'étudiants :
             </p>
             <label for="nbetudiant"></label><input type="text" name="NbEtudiant" id="nbetudiant" class="input-field"><br>
 
@@ -223,7 +197,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
 <div id="popUpPerso" class="popupEtu">
     <div class="popup-content">
 
-        <form action="../Controller/ControllerAjoutAdministration.php" method="POST">
+        <form action="../Controller/Personnel/ControllerAjoutAdministration.php" method="POST">
             <h1 class="titre1"> Création d'un membre du personnel </h1>
             <ul>
                 <li>
@@ -283,168 +257,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
     </div>
 </div>
 
-
-<header class="header">
-    <div class="logo-container">
-        <img src="../asserts/img/logo.png" class="logo">
-    </div>
-
-    <div class="menu-container">
-        <nav>
-            <form method="post" action="../Controller/ControllerBtnDeco.php">
-                <ul class="vertical-menu">
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminMain.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminEtu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminEntreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminAdministration.php'" name="adminitrsation" class="btnCreation"> Administration </button>
-                    </li>
-                    <li>
-                        <a href="../english/View/ViewAdminMainEn.php"> <img src="../asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
-                    </li>
-                    <li id="account-photo">
-                        <img id="photo" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
-                        <div id="account-dropdown">
-                            <form method="post" action="../Controller/ControllerBtnDeco.php">
-                                <input class="" name="compte" type="submit" value="Mon compte">
-                                <input class="" name="deco" type="submit" value="Se déconnecter">
-                            </form>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="notification">
-                            <div class="icon-bell" onclick="toggleNotifications()">
-                                <span class="badge" id="notificationBadge"> </span>
-                            </div>
-                        </div>
-                        <div class="burger-menu" id="burgerMenu" style="display: none;">
-                            <button type="button" id="validationButton" class="validationButton" onclick="fermerNotifications()">Fermer</button>
-
-                            <div class="millieu">
-                                <button type="button" id="showUnreadButton">Notifications non lues</button>
-                                <button type="button" id="showReadButton">Notifications lues</button>
-                            </div>
-
-                            <div>
-                                <h2 id="hnonlu">Notifications non lues</h2>
-                                <ul id="unreadNotificationList" ></ul>
-
-                            </div>
-                            <div>
-                                <h2 id="hlu">Notifications lues</h2>
-                                <ul id="readNotificationList"></ul>
-                            </div>
-
-                            <button type="button" id="validationButton" class="validationButton" ">Valider</button>
-
-                        </div>
-                    </li>
-                </ul>
-            </form>
-        </nav>
-    </div>
-
-
-    <form method="post" action="../Controller/ControllerBtnDeco.php">
-        <ul class="vertical-menu-burger">
-            <li>
-                <a href="../english/View/ViewAdminMainEn.php"> <img src="../asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
-            </li>
-
-            <li id="account-photo2">
-                <img id="photo2" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
-                <div id="account-dropdown2">
-                    <form method="post" action="../Controller/ControllerBtnDeco.php">
-                        <input class="" name="compte" type="submit" value="Mon compte">
-                        <input class="" name="deco" type="submit" value="Se déconnecter">
-                    </form>
-
-                </div>
-            </li>
-            <li>
-                <div class="notification">
-                    <div class="icon-bell" onclick="toggleNotifications()">
-                        <span class="badge" id="notificationBadge"> </span>
-                    </div>
-                </div>
-                <div class="burger-menu" id="burgerMenu" style="display: none;">
-                    <button type="button" id="validationButton" class="validationButton" onclick="fermerNotifications()">Fermer</button>
-
-                    <div class="millieu">
-                        <button type="button" id="showUnreadButton">Notifications non lues</button>
-                        <button type="button" id="showReadButton">Notifications lues</button>
-                    </div>
-
-                    <div>
-                        <h2 id="hnonlu">Notifications non lues</h2>
-                        <ul id="unreadNotificationList" ></ul>
-
-                    </div>
-                    <div>
-                        <h2 id="hlu">Notifications lues</h2>
-                        <ul id="readNotificationList"></ul>
-                    </div>
-
-                    <button type="button" id="validationButton" class="validationButton" ">Valider</button>
-
-                </div>
-            </li>
-        </ul>
-    </form>
-
-
-    <div class="menu-toggle" id="menu-toggle">
-        <div class="menu-icon">&#9776;</div>
-        <ul class="menu">
-            <li>
-                <button type="button" onclick="window.location.href ='ViewAdminMain.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
-            </li>
-            <li>
-                <button type="button" onclick="window.location.href ='ViewAdminEtu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
-            </li>
-            <li>
-                <button type="button" onclick="window.location.href ='ViewAdminEntreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
-            </li>
-            <li>
-                <button type="button" onclick="window.location.href ='ViewAdminAdministration.php'" name="adminitrsation" class="btnCreation"> Administration </button>
-            </li>
-        </ul>
-    </div>
-
-</header>
-
-
-<script>
-    var menuToggle = document.getElementById('menu-toggle');
-
-    // Récupérer le menu
-    var menu = document.querySelector('.menu');
-
-    // Attacher un événement de clic au menu-toggle
-    menuToggle.addEventListener('click', function() {
-        // Basculer la visibilité du menu lors du clic
-        if (menu.style.display === 'none' || menu.style.display === '') {
-            menu.style.display = 'block';
-        } else {
-            menu.style.display = 'none';
-        }
-    });
-
-    // Cacher le menu lorsque l'utilisateur clique en dehors du menu
-    window.addEventListener('click', function(e) {
-        if (!menuToggle.contains(e.target) && !menu.contains(e.target)) {
-            menu.style.display = 'none';
-        }
-    });
-</script>
-
+<?php include("ViewHeader.php"); ?>
 
 <div class="body-container">
 
@@ -454,7 +267,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
         </div>
         <div class="all-text">
             <div class="rectangle-info">
-                <div class="info-box">
+                <div class="info-box"><a href="ViewAfficherPlusEtu.php">
                     <h3 class="nbrEtu">Nombre d'étudiants</h3>
                     <?php
                     if (isset($nbrEtu)) {
@@ -463,10 +276,10 @@ include "../Controller/ControllerRechercheNbr.php"?>
                         echo "<h3 class='nbr'>Erreur: Nombre non défini</h3>";
                     }
                     ?>
-                </div>
+                    </a></div>
             </div>
             <div class="rectangle-info">
-                <div class="info-box">
+                <div class="info-box"><a href="ViewAfficherPlusEntreprise.php">
                     <h3 class="nbrEnt">Nombre d'entreprises</h3>
                     <?php
                     if (isset($nbrEntreprise)) {
@@ -475,10 +288,10 @@ include "../Controller/ControllerRechercheNbr.php"?>
                         echo "<h3 class='nbr'>Erreur: Nombre non défini</h3>";
                     }
                     ?>
-                </div>
+                    </a></div>
             </div>
             <div class="rectangle-info">
-                <div class="info-box">
+                <div class="info-box"><a href="ViewAfficherPlusOffre.php">
                     <h3 class="nbrOff">Nombre d'offres</h3>
                     <?php
                     if (isset($nbrOffre)) {
@@ -487,7 +300,7 @@ include "../Controller/ControllerRechercheNbr.php"?>
                         echo "<h3 class='nbr'>Erreur: Nombre non défini</h3>";
                     }
                     ?>
-                </div>
+                    </a></div>
             </div>
         </div>
         <div class="titreAppli">

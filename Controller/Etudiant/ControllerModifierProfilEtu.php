@@ -2,8 +2,8 @@
 
 use Model\Conn;
 
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelModifierProfilEtu.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelModifierProfilEtu.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -13,7 +13,7 @@ $conn = Conn::getInstance();
 $id = $_GET['ine'];
 $etu = selectEtudiantIne($conn, $id);
 
-include("../View/ViewModifierProfilEtu.php");
+include("../../View/ViewModifierProfilEtu.php");
 
 if (isset($_POST['modifier_nom'])){
     $nom = $_POST['nouveau_nom'];
