@@ -9,7 +9,17 @@
     <script src="../../asserts/js/ajoutAdministration.js"></script>
 </head>
 <body>
+<button onclick="retourPage()" class="btnRetour">Retour</button>
+
+
+<script>
+    function retourPage() {
+        window.history.back();
+    }
+</script>
+
 <form action="../../Controller/Personnel/ControllerAjoutAdministration.php" method="POST" onsubmit="return validateForm()">
+    <h1 class="titre1"> Création d'un membre du personnel </h1>
     <ul>
         <li>
             <label for="nom">Nom:</label>
@@ -65,7 +75,7 @@
     </ul>
 
     <div class="button">
-        <button type="submit" id="ajoutEntreprise" name="valider">Valider</button>
+        <button type="submit" id="ajoutPersonnel" name="valider">Valider</button>
     </div>
 </form>
 </body>

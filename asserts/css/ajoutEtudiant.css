@@ -1,3 +1,7 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
 #popUpEtu .popup-content {
     max-height: 90vh;
     overflow-y: scroll;
