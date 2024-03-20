@@ -1,11 +1,11 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
 session_start();
 ob_start();
-include '../../Model/ModelConnexionAdmin.php';
-include '../../Model/ConnexionBDD.php';
+include '../../Model/Personnel/ModelConnexionAdmin.php';
+include '../../Model/Connexion/ConnexionBDD.php';
 
 $conn = Conn::getInstance();
 

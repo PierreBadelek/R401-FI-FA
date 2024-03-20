@@ -1,4 +1,4 @@
-<?php use Model\Conn;
+<?php use Model\Connexion\Conn;
 
 include '../Controller/ControllerVerificationDroit.php';
 include "../Controller/ControllerRechercheNbr.php" ?>

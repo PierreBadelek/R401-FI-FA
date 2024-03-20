@@ -1,6 +1,6 @@
 function offres() {
     $.ajax({
-        url: '../../Model/ModelAffichagetousOffres.php',
+        url: '../../Model/Offre/ModelAffichagetousOffres.php',
         type: 'GET',
         dataType: 'html',
         data: {

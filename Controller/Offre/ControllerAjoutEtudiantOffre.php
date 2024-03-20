@@ -1,10 +1,10 @@
 <?php
 // process-form.php
-use Model\Conn;
+use Model\Connexion\Conn;
 
 session_start();
 
-include_once '../../Model/ConnexionBDD.php';
+include_once '../../Model/Connexion/ConnexionBDD.php';
 
 $conn = Conn::getInstance();
 error_reporting(E_ALL);

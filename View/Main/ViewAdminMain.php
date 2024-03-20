@@ -1,4 +1,4 @@
-<?php use Model\Conn;
+<?php use Model\Connexion\Conn;
 
 include '../../Controller/ControllerVerificationDroit.php';
 include "../../Controller/ControllerRechercheNbr.php"
@@ -146,7 +146,7 @@ include "../../Controller/ControllerRechercheNbr.php"
             <p class="label-text">Entreprise :</p>
             <label for="entreprise"></label><select name="entreprise" id="entreprise" class="select-field">
                 <?php
-                include_once '../../Model/ConnexionBDD.php';
+                include_once '../../Model/Connexion/ConnexionBDD.php';
                 $conn = Conn::getInstance();
                 $sql = "SELECT identreprise, nom FROM entreprise";
                 $result = $conn->query($sql);

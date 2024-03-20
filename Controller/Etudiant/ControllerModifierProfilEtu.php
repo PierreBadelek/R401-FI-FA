@@ -1,9 +1,9 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../../Model/ConnexionBDD.php';
-include '../../Model/ModelModifierProfilEtu.php';
+include '../../Model/Connexion/ConnexionBDD.php';
+include '../../Model/Etudiant/ModelModifierProfilEtu.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -15,9 +15,9 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
 $id = $_GET['ine'];
 $etu = selectEtudiantIne($conn, $id);
 
-include('/'.$root."/View/Etudiant/ViewModifierProfilEtu.php");
+include("../../View/Etudiant/ViewModifierProfilEtu.php");
 
-$chemin = '/'.$root.'ControllerModifierProfilEtu.php?ine=$id';
+$chemin = $root.'ControllerModifierProfilEtu.php?ine=$id';
 
 if (isset($_POST['modifier_nom'])){
     $nom = $_POST['nouveau_nom'];

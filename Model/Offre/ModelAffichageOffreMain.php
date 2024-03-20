@@ -1,8 +1,8 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../Model/ConnexionBDD.php';
+include '../../Model/Connexion/ConnexionBDD.php';
 $db = Conn::getInstance();
 
 $sql2 = "SELECT * FROM Offre  where visible = true";
@@ -44,7 +44,7 @@ foreach ($resultat2 as $res2):
                 $selectnom->execute();
                 $etudiants = $selectnom->fetchAll(PDO::FETCH_ASSOC);
                 ?>
-                <form action="../Controller/Offre/ControllerAjoutEtudiantOffre.php" method="post" name="formAjoutEtu_<?php echo $count; ?>">
+                <form action="../../Controller/Offre/ControllerAjoutEtudiantOffre.php" method="post" name="formAjoutEtu_<?php echo $count; ?>">
                         <li class="offre">
                             <strong>Nom :</strong> <?php echo $res2['nom']; ?><br>
                             <strong>Domaine : </strong><?php echo $res2['domaine']; ?><br>

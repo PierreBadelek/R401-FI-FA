@@ -48,7 +48,7 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
                         </div>
                     </li>
                     <li>
-                        <a href="/english/View/ViewAdminMainEn.php"> <img src="/<?php echo $root ?>/asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
+                        <a href="/<?php echo $root ?>/english/View/ViewAdminMainEn.php"> <img src="/<?php echo $root ?>/asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
                     </li>
                     <li id="account-photo">
                         <img id="photo" src="/<?php echo $root ?>/asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">

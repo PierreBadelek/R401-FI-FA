@@ -1,8 +1,8 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../Model/ConnexionBDD.php';
+include '../../Model/Connexion/ConnexionBDD.php';
 $db = Conn::getInstance();
 $sql = "SELECT nom,email,secteuractivite, identreprise FROM Entreprise ORDER BY identreprise DESC LIMIT 5";
 $req = $db->prepare($sql);

@@ -1,6 +1,6 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
 error_reporting(E_ERROR | E_PARSE);
 ini_set('display_errors', 0);
@@ -13,7 +13,7 @@ ob_start();
 
 $root = basename($_SERVER['DOCUMENT_ROOT']);
 
-include_once $_SERVER['DOCUMENT_ROOT'].'/Model/ConnexionBDD.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/Model/Connexion/ConnexionBDD.php';
 include $_SERVER['DOCUMENT_ROOT'].'/Model/ModelRechercheNbr.php';
 
 $conn = Conn::getInstance();
