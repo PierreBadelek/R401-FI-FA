@@ -15,9 +15,9 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
 $id = $_GET['ine'];
 $etu = selectEtudiantIne($conn, $id);
 
-include('/'.$root."/View/Etudiant/ViewModifierProfilEtu.php");
+include("../../View/Etudiant/ViewModifierProfilEtu.php");
 
-$chemin = '/'.$root.'ControllerModifierProfilEtu.php?ine=$id';
+$chemin = $root.'ControllerModifierProfilEtu.php?ine=$id';
 
 if (isset($_POST['modifier_nom'])){
     $nom = $_POST['nouveau_nom'];
