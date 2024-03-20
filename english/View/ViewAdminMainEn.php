@@ -1,6 +1,6 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
 include "../../Controller/ControllerVerificationDroit.php";
 include "../../Controller/ControllerRechercheNbr.php";
