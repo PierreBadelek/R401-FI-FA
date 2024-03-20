@@ -4,7 +4,7 @@ namespace tests_unitaires\Model;
 require "..\..\Model\ConnexionBDD.php";
 require "..\..\Model\ModelReinitialiserMdp.php";
 
-use Model\Conn;
+use Model\Connexion\Conn;
 use PHPUnit\Framework\TestCase;
 
 class testModelReinitialiserMdp extends TestCase

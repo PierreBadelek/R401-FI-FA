@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+namespace Model\Connexion;
 
 use PDO;
 use PDOException;
@@ -11,9 +11,9 @@ class Conn
     private static $instance = null;
     private $connexion;
     private static $host = 'localhost';
-    private static $dbname = 'SaeS4';
+    private static $dbname = 'postgres';
     private static $username = 'postgres';
-    private static $password = 'Dorian2004';
+    private static $password = 'postgres';
 
     private function __construct()
     {

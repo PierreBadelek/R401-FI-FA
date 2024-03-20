@@ -1,12 +1,12 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../Model/ConnexionBDD.php';
+include '../../Model/Connexion/ConnexionBDD.php';
 $db = Conn::getInstance();
-$sql = "SELECT idetudiant, nom, prenom,ine,formation FROM Etudiant ORDER BY idetudiant DESC LIMIT 4";
+$sql = "SELECT idetudiant, nom, prenom,ine,formation FROM Etudiant ORDER BY idetudiant DESC";
 $req = $db->prepare($sql);
-$req->execute();  // Correction : Utilisation de $req au lieu de $sql
+$req->execute();
 $resultat = $req->fetchAll(PDO::FETCH_ASSOC);
 foreach ($resultat as $etudiant) {
     echo "<li><strong>Nom:</strong> " . $etudiant['nom'] . "<br>";

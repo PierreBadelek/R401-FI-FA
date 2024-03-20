@@ -1,6 +1,6 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
 /**
  * Récupérer les données d'un rôle au format json

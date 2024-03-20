@@ -23,29 +23,25 @@
 
 <form action="../../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre" onsubmit="return validateForm()">
     <h1 class="titre1"> Création d'une offre </h1>
-    <p class="label-text">
+    <p>
         Nom de l'offre :
     </p>
-    <label for="offre"></label><input type="text" name="Nom" id="offre" class="input-field">
-    <span class="error-message" id="offre-error"></span>
+    <label for="offre"></label><input type="text" name="Nom" id="offre">
 
-    <p class="label-text">
+    <p>
         Domaine de l'offre :
     </p>
-    <label for="domaine"></label><input type="text" name="Domaine" id="domaine" class="input-field">
-    <span class="error-message" id="domaine-error"></span>
+    <label for="domaine"></label><input type="text" name="Domaine" id="domaine">
 
-    <p class="label-text">
+    <p>
         Mission :
     </p>
-    <label for="mission"></label><textarea name="Mission" id="mission" class="zoneText input-field"></textarea>
-    <span class="error-message" id="mission-error"></span>
+    <label for="mission"></label><textarea name="Mission" id="mission" class="zoneText"></textarea>
 
-    <p class="label-text">
+    <p>
         Nombre d'étudiant :
     </p>
-    <label for="nbetudiant"></label><input type="text" name="NbEtudiant" id="nbetudiant" class="input-field"><br>
-    <span class="error-message" id="nbetudiant-error"></span>
+    <label for="nbetudiant"></label><input type="text" name="NbEtudiant" id="nbetudiant"><br>
 
     <p id="message" class="error-message"></p>
 
@@ -53,9 +49,9 @@
     <label for="entreprise"></label><select name="entreprise" id="entreprise" class="select-field">
         <?php
 
-        use Model\Conn;
+        use Model\Connexion\Conn;
 
-        include_once '../Model/ConnexionBDD.php';
+        include_once '../../Model/Connexion/ConnexionBDD.php';
         $conn = Conn::getInstance();
         $sql = "SELECT identreprise, nom FROM entreprise";
         $result = $conn->query($sql);

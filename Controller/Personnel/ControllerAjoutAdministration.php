@@ -1,8 +1,8 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../../Model/ConnexionBDD.php';
+include '../../Model/Connexion/ConnexionBDD.php';
 include '../../Model/ModelAjout.php';
 $conn = Conn::getInstance();
 

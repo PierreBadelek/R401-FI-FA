@@ -1,12 +1,12 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include '../../Model/ModelMdpEtu.php';
-include '../../Model/ConnexionBDD.php';
+include '../../Model/Etudiant/ModelMdpEtu.php';
+include '../../Model/Connexion/ConnexionBDD.php';
 
 
 $conn = Conn::getInstance();
