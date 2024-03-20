@@ -1,6 +1,6 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
 include "../../Controller/ControllerVerificationDroit.php"
 ?>
@@ -166,7 +166,7 @@ include "../../Controller/ControllerVerificationDroit.php"
             <p>Company :</p>
             <label for="entreprise"></label><select name="entreprise" id="entreprise">
                 <?php
-                include_once '../../Model/ConnexionBDD.php';
+                include_once '../../Model/Connexion/ConnexionBDD.php';
                 $conn = Conn::getInstance();
                 $sql = "SELECT identreprise, nom FROM entreprise";
                 $result = $conn->query($sql);
@@ -301,7 +301,7 @@ include "../../Controller/ControllerVerificationDroit.php"
                         <button type="button" onclick="window.location.href ='ViewAdminAdministrationEn.php'" name="adminitrsation" class="btnCreation">Administration</button>
                     </li>
                     <li>
-                        <a href="../../View/ViewAdminMain.php"> <img src="../../asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
+                        <a href="../../View/Main/ViewAdminMain.php"> <img src="../../asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
                     </li>
                     <li id="account-photo">
                         <img id="photo" src="../../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">

@@ -4,7 +4,7 @@ namespace tests_unitaires\Model;
 require "..\..\Model\ConnexionBDD.php";
 require "..\..\Model\ModelVerifMail.php";
 
-use Model\Conn;
+use Model\Connexion\Conn;
 use PHPUnit\Framework\TestCase;
 
 class testModelVerifMail extends TestCase

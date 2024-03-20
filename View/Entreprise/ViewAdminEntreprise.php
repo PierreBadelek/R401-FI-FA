@@ -20,7 +20,7 @@
     <div class="rectangle-mid">
         <form action="" method="post">
             <button name="btnAjoutEntreprise" onclick="window.location.href ='ViewAjoutEntreprise.php'" class="btnAjoutEntreprise" type="button">Ajouter une entreprise</button>
-            <button name="btnAjoutOffre" onclick="window.location.href ='../Offre/ViewDemandeAjoutOffre.php'" class="btnAjoutOffre" type="button">Ajouter une offre</button>
+            <button name="btnAjoutOffre" onclick="window.location.href ='../Offre/ViewAjoutOffre.php'" class="btnAjoutOffre" type="button">Ajouter une offre</button>
         </form>
 
         <form method="post" action="">

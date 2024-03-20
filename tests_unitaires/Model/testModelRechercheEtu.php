@@ -5,7 +5,7 @@ require "..\..\Model\ConnexionBDD.php";
 require "..\..\Model\ModelRechercheEtu.php";
 
 
-use Model\Conn;
+use Model\Connexion\Conn;
 use PHPUnit\Framework\TestCase;
 
 class testModelRechercheEtu extends TestCase

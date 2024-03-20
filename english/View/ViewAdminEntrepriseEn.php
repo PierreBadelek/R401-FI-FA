@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -228,7 +225,7 @@
         <div class="footer-section links">
             <h2>Quick links</h2>
             <ul>
-                <li><a href="../../View/ViewAdminMain.php">Homepage</a></li>
+                <li><a href="../../View/Main/ViewAdminMain.php">Homepage</a></li>
                 <li><a href="../../View/Etudiant/ViewAdminEtu.php">Students</a></li>
                 <li><a href="../../View/Entreprise/ViewAdminEntreprise.php">Companies</a></li>
                 <li><a href="../../View/Personnel/ViewAdminAdministration.php">Administration</a></li>

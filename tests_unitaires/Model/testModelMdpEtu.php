@@ -4,7 +4,7 @@ namespace tests_unitaires\Model;
 require "..\..\Model\ConnexionBDD.php";
 require "..\..\Model\ModelMdpEtu.php";
 
-use Model\Conn;
+use Model\Connexion\Conn;
 use PHPUnit\Framework\TestCase;
 
 class testModelMdpEtu extends TestCase

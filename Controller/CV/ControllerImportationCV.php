@@ -1,10 +1,10 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../../Model/ModelMail.php';
-include '../../Model/ConnexionBDD.php';
-include '../../Model/ModelInscriptionEtu.php';
+include '../../Model/Notification/ModelMail.php';
+include '../../Model/Connexion/ConnexionBDD.php';
+include '../../Model/Etudiant/ModelInscriptionEtu.php';
 
 session_start();
 

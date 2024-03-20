@@ -1,11 +1,11 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../../Model/ConnexionBDD.php';
-include '../../Model/ModelReinitialiserMdp.php';
-include '../../Model/ModelMail.php';
-include '../../Model/ModelInscriptionEtu.php';
+include '../../Model/Connexion/ConnexionBDD.php';
+include '../../Model/Connexion/ModelReinitialiserMdp.php';
+include '../../Model/Notification/ModelMail.php';
+include '../../Model/Etudiant/ModelInscriptionEtu.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
