@@ -22,7 +22,7 @@ include "../../Controller/ControllerRechercheNbr.php" ?>
 
     <div class="rectangle-haut">
         <div class="all-text">
-            <div class="rectangleNbr">
+            <div class="rectangleNbr"><a href="../Etudiant/ViewAfficherPlusEtu.php">
                 <h3 class="nbrEtu">Nombre d'étudiant</h3>
                 <?php
                 if (isset($nbrEtu)) {
@@ -31,9 +31,9 @@ include "../../Controller/ControllerRechercheNbr.php" ?>
                     echo "<h3 class='nbr'>Erreur: Nombre non défini</h3>";
                 }
                 ?>
-            </div>
+                </a></div>
 
-            <div class="rectangleNbr">
+            <div class="rectangleNbr"><a href="../Entreprise/ViewAfficherPlusEntreprise.php">
                 <h3 class="nbrEntreprise">Nombre d'entreprise</h3>
                 <?php
                 if (isset($nbrEntreprise)) {
@@ -42,9 +42,9 @@ include "../../Controller/ControllerRechercheNbr.php" ?>
                     echo "<h3 class='nbr'>Erreur: Nombre non défini</h3>";
                 }
                 ?>
-            </div>
+                </a></div>
 
-            <div class="rectangleNbr">
+            <div class="rectangleNbr"><a href="../Offre/ViewAfficherPlusOffre.php">
                 <h3 class="nbrOff">Nombre d'offre</h3>
                 <?php
                 if (isset($nbrOffre)) {
@@ -53,7 +53,7 @@ include "../../Controller/ControllerRechercheNbr.php" ?>
                     echo "<h3 class='nbr'>Erreur: Nombre non défini</h3>";
                 }
                 ?>
-            </div>
+                </a></div>
 
             <div class="rectangleNbr">
                 <h3 class="nbrPers">Nombre de personnel</h3>
