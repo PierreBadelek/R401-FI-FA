@@ -2,7 +2,8 @@
 
 use Model\Conn;
 
-include "../../Controller/ControllerVerificationDroit.php"
+include "../../Controller/ControllerVerificationDroit.php";
+include "../../Controller/ControllerRechercheNbr.php";
 ?>
 
 <!DOCTYPE html>
@@ -278,123 +279,49 @@ include "../../Controller/ControllerVerificationDroit.php"
     </div>
 </div>
 
-
-<header class="header">
-    <div class="logo-container">
-        <img src="../../asserts/img/logo.png" class="logo">
-    </div>
-
-    <div class="menu-container">
-        <nav>
-            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                <ul class="vertical-menu">
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminMainTestEn.php'" name="accueil" value="Accueil" class="btnCreation">Homepage</button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminEtuEn.php'" name="etudiant" value="Etudiant" class="btnCreation">Student</button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminEntrepriseEn.php'" name="entreprise" value="Entreprise" class="btnCreation">Company</button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminAdministrationEn.php'" name="adminitrsation" class="btnCreation">Administration</button>
-                    </li>
-                    <li>
-                        <a href="../../View/ViewAdminMain.php"> <img src="../../asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
-                    </li>
-                    <li id="account-photo">
-                        <img id="photo" src="../../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
-                        <div id="account-dropdown">
-                            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                                <input class="" name="compte" type="submit" value="Mon compte">
-                                <input class="" name="deco" type="submit" value="Se déconnecter">
-
-                            </form>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="notification">
-                            <div class="icon-bell" onclick="toggleNotifications()">
-                                <span class="badge" id="notificationBadge"> </span>
-                            </div>
-                        </div>
-                        <div class="burger-menu" id="burgerMenu" style="display: none;">
-                            <button type="button" id="validationButton" class="validationButton" onclick="fermerNotifications()">Fermer</button>
-
-                            <div class="millieu">
-                                <button type="button" id="showUnreadButton">Notifications non lues</button>
-                                <button type="button" id="showReadButton">Notifications lues</button>
-                            </div>
-
-                            <div>
-                                <h2 id="hnonlu">Notifications non lues</h2>
-                                <ul id="unreadNotificationList" ></ul>
-
-                            </div>
-                            <div>
-                                <h2 id="hlu">Notifications lues</h2>
-                                <ul id="readNotificationList"></ul>
-                            </div>
-
-                            <button type="button" id="validationButton" class="validationButton" ">Valider</button>
-
-                        </div>
-                    </li>
-                </ul>
-            </form>
-        </nav>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var photo = document.getElementById("photo");
-            var dropdown = document.getElementById("account-dropdown");
-
-            photo.addEventListener("click", function (event) {
-                event.stopPropagation(); // Empêche la propagation du clic à d'autres éléments parents
-                dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-            });
-
-            // Ajout d'un écouteur d'événements sur le document pour fermer le menu s'il est ouvert et que l'on clique en dehors
-            document.addEventListener("click", function (event) {
-                if (dropdown.style.display === "block" && !event.target.closest('#account-photo')) {
-                    dropdown.style.display = "none";
-                }
-            });
-        });
-
-
-    </script>
-
-</header>
-
-
+<?php include("ViewHeaderEn.php"); ?>
 
 <div class="body-container">
 
     <div class="rectangle-haut">
         <div class="image-box">
-            <img class="banniere" src="../../asserts/img/banniere.png" alt="Bannière">
+            <img class="banniere" src="../../asserts/img/banniere.png" alt="Banner">
         </div>
         <div class="all-text">
             <div class="rectangle-info">
                 <div class="info-box">
                     <h3 class="nbrEtu">Number of students</h3>
-                    <h3 class="nbr">X</h3>
+                    <?php
+                    if (isset($nbrEtu)) {
+                        echo "<h3 class='resNbrEtu'>" . $nbrEtu . "</h3>";
+                    } else {
+                        echo "<h3 class='nbr'>Error: Undefined number</h3>";
+                    }
+                    ?>
                 </div>
             </div>
             <div class="rectangle-info">
                 <div class="info-box">
                     <h3 class="nbrEnt">Number of companies</h3>
-                    <h3 class="nbr">X</h3>
+                    <?php
+                    if (isset($nbrEntreprise)) {
+                        echo "<h3 class='resNbrEtu'>" . $nbrEntreprise . "</h3>";
+                    } else {
+                        echo "<h3 class='nbr'>Error: Undefined number</h3>";
+                    }
+                    ?>
                 </div>
             </div>
             <div class="rectangle-info">
                 <div class="info-box">
                     <h3 class="nbrOff">Number of offers</h3>
-                    <h3 class="nbr">X</h3>
+                    <?php
+                    if (isset($nbrOffre)) {
+                        echo "<h3 class='resNbrEtu'>" . $nbrOffre . "</h3>";
+                    } else {
+                        echo "<h3 class='nbr'>Error: Undefined number</h3>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
