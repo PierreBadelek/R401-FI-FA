@@ -174,6 +174,5 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
     <script src="/<?php echo $root ?>/asserts/js/header.js" defer></script>
     <link rel="icon" href="/<?php echo $root ?>/asserts/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/<?php echo $root ?>/asserts/css/Cloche.css">
-    <script src="/<?php echo $root ?>/asserts/js/script.js"></script>
 
 </header>
