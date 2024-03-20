@@ -53,19 +53,19 @@ function role($user) {
 
     switch ($user['role']) {
         case 'cd': //Si l'utilisateur est un chargé de développement
-            header('Location: ../../View/ViewCdMain.php');
+            header('Location: ../../View/Main/ViewCdMain.php');
             exit;
         case 'rp': //Si l'utilisateur est un responsable pédagogique
-            header('Location: ../../View/ViewSecMain.php');
+            header('Location: ../../View/Main/ViewSecMain.php');
             exit;
         case 'sec': //Si l'utilisateur est une secretaire
-            header('Location: ../../View/ViewSecMain.php');
+            header('Location: ../../View/Main/ViewSecMain.php');
             exit;
         case 'admin': //Si l'utilisateur est un administrateur
-            header('Location: ../../View/ViewAdminMain.php');
+            header('Location: ../../View/Main/ViewAdminMain.php');
             exit;
         case 'rs': //Si l'utilisateur est un responsable du service
-            header('Location: ../../View/ViewRsMain.php');
+            header('Location: ../../View/Main/ViewRsMain.php');
             exit;
         default:
             echo $user['role'];
