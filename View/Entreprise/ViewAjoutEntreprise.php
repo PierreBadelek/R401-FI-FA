@@ -11,7 +11,16 @@ include '../../Controller/ControllerVerificationDroit.php';
     <script src="../../asserts/js/ajoutEntreprise.js"></script>
 </head>
 <body>
-<h3> Création d'une Entreprise </h3>
+<button onclick="retourPage()" class="btnRetour">Retour</button>
+
+
+<script>
+    function retourPage() {
+        window.history.back();
+    }
+</script>
+
+<h1> Création d'une Entreprise </h1>
 <form action="../../Controller/Entreprise/ControllerAjoutEntreprise.php" method="POST" id="formulaire" onsubmit="return validateForm()">
     <ul>
         <li>
