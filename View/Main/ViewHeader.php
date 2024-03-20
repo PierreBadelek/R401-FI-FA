@@ -17,13 +17,34 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
                         <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Main/ViewAdminMain.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
                     </li>
                     <li>
-                        <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/ViewAdminEtu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
+                        <div class="dropdown">
+                            <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/ViewAdminEtu.php'" name="etudiant" value="Etudiant" class="btnCreation">Etudiant</button>
+                            <div class="dropdown-content">
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/ViewAjoutEtudiant.php'" name="etudiant" value="Etudiant" class="item">Créer un étudiant</button>
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/ViewAdminEtu.php'" name="etudiant" value="Etudiant" class="item">Rechercher un étudiant</button>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAdminEntreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
+                        <div class="dropdown">
+                            <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAdminEntreprise.php'" name="entreprise" value="Entreprise" class="btnCreation">Entreprise</button>
+                            <div class="dropdown-content">
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAjoutEntreprise.php'" name="entreprise" value="Entreprise" class="item">Créer une entreprise</button>
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAdminEntreprise.php'" name="entreprise" value="Entreprise" class="item">Rechercher une entreprise</button>
+
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Offre/ViewAjoutOffre.php'" name="Offre" value="Offre" class="item">Créer une offre</button>
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAdminEntreprise.php'" name="Offre" value="Offre" class="item">Rechercher une offre</button>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Personnel/ViewAdminAdministration.php'" name="adminitrsation" class="btnCreation"> Administration </button>
+                        <div class="dropdown">
+                            <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Personnel/ViewAdminAdministration.php'" name="adminitrsation" value="adminitrsation" class="btnCreation">Administration</button>
+                            <div class="dropdown-content">
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Personnel/ViewAjoutAdministration.php'" name="adminitrsation" value="adminitrsation" class="item">Créer un membre du personnel</button>
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Personnel/ViewAdminAdministration.php'" name="adminitrsation" value="adminitrsation" class="item">Voir les membres du personnel</button>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a href="/english/View/ViewAdminMainEn.php"> <img src="/<?php echo $root ?>/asserts/img/traduction.png" alt="Icone de traduction" class="traduction" id="trad"></a>
@@ -129,12 +150,21 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
                 </li>
                 <li>
                     <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View//Etudiant/ViewAdminEtu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/ViewAjoutEtudiant.php'" name="etudiant" value="Etudiant" class="sousBtnCreation">Créer un étudiant</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/ViewAdminEtu.php'" name="etudiant" value="Etudiant"  class="sousBtnCreation">Rechercher un étudiant</button>
                 </li>
                 <li>
                     <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAdminEntreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAjoutEntreprise.php'" name="entreprise" value="Entreprise" class="sousBtnCreation">Créer une entreprise</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAdminEntreprise.php'" name="entreprise" value="Entreprise" class="sousBtnCreation">Rechercher une entreprise</button>
+
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Offre/ViewAjoutOffre.php'" name="Offre" value="Offre" class="sousBtnCreation">Créer une offre</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAdminEntreprise.php'" name="Offre" value="Offre" class="sousBtnCreation">Rechercher une offre</button>
                 </li>
                 <li>
                     <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Personnel/ViewAdminAdministration.php'" name="adminitrsation" class="btnCreation"> Administration </button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Personnel/ViewAjoutAdministration.php'" name="adminitrsation" value="adminitrsation" class="sousBtnCreation">Créer un membre du personnel</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Personnel/ViewAdminAdministration.php'" name="adminitrsation" value="adminitrsation" class="sousBtnCreation">Voir les membres du personnel</button>
                 </li>
             </ul>
         </div>
