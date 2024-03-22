@@ -62,12 +62,7 @@ $resultat2 = $req->fetchAll(PDO::FETCH_ASSOC);
 
 $count = 0;
 foreach ($resultat2 as $res2):
-    $nomOffre = $res2['nom'];
-    $selectIDoffre = $db->prepare('SELECT idOffre FROM Offre WHERE nom = :nom');
-    $selectIDoffre->bindParam(':nom', $nomOffre);
-    $selectIDoffre->execute();
-    $resultatID = $selectIDoffre->fetch(PDO::FETCH_ASSOC);
-    $idOffre = $resultatID['idoffre'];
+    $idOffre = $res2['idoffre'];
 
     $selectnom = $db->prepare('SELECT DISTINCT nom, prenom FROM postule join etudiant e on e.idetudiant = postule.idetudiant WHERE idoffre = :idoffre');
     $selectnom->bindParam(':idoffre', $idOffre, PDO::PARAM_INT);
@@ -86,7 +81,7 @@ foreach ($resultat2 as $res2):
     <link rel="stylesheet" type="text/css" href="../asserts/css/Cloche.css">
     <script src="../asserts/js/script.js"></script>
 
-    <form action="../Controller/ControlleurCdSelectionEtu.php?nomOffre=<?php echo $res2['nom'];?> " method="post" name="formAjoutEtu_<?php echo $count; ?>">
+    <form action="../Controller/ControlleurCdSelectionEtu.php?idOffre=<?php echo $idOffre;?> " method="post" name="formAjoutEtu_<?php echo $count; ?>">
         <ul class="offres-container">
             <li class="offre">
                 <strong>Nom :</strong> <?php echo $res2['nom']; ?><br>
@@ -94,7 +89,7 @@ foreach ($resultat2 as $res2):
                 <strong>Mission : </strong><?php echo $res2['mission']; ?><br>
                 <strong>Nombre d'étudiants :</strong> <?php echo $res2['nbetudiant']; ?><br>
                 <strong>Parcours :</strong> <?php echo $res2['parcours']; ?><br>
-                <input type="hidden" name="nomOffre" value="<?php echo $nomOffre; ?>">
+                <input type="hidden" name="idOffre" value="<?php echo $idOffre; ?>">
                 <input type="submit" name="BtAjoutEtudiant" value="voir les etudiant qui ont postulés">
                 <label> Les étudiants qui ont déjà postulés :</label><br>
                 <?php

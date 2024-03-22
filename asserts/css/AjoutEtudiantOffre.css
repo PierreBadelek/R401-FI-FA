@@ -66,6 +66,36 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#dataTable {
+    width: 100%;
+    border-spacing: 0;
+    margin: 20px auto;
+}
+
+#dataTable th,
+#dataTable td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+#dataTable th.colonne {
+    background-color: rgba(0, 140, 173, 0.75);
+    color: black;
+}
+
+#dataTable tbody tr:nth-child(even) {
+    background-color: rgba(0, 150, 186, 0.51);
+}
+
+#dataTable tbody tr:nth-child(odd) {
+    background-color: rgba(0, 163, 227, 0.19);
+}
+
+#dataTable tbody tr:hover {
+    background-color: white;
+}
+
 input[type="checkbox"] {
     margin-right: 8px;
 }
