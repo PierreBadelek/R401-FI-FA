@@ -3,7 +3,6 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
 ?>
 
 <link rel="stylesheet" href="/<?php echo $root ?>/asserts/css/header.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 <header class="header">
     <div class="logo-container">
@@ -156,7 +155,6 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
     <link rel="icon" href="/<?php echo $root ?>/asserts/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/<?php echo $root ?>/asserts/css/Cloche.css">
     <script src="/<?php echo $root ?>/asserts/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
 </header>
