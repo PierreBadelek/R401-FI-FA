@@ -1,4 +1,9 @@
 
+.rectangle-haut{
+    border-top: solid rgba(255, 255, 255, 0) 2px !important;
+
+}
+
 .notification {
     position: relative;
     display: inline-block;
@@ -15,7 +20,7 @@
 .millieu {
     display: flex;
     justify-content: space-around; /* Aligne les éléments à distance égale */
-    margin-top: 20px; /* Espacement depuis le haut */
+    margin-top: -3rem !important; /* Espacement depuis le haut */
 }
 
 .millieu button {
@@ -154,7 +159,7 @@
     width: 35rem;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.94);
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
     overflow-y: scroll;
     overflow-x: hidden;
 
@@ -168,16 +173,19 @@
 /* Style pour les sections de notifications */
 #hlu,
 #hnonlu {
+    border-radius: 7px;
+    width: 30rem;
+    margin-left: 1rem;
     font-size: 1.8em;
     margin-bottom: 15px;
     text-transform: uppercase;
     color: #FFF;
-    background-color: #366286; /* Couleur de fond pour la section lue */
+    background-color: rgba(0, 140, 173, 0.75);
     padding: 10px;
 }
 
 #hnonlu {
-    background-color: #586f9c; /* Couleur de fond pour la section non lue */
+    background-color: rgba(0, 140, 173, 0.75);
 }
 
 /* Style pour masquer initialement les sections */

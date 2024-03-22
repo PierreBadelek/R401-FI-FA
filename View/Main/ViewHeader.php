@@ -3,7 +3,32 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
 ?>
 
 <link rel="stylesheet" href="/<?php echo $root ?>/asserts/css/header.css">
+<div class="burger-menu" id="burgerMenu" style="display: none;">
 
+    <h1 style="margin-left: 2.5rem">NOTIFICATIONS</h1>
+
+        <div class="millieu">
+            <button type="button" class="btn btn-primary btn-lg" id="showUnreadButton">Notifications non lues</button>
+            <button type="button" class="btn btn-primary btn-lg" id="showReadButton">Notifications lues</button>
+        </div>
+
+    <div style="display: flex; margin-top: -4rem;">
+        <button type="button" id="validationButton" class="btn btn-outline-danger" onclick="toggleNotifications()">Fermer</button>
+        <button type="button" id="validationButton" class="btn btn-outline-success">Valider</button>
+    </div>
+
+    <div>
+        <h2 id="hnonlu">Notifications non lues</h2>
+        <ul id="unreadNotificationList" ></ul>
+
+    </div>
+    <div>
+        <h2 id="hlu">Notifications lues</h2>
+        <ul id="readNotificationList"></ul>
+    </div>
+
+
+</div>
 <header class="header">
     <div class="logo-container">
         <img src="/<?php echo $root ?>/asserts/img/logo.png" class="logo">
@@ -65,27 +90,7 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
                                 <span class="badge" id="notificationBadge"> </span>
                             </div>
                         </div>
-                        <div class="burger-menu" id="burgerMenu" style="display: none;">
-                            <button type="button" id="validationButton" class="btn btn-outline-danger" onclick="fermerNotifications()">Fermer</button>
 
-                            <div class="millieu">
-                                <button type="button" class="btn btn-primary btn-lg" id="showUnreadButton">Notifications non lues</button>
-                                <button type="button" class="btn btn-primary btn-lg" id="showReadButton">Notifications lues</button>
-                            </div>
-
-                            <div>
-                                <h2 id="hnonlu">Notifications non lues</h2>
-                                <ul id="unreadNotificationList" ></ul>
-
-                            </div>
-                            <div>
-                                <h2 id="hlu">Notifications lues</h2>
-                                <ul id="readNotificationList"></ul>
-                            </div>
-
-                            <button type="button" id="validationButton" class="btn btn-outline-success">Valider</button>
-
-                        </div>
                     </li>
                 </ul>
             </form>
