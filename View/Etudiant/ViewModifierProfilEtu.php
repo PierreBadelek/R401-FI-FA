@@ -1,8 +1,3 @@
-<?php
-$root = $_SERVER['DOCUMENT_ROOT'];
-include $root.'/View/Main/ViewHeader.php';
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +10,15 @@ include $root.'/View/Main/ViewHeader.php';
 </head>
 
 <body>
+
+<button onclick="retourPage()" class="btnRetour">Retour</button>
+
+<script>
+    function retourPage() {
+        window.history.back();
+    }
+</script>
+
 <div class="content">
     <form method="post" action="../../Controller/Etudiant/ControllerModifierProfilEtu.php<?php echo isset($_GET['ine']) ? '?ine=' . $_GET['ine'] : ''; ?>">
 
@@ -94,10 +98,12 @@ include $root.'/View/Main/ViewHeader.php';
                 <label> Actif : </label>
                 <input type="checkbox" name="actif" id="actif" value="actif" <?php if ($etu['actif']) echo 'checked'; ?>>
             </div>
+            <div class="modifier">
+                <button type="submit" name="modifier_nom" value="Modifier" class="transparent-button">
+                    <img class="editable" id="editIcon" src="../../asserts/img/editer.png" alt="edit">
+                </button>
+            </div>
         </div>
-        <button type="submit" name="modifier_nom" value="Modifier" class="transparent-button">
-            <img class="editable" id="editIcon" src="../../asserts/img/editer.png" alt="edit">
-        </button>
     </form>
 </div>
 
