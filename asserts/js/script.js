@@ -1,7 +1,15 @@
+var active = false;
 function toggleNotifications() {
     const burgerMenu = document.getElementById('burgerMenu');
-    console.log("aa")
-     burgerMenu.classList.toggle('active')
+    if (active === false){
+        burgerMenu.style.transform = "translateX(0)";
+        active = true;
+    } else {
+        burgerMenu.style.transform = "translateX(-100%)";
+        active = false;
+
+    }
+
     /*
     if (burgerMenu.style.display === 'none') {
         fetchNotifications();

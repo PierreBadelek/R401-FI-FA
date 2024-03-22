@@ -74,11 +74,11 @@
 
 
 #burgerMenu {
-    display: block;
+    display: block !important;
     position: fixed;
     top: 0;
     left: 0;
-    width: 40%;
+    width: 35rem;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.94);
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
@@ -90,9 +90,7 @@
     transition: all 0.75s;
 }
 
-#burgerMenu:active{
-    transform: translateX(0);
-}
+
 
 /* Style pour les sections de notifications */
 #hlu,
