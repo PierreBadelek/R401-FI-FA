@@ -138,15 +138,15 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
                 </li>
                 <li>
                     <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="btnCreation">Etudiant</button>
-                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/ViewAjoutEtudiant.php'" name="etudiant" value="Etudiant" class="item">Créer un étudiant</button>
-                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="item">Rechercher un étudiant</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/ViewAjoutEtudiant.php'" name="etudiant" value="Etudiant" class="sousBtnCreation">Créer un étudiant</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="sousBtnCreation">Rechercher un étudiant</button>
                 </li>
                 <li>
                     <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="entreprise" value="Entreprise" class="btnCreation">Entreprise</button>
-                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAjoutEntreprise.php'" name="entreprise" value="Entreprise" class="item">Créer une entreprise</button>
-                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="entreprise" value="Entreprise" class="item">Rechercher une entreprise</button>
-                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Offre/ViewAjoutOffre.php'" name="Offre" value="Offre" class="item">Créer une offre</button>
-                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="Offre" value="Offre" class="item">Rechercher une offre</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAjoutEntreprise.php'" name="entreprise" value="Entreprise" class="sousBtnCreation">Créer une entreprise</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="entreprise" value="Entreprise" class="sousBtnCreation">Rechercher une entreprise</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Offre/ViewAjoutOffre.php'" name="Offre" value="Offre" class="sousBtnCreation">Créer une offre</button>
+                    <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="Offre" value="Offre" class="sousBtnCreation">Rechercher une offre</button>
 
                 </li>
                 <?php
