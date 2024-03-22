@@ -67,11 +67,11 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
                             </div>
                         </div>
                         <div class="burger-menu" id="burgerMenu" style="display: none;">
-                            <button type="button" id="validationButton" class="validationButton" onclick="fermerNotifications()">Fermer</button>
+                            <button type="button" id="validationButton" class="btn btn-outline-danger" onclick="fermerNotifications()">Fermer</button>
 
                             <div class="millieu">
-                                <button type="button" id="showUnreadButton">Notifications non lues</button>
-                                <button type="button" id="showReadButton">Notifications lues</button>
+                                <button type="button" class="btn btn-primary btn-lg" id="showUnreadButton">Notifications non lues</button>
+                                <button type="button" class="btn btn-primary btn-lg" id="showReadButton">Notifications lues</button>
                             </div>
 
                             <div>
@@ -84,7 +84,7 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
                                 <ul id="readNotificationList"></ul>
                             </div>
 
-                            <button type="button" id="validationButton" class="validationButton" ">Valider</button>
+                            <button type="button" id="validationButton" class="btn btn-outline-success">Valider</button>
 
                         </div>
                     </li>

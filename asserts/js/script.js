@@ -1,12 +1,14 @@
 function toggleNotifications() {
     const burgerMenu = document.getElementById('burgerMenu');
-
+    console.log("aa")
+     burgerMenu.classList.toggle('active')
+    /*
     if (burgerMenu.style.display === 'none') {
         fetchNotifications();
         burgerMenu.style.display = 'block';
     } else {
         burgerMenu.style.display = 'none';
-    }
+    }*/
 }
 
 
