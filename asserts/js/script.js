@@ -71,7 +71,7 @@ function fetchNotifications() {
                     const noResponseDetails = document.createElement('div');
 
                     // Crée un élément de paragraphe pour chaque détail et les ajoute au conteneur
-                    ["<b>Pas d'entreprise</b>",'<b>Nom:</b> ' + notification.em, '<b>Prénom:</b> ' + notification.ep, '<b>Offre:</b> ' + notification.om, '<b>Entreprise:</b> ' + notification.nom]
+                    ["Pas d'entreprise",'Nom: ' + notification.em, 'Prénom: ' + notification.ep, 'Offre: ' + notification.om, 'Entreprise: ' + notification.nom]
                         .forEach(detail => {
                             const detailElement = document.createElement('p');
                             detailElement.textContent = detail;
@@ -83,7 +83,7 @@ function fetchNotifications() {
                     const noResponseDetails = document.createElement('div');
 
                     // Crée un élément de paragraphe pour chaque détail et les ajoute au conteneur
-                    ["<b>Pas de réponse</b>" ,'<b>Nom:</b> ' + notification.em, '<b>Prénom:</b> ' + notification.ep, '<b>Offre:</b> ' + notification.om, '<b>Entreprise:</b> ' + notification.nom]
+                    ["Pas de réponse" ,'Nom: ' + notification.em, 'Prénom: ' + notification.ep, 'Offre: ' + notification.om, 'Entreprise: ' + notification.nom]
                         .forEach(detail => {
                             const detailElement = document.createElement('p');
                             detailElement.textContent = detail;
