@@ -1,36 +1,36 @@
-<?php include '../Controller/ControllerVerificationDroit.php'; ?>
+<?php include '../../Controller/ControllerVerificationDroit.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 
     <title>Profil - <?= $perso['nom'] ?> <?= $perso['prenom'] ?></title>
-    <link rel="stylesheet" type="text/css" href="../asserts/css/ModifierProfilPerso.css">
-    <link rel="stylesheet" type="text/css" href="../asserts/css/adminMenu.css">
+    <link rel="stylesheet" type="text/css" href="../../asserts/css/ModifierProfilPerso.css">
+    <link rel="stylesheet" type="text/css" href="../../asserts/css/adminMenu.css">
 
-    <script src="../asserts/js/modifProfil.js"></script>
-    <link rel="icon" href="../asserts/img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../asserts/css/Cloche.css">
-    <script src="../asserts/js/script.js"></script>
+    <script src="../../asserts/js/modifProfil.js"></script>
+    <link rel="icon" href="../../asserts/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../asserts/css/Cloche.css">
+    <script src="../../asserts/js/script.js"></script>
 </head>
 
 <body>
 
 <header class="header">
     <div class="logo-container">
-        <img src="../asserts/img/logo.png" class="logo">
+        <img src="../../asserts/img/logo.png" class="logo">
     </div>
 
     <div class="menu-container">
         <nav>
-            <form method="post" action="../Controller/ControllerBtnDeco.php">
+            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
-                    <li><button type="button" onclick="window.location.href ='../View/View<?php echo $_SESSION['role']; ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">Accueil</button><li>
+                    <li><button type="button" onclick="window.location.href ='../../View/View<?php echo $_SESSION['role']; ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">Accueil</button><li>
                     <li>
-                        <button type="button" onclick="window.location.href ='../View/View<?php echo $_SESSION['role']; ?>Etu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
+                        <button type="button" onclick="window.location.href ='../../View/View<?php echo $_SESSION['role']; ?>Etu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
                     </li>
                     <li>
-                        <button type="button" onclick="window.location.href ='../View/View<?php echo $_SESSION['role']; ?>Entreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
+                        <button type="button" onclick="window.location.href ='../../View/View<?php echo $_SESSION['role']; ?>Entreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
                     </li>
                     <?php
                     if ($_SESSION['role'] === 'admin') {
@@ -38,7 +38,7 @@
                     }
                     ?>
                     <li id="account-photo">
-                        <img id="photo" src="../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
+                        <img id="photo" src="../../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                         <div id="account-dropdown">
                             <button type="submit" name="compte" class="">Mon compte</button>
                             <button type="submit" name="deco" class="">Se déconnecter</button>
@@ -109,7 +109,7 @@
     <div class = "container-content">
         <h1>Mon Profil</h1>
 
-        <form method="post" action="../Controller/ControllerModifierProfilPerso.php">
+        <form method="post" action="../../Controller/Personnel/ControllerModifierProfilPerso.php">
             <div class="information">
 
                 <div>
@@ -156,7 +156,7 @@
             <div class = "information">
                 <div>
                     <button type="submit" name="modifier_profil" class="transparent-button">
-                        <img class="editable" id="editIcon" src="../asserts/img/editer.png" alt="edit">
+                        <img class="editable" id="editIcon" src="../../asserts/img/editer.png" alt="edit">
                     </button>
                 </div>
 
@@ -166,7 +166,7 @@
         if (isset($_GET['id'])) {
             ?>
             <div>
-                <button type="button" onclick="window.location.href ='../View/ViewOubliMotDePasse.php''" name="modifier_mdp" class="AjRapide"> Modifier votre mot de passe </button>
+                <button type="button" onclick="window.location.href ='../../View/ViewOubliMotDePasse.php'" name="modifier_mdp" class="AjRapide"> Modifier votre mot de passe </button>
             </div>
             <?php
         }

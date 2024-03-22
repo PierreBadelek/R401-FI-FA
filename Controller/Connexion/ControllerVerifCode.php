@@ -2,10 +2,10 @@
 session_start();
 use Model\Conn;
 
-include '../Model/ConnexionBDD.php';
-include '../Model/ModelReinitialiserMdp.php';
-include '../Model/ModelMail.php';
-include '../Model/ModelInscriptionEtu.php';
+include '../../Model/ConnexionBDD.php';
+include '../../Model/ModelReinitialiserMdp.php';
+include '../../Model/ModelMail.php';
+include '../../Model/ModelInscriptionEtu.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -18,7 +18,7 @@ $errors = [];
 
 if (isset($_POST['code']) ) {
     if ($_POST['code'] ==  $_SESSION['code']){
-        header('location: ../View/ViewOubliMotDePasseCode.php');
+        header('location: ../../View/ViewOubliMotDePasseCode.php');
     } ;
 } else {
     echo json_encode($_SESSION['code']);
