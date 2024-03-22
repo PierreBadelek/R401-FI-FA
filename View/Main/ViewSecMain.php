@@ -1,6 +1,6 @@
 <?php
-include '../Controller/ControllerVerificationDroit.php';
-include "../Controller/ControllerRechercheNbr.php" ?>
+include '../../Controller/ControllerVerificationDroit.php';
+include "../../Controller/ControllerRechercheNbr.php" ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,6 +20,7 @@ include "../Controller/ControllerRechercheNbr.php" ?>
 
     <script src="../../asserts/js/AdminMain.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../../asserts/js/affichageListes.js" defer></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -119,67 +120,8 @@ include "../Controller/ControllerRechercheNbr.php" ?>
     </div>
 </div>
 
-<header class="header">
-    <div class="logo-container">
-        <img src="../../asserts/img/logo.png" class="logo">
-    </div>
 
-    <div class="menu-container">
-        <nav>
-            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                <ul class="vertical-menu">
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewSecMain.php'" name="accueil" value="Accueil" class="btnCreation">  Acceuil </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewSecEtu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewSecEntreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
-                    </li>
-                    <li id="account-photo">
-                        <img id="photo" src="../../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
-                        <div id="account-dropdown">
-                            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                                <input class="" name="compte" type="submit" value="Mon compte">
-                                <input class="" name="deco" type="submit" value="Se déconnecter">
-                            </form>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="notification">
-                            <div class="icon-bell" onclick="toggleNotifications()">
-                                <span class="badge" id="notificationBadge"> </span>
-                            </div>
-                        </div>
-                        <div class="burger-menu" id="burgerMenu" style="display: none;">
-                            <div class="millieu">
-                                <button type="button" id="showUnreadButton">Notifications non lues</button>
-                                <button type="button" id="showReadButton">Notifications lues</button>
-                            </div>
-
-                            <div>
-                                <h2 id="hnonlu">Notifications non lues</h2>
-                                <ul id="unreadNotificationList" ></ul>
-
-                            </div>
-                            <div>
-                                <h2 id="hlu">Notifications lues</h2>
-                                <ul id="readNotificationList"></ul>
-                            </div>
-
-                            <button type="button" id="validationButton" class="validationButton" ">Valider</button>
-
-                        </div>
-                    </li>
-                </ul>
-            </form>
-        </nav>
-    </div>
-
-</header>
-
+<?php include("ViewHeader.php"); ?>
 
 
 <div class="body-container">
