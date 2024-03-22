@@ -58,8 +58,10 @@ function fetchNotifications() {
                 notificationBadge.classList.remove('red-badge');
             }
 
+            const listItem = document.createElement('li');
+            const checkbox = document.createElement('input');
 
-
+            
             data.notif.forEach(notification => {
 
                 const listItem = document.createElement('li');

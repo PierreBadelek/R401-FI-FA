@@ -25,7 +25,6 @@
 
 .millieu button {
 
-    padding: 10px 20px;
     background-color: #007bff;
     color: #FFF;
     cursor: pointer;
@@ -118,6 +117,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
+    width: 7rem;
     border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
     border-radius: var(--bs-btn-border-radius);
     background-color: var(--bs-btn-bg);
@@ -150,6 +150,7 @@
     background: var(--bs-btn-color) ;
     color: white;
 }
+
 
 #burgerMenu {
     display: block !important;
@@ -199,7 +200,8 @@
 }
 .notification-unread,
 .notification-read {
-    /* Vos styles pour chaque notification */
+    margin-left: 3.5rem;
+    width: 25rem;
     background-color: #fff; /* Couleur de fond pour les notifications non lues */
     padding: 10px;
     margin-bottom: 10px;
@@ -233,7 +235,8 @@
     background-color: #007bff; /* Couleur de fond pour les boutons */
     color: #FFF;
     border: none;
-    padding: 10px 20px;
+    width: 10rem !important;
+    height: 4rem;
     cursor: pointer;
     font-size: 1em;
     text-align: center;
@@ -244,3 +247,22 @@
     background-color: #0056b3; /* Couleur de fond pour les boutons au survol */
 }
 
+@media only screen and (max-width: 580px) {
+
+    #burgerMenu {
+        width: 25rem;
+        }
+
+    .notification-unread,
+    .notification-read {
+        margin-left: 1.5rem;
+        width: 20rem;}
+
+    #hlu,
+    #hnonlu {
+        width: 21rem;}
+
+    .titlenotif{
+        margin-left: 7rem !important;
+    }
+}
