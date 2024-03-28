@@ -1,16 +1,3 @@
-
-document.getElementById("ajoutEtudiant").addEventListener("click", function (event) {
-    const nom = document.getElementById("nom").value;
-    const prenom = document.getElementById("prenom").value;
-    const email = document.getElementById("email").value;
-    const mdp = document.getElementById("mdp").value;
-
-    if (nom === "" || prenom === "" || email === "" || mdp === "") {
-        event.preventDefault(); // Prevent form submission
-        alert("Veuillez remplir tous les champs obligatoires.");
-    }
-});
-
 function validateForm() {
     var nom = document.getElementById("nom").value;
     var prenom = document.getElementById("prenom").value;
@@ -27,79 +14,53 @@ function validateForm() {
     var email = document.getElementById("email").value;
     var cv = document.getElementById("cv").value;
 
-    // Réinitialiser les messages d'erreur
-    document.getElementById("nom-error").innerHTML = "";
-    document.getElementById("prenom-error").innerHTML = "";
-    document.getElementById("dateDeNaissance-error").innerHTML = "";
-    document.getElementById("adresse-error").innerHTML = "";
-    document.getElementById("ville-error").innerHTML = "";
-    document.getElementById("codePostal-error").innerHTML = "";
-    document.getElementById("ine-error").innerHTML = "";
-    document.getElementById("anneeEtude-error").innerHTML = "";
-    document.getElementById("formation-error").innerHTML = "";
-    document.getElementById("entreprise-error").innerHTML = "";
-    document.getElementById("mission-error").innerHTML = "";
-    document.getElementById("mobile-error").innerHTML = "";
-    document.getElementById("email-error").innerHTML = "";
-    document.getElementById("cv-error").innerHTML = "";
 
     // Vérifier si les champs sont vides
     var isValid = true;
+
     if (nom.trim() === "") {
-        document.getElementById("nom-error").innerHTML = "Le champ Nom est obligatoire";
+        document.getElementById("nom").style = 'border: solid red 3px';
         isValid = false;
     }
     if (prenom.trim() === "") {
-        document.getElementById("prenom-error").innerHTML = "Le champ Prenom est obligatoire";
+        document.getElementById("prenom").style = 'border: solid red 3px';
         isValid = false;
     }
     if (dateDeNaissance.trim() === "") {
-        document.getElementById("dateDeNaissance-error").innerHTML = "Le champ Date De Naissance est obligatoire";
+        document.getElementById("dateDeNaissance").style = 'border: solid red 3px';
         isValid = false;
     }
     if (adresse.trim() === "") {
-        document.getElementById("adresse-error").innerHTML = "Le champ Adresse est obligatoire";
+        document.getElementById("adresse").style = 'border: solid red 3px';
         isValid = false;
     }
     if (ville.trim() === "") {
-        document.getElementById("ville-error").innerHTML = "Le champ Ville est obligatoire";
+        document.getElementById("ville").style = 'border: solid red 3px';
         isValid = false;
     }
     if (codePostal.trim() === "") {
-        document.getElementById("codePostal-error").innerHTML = "Le champ Code Postal est obligatoire";
+        document.getElementById("codePostal").style = 'border: solid red 3px';
         isValid = false;
     }
     if (ine.trim() === "") {
-        document.getElementById("ine-error").innerHTML = "Le champ INE est obligatoire";
+        document.getElementById("ine").style = 'border: solid red 3px';
         isValid = false;
     }
     if (anneeEtude.trim() === "") {
-        document.getElementById("anneeEtude-error").innerHTML = "Le champ Année d'Etude est obligatoire";
+        document.getElementById("anneeEtude").style = 'border: solid red 3px';
         isValid = false;
     }
     if (formation.trim() === "") {
-        document.getElementById("formation-error").innerHTML = "Le champ Formation est obligatoire";
-        isValid = false;
-    }
-    if (entreprise.trim() === "") {
-        document.getElementById("entreprise-error").innerHTML = "Le champ Entreprise est obligatoire";
-        isValid = false;
-    }
-    if (mission.trim() === "") {
-        document.getElementById("mission-error").innerHTML = "Le champ Mission est obligatoire";
-        isValid = false;
-    }
-    if (mobile.trim() === "") {
-        document.getElementById("mobile-error").innerHTML = "Le champ Mobile est obligatoire";
+        document.getElementById("formation").style = 'border: solid red 3px';
         isValid = false;
     }
     if (email.trim() === "") {
-        document.getElementById("email-error").innerHTML = "Le champ Email est obligatoire";
+        document.getElementById("email").style = 'border: solid red 3px';
         isValid = false;
     }
-    if (cv.trim() === "") {
-        document.getElementById("cv-error").innerHTML = "Le champ CV est obligatoire";
-        isValid = false;
+
+    if (!isValid) {
+        document.querySelector('.erreur-message').innerText = 'Veuillez remplir les champs en rouge';
     }
 
     return isValid;
