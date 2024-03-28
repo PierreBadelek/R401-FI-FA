@@ -21,11 +21,11 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
             <h2>Liens rapides</h2>
             <ul>
                 <li><a href="/<?php echo $root ?>/View/Main/View<?php echo $_SESSION['role'] ?>Main.php">Accueil</a></li>
-                <li><a href="/<?php echo $root ?>/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php">Etudiant</a></li>
-                <li><a href="/<?php echo $root ?>/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php">Entreprise</a></li>
+                <li><a href="/<?php echo $root ?>/View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php">Etudiant</a></li>
+                <li><a href="/<?php echo $root ?>/View/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php">Entreprise</a></li>
                 <?php
                 if ($_SESSION['role'] === 'admin') {
-                    echo '<li><a href="/' . $root . '/Personnel/ViewAdminAdministration.php">Administration</a></li>';
+                    echo '<li><a href="/' . $root . '/View/Personnel/ViewAdminAdministration.php">Administration</a></li>';
                 }
                 ?>
             </ul>
