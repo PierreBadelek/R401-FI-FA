@@ -11,125 +11,24 @@
 </head>
 <body class="body">
 
-<script>
-    function retourPage() {
-        window.history.back();
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        var bouton = document.getElementById("valider");
-        bouton.addEventListener("click", validerFormulaire);
-    });
-
-    function validerFormulaire(event) {
-        event.preventDefault();
-
-        var nom = document.querySelector('.input-nom').value;
-        var prenom = document.querySelector('.input-prenom').value;
-        var email = document.querySelector('.input-mail').value;
-        var mdp = document.querySelector('.input-mdp').value;
-        var adresse = document.querySelector('.input-adresse').value;
-        var ville = document.querySelector('.input-ville').value;
-        var cp = document.querySelector('.input-cp').value;
-        var date = document.querySelector('.input-date').value;
-        var anneeetude = document.querySelector('.input-anneeetude').value;
-        var ine = document.querySelector('.input-ine').value;
-
-        var erreur = false;
-
-        if (nom === '') {
-            document.querySelector('.erreur-nom').innerText = 'Veuillez entrer un nom.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-nom').innerText = '';
-        }
-
-        if (prenom === '') {
-            document.querySelector('.erreur-prenom').innerText = 'Veuillez entrer un prénom.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-prenom').innerText = '';
-        }
-
-        if (email === '') {
-            document.querySelector('.erreur-email').innerText = 'Veuillez entrer une adresse email.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-email').innerText = '';
-        }
-
-        if (mdp === '') {
-            document.querySelector('.erreur-mdp').innerText = 'Veuillez entrer un mot de passe.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-mdp').innerText = '';
-        }
-
-        if (adresse === '') {
-            document.querySelector('.erreur-adresse').innerText = 'Veuillez entrer une adresse.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-adresse').innerText = '';
-        }
-
-        if (ville === '') {
-            document.querySelector('.erreur-ville').innerText = 'Veuillez entrer une ville.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-ville').innerText = '';
-        }
-
-        if (cp === '') {
-            document.querySelector('.erreur-cp').innerText = 'Veuillez entrer un code postal.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-cp').innerText = '';
-        }
-
-        if (date === '') {
-            document.querySelector('.erreur-date').innerText = 'Veuillez entrer une date de naissance.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-date').innerText = '';
-        }
-
-        if (anneeetude === '') {
-            document.querySelector('.erreur-anneeetude').innerText = 'Veuillez entrer une année d étude.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-anneeetude').innerText = '';
-        }
-
-        if (ine === '') {
-            document.querySelector('.erreur-ine').innerText = 'Veuillez entrer un INE.';
-            erreur = true;
-        } else {
-            document.querySelector('.erreur-ine').innerText = '';
-        }
-
-        if (!erreur) {
-            event.target.closest("form").submit();
-        }
-    }
-</script>
+<script src="../asserts/js/messagesErreur.js" defer></script>
 
 <header class="header">
 
     <button onclick="retourPage()" class="btnRetour">Retour</button>
 
+    <h1 class="erreur-message"></h1>
     <div class="princi-rectangle">
 
         <form action="../Controller/Etudiant/ControllerInscriptionEtu.php" method="post">
-            <div class="nom-rectangle rectangle">
 
-                <input type="text" name="nom" class="input-nom input" placeholder="NOM">
-                <span class="erreur-nom erreur-message"></span>
+            <div class="nom-rectangle rectangle">
+                <input type="text" name="nom" class="input-nom input" placeholder="NOM*">
             </div>
 
             <div class="prenom-rectangle rectangle">
 
-                <input type="text" name="prenom" class="input-prenom input" placeholder="Prenom">
-                <span class="erreur-prenom erreur-message"></span>
+                <input type="text" name="prenom" class="input-prenom input" placeholder="Prenom*">
             </div>
 
             <div class="formation-rectangle rectangle">
@@ -150,49 +49,41 @@
 
             <div class="mail-rectangle rectangle">
 
-                <input type="email" name="email" class="input-mail input" placeholder="Email">
-                <span class="erreur-email erreur-message"></span>
+                <input type="email" name="email" class="input-mail input" placeholder="Email*">
             </div>
 
             <div class="mdp-rectangle rectangle">
 
-                <input type="password" name="mdp" class="input-mdp input" placeholder="Mot de Passe">
-                <span class="erreur-mdp erreur-message"></span>
+                <input type="password" name="mdp" class="input-mdp input" placeholder="Mot de Passe*">
             </div>
 
             <div class="adresse-rectangle rectangle">
 
-                <input type="text" name="adresse" class="input-adresse input" placeholder="Adresse">
-                <span class="erreur-adresse erreur-message"></span>
+                <input type="text" name="adresse" class="input-adresse input" placeholder="Adresse*">
             </div>
 
             <div class="ville-rectangle rectangle">
 
-                <input type="text" name="ville" class="input-ville input" placeholder="Ville">
-                <span class="erreur-ville erreur-message"></span>
+                <input type="text" name="ville" class="input-ville input" placeholder="Ville*">
             </div>
 
             <div class="cp-rectangle rectangle">
 
-                <input type="text" name="cp" class="input-cp input" placeholder="Code Postal">
-                <span class="erreur-cp erreur-message"></span>
+                <input type="text" name="cp" class="input-cp input" placeholder="Code Postal*">
             </div>
 
             <div class="date-rectangle rectangle">
-                <input type="date" name="date" class="input-date input" placeholder="Date de naissance">
-                <span class="erreur-date erreur-message"></span>
+                <input type="date" name="date" class="input-date input" placeholder="Date de naissance*">
             </div>
 
             <div class="anneeetude-rectangle rectangle">
 
-                <input type="number" name="anneeetude" class="input-anneeetude input" placeholder="Année d'étude">
-                <span class="erreur-anneeetude erreur-message"></span>
+                <input type="number" name="anneeetude" class="input-anneeetude input" placeholder="Année d'étude*">
             </div>
 
             <div class="ine-rectangle rectangle">
 
-                <input type="text" name="ine" class="input-ine input" placeholder="INE">
-                <span class="erreur-ine erreur-message"></span>
+                <input type="text" name="ine" class="input-ine input" placeholder="INE*">
             </div>
 
             <div>
