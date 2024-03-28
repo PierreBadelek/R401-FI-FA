@@ -31,41 +31,43 @@ include "../../Controller/ControllerRechercheNbr.php"
     <div class="popup-content" id="formulaireAjoutEtudiant">
         <form action="../../Controller/Etudiant/ControllerAjoutEtudiant.php" method="post" id="formulaireAjoutEtudiant">
             <h1 class="titre1"> Création d'un étudiant </h1>
+
+            <h1 class="erreur-message-etu"></h1>
             <ul>
                 <li>
-                    <label for="nom" class="label-text">Nom:</label>
+                    <label for="nom" class="label-text">Nom*:</label>
                     <input type="text" id="nom" name="nom" class="input">
                 </li>
                 <li>
-                    <label for="prenom" class="label-text">Prénom:</label>
+                    <label for="prenom" class="label-text">Prénom*:</label>
                     <input type="text" id="prenom" name="prenom" class="input">
                 </li>
                 <li>
-                    <label for="dateDeNaissance" class="label-text">Date de naissance:</label>
+                    <label for="dateDeNaissance" class="label-text">Date de naissance*:</label>
                     <input type="date" id="dateDeNaissance" name="dateDeNaissance" class="input">
                 </li>
                 <li>
-                    <label for="adresse" class="label-text">Adresse:</label>
+                    <label for="adresse" class="label-text">Adresse*:</label>
                     <input type="text" id="adresse" name="adresse" class="input">
                 </li>
                 <li>
-                    <label for="ville" class="label-text">Ville:</label>
+                    <label for="ville" class="label-text">Ville*:</label>
                     <input type="text" id="ville" name="ville" class="input">
                 </li>
                 <li>
-                    <label for="codePostal" class="label-text">Code postal:</label>
+                    <label for="codePostal" class="label-text">Code postal*:</label>
                     <input type="number" id="codePostal" name="codePostal" class="input">
                 </li>
                 <li>
-                    <label for="ine" class="label-text">INE:</label>
+                    <label for="ine" class="label-text">INE*:</label>
                     <input type="text" id="ine" name="ine" class="input">
                 </li>
                 <li>
-                    <label for="anneeEtude" class="label-text">Année d'étude:</label>
+                    <label for="anneeEtude" class="label-text">Année d'étude*:</label>
                     <input type="number" id="anneeEtude" name="anneeEtude" class="input">
                 </li>
                 <li>
-                    <label for="formation" class="label-text">Formation:</label>
+                    <label for="formation" class="label-text">Formation*:</label>
                     <select name="formation" id="formation" class="input">
                         <option value="GEII">GEII</option>
                         <option value="GIM">GIM</option>
@@ -98,7 +100,7 @@ include "../../Controller/ControllerRechercheNbr.php"
                     </select>
                 </li>
                 <li>
-                    <label for="email" class="label-text">Email:</label>
+                    <label for="email" class="label-text">Email*:</label>
                     <input type="email" id="email" name="email" class="input">
                 </li>
                 <li>
@@ -121,23 +123,26 @@ include "../../Controller/ControllerRechercheNbr.php"
 
         <form action="../../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre">
             <h1 class="titre1"> Création d'une offre </h1>
+
+            <h1 class="erreur-message-offre"></h1>
+
             <p class="label-text">
-                Nom de l'offre :
+                Nom de l'offre* :
             </p>
             <label for="offre"></label><input type="text" name="Nom" id="offre" class="input-field">
 
             <p class="label-text">
-                Domaine de l'offre :
+                Domaine de l'offre* :
             </p>
-            <label for="domaine"></label><input type="text" name="Domaine" id="domaine" class="input-field">
+            <label for="domaine"></label><input type="text" name="Domaine" id="domaine-offre" class="input-field">
 
             <p class="label-text">
-                Missions :
+                Missions* :
             </p>
-            <label for="mission"></label><textarea name="Mission" id="mission" class="zoneText input-field"></textarea>
+            <label for="mission"></label><textarea name="Mission" id="mission-offre" class="zoneText input-field"></textarea>
 
             <p class="label-text">
-                Nombre d'étudiants :
+                Nombre d'étudiants* :
             </p>
             <label for="nbetudiant"></label><input type="text" name="NbEtudiant" id="nbetudiant" class="input-field"><br>
 
@@ -157,7 +162,7 @@ include "../../Controller/ControllerRechercheNbr.php"
             </select><br>
 
             <p class="label-text">
-                Parcours :
+                Parcours* :
             </p>
             <label for="parcours" ></label>
             <select name="Parcours" id="parcours"  class="select-field">
@@ -200,18 +205,20 @@ include "../../Controller/ControllerRechercheNbr.php"
 
         <form action="../../Controller/Personnel/ControllerAjoutAdministration.php" method="POST">
             <h1 class="titre1"> Création d'un membre du personnel </h1>
+
+            <h1 class="erreur-message-perso"></h1>
             <ul>
                 <li>
-                    <label for="nom" class="label-text">Nom:</label>
-                    <input type="text" id="nom" name="nom"  class="input-field">
+                    <label for="nom" class="label-text">Nom* :</label>
+                    <input type="text" id="nom-perso" name="nom"  class="input-field">
                 </li>
                 <li>
-                    <label for="prenom" class="label-text">Prenom:</label>
-                    <input type="text" id="prenom" name="prenom"  class="input-field">
+                    <label for="prenom" class="label-text">Prénom* :</label>
+                    <input type="text" id="prenom-perso" name="prenom"  class="input-field">
                 </li>
                 <li>
                     <div class="formation-rectangle">
-                        <label for="parcours" class="label-text">Formation :</label>
+                        <label for="parcours" class="label-text">Formation* :</label>
                         <select id="formation-select" name="formation" class="select-field">
                             <option value="GEII">GEII</option>
                             <option value="GIM">GIM</option>
@@ -227,16 +234,16 @@ include "../../Controller/ControllerRechercheNbr.php"
                     </div>
                 </li>
                 <li>
-                    <label for="email" class="label-text">Email:</label>
-                    <input type="email" id="email" name="email"  class="input-field">
+                    <label for="email" class="label-text">Email* :</label>
+                    <input type="email" id="email-perso" name="email"  class="input-field">
                 </li>
                 <li>
-                    <label for="mdp" class="label-text">Mot de passe:</label>
-                    <input type="password" id="mdp" name="mdp"  class="input-field">
+                    <label for="mdp" class="label-text">Mot de passe* :</label>
+                    <input type="password" id="mdp-perso" name="mdp"  class="input-field">
                 </li>
                 <li>
                     <div class="role-rectangle">
-                        <label for="role" class="label-text">Role :</label>
+                        <label for="role" class="label-text">Role* :</label>
                         <select id="role-select" name="role" class="select-field">
                             <option value="admin">Administrateur</option>
                             <option value="rp">Responsable pédagogique</option>
