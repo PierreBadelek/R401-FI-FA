@@ -26,39 +26,39 @@
 
     <ul>
         <li>
-            <label for="nom" class="label-text">Nom:</label>
+            <label for="nom" class="label-text">Nom* :</label>
             <input type="text" id="nom" name="nom" class="input">
         </li>
         <li>
-            <label for="prenom" class="label-text">Prénom:</label>
+            <label for="prenom" class="label-text">Prénom* :</label>
             <input type="text" id="prenom" name="prenom" class="input">
         </li>
         <li>
-            <label for="dateDeNaissance" class="label-text">Date de naissance:</label>
+            <label for="dateDeNaissance" class="label-text">Date de naissance* :</label>
             <input type="date" id="dateDeNaissance" name="dateDeNaissance" class="input">
         </li>
         <li>
-            <label for="adresse" class="label-text">Adresse:</label>
+            <label for="adresse" class="label-text">Adresse* :</label>
             <input type="text" id="adresse" name="adresse" class="input">
         </li>
         <li>
-            <label for="ville" class="label-text">Ville:</label>
+            <label for="ville" class="label-text">Ville* :</label>
             <input type="text" id="ville" name="ville" class="input">
         </li>
         <li>
-            <label for="codePostal" class="label-text">Code postal:</label>
+            <label for="codePostal" class="label-text">Code postal* :</label>
             <input type="number" id="codePostal" name="codePostal" class="input">
         </li>
         <li>
-            <label for="ine" class="label-text">INE:</label>
+            <label for="ine" class="label-text">INE* :</label>
             <input type="text" id="ine" name="ine" class="input">
         </li>
         <li>
-            <label for="anneeEtude" class="label-text">Année d'étude:</label>
+            <label for="anneeEtude" class="label-text">Année d'étude* :</label>
             <input type="number" id="anneeEtude" name="anneeEtude" class="input">
         </li>
         <li>
-            <label for="formation" class="label-text">Formation:</label>
+            <label for="formation" class="label-text">Formation* :</label>
             <select name="formation" id="formation" class="input">
                 <option value="GEII">GEII</option>
                 <option value="GIM">GIM</option>
@@ -91,7 +91,7 @@
                 </select>
         </li>
         <li>
-            <label for="email" class="label-text">Email:</label>
+            <label for="email" class="label-text">Email* :</label>
             <input type="email" id="email" name="email" class="input">
         </li>
         <li>

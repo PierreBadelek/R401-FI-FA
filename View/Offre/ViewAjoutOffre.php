@@ -23,29 +23,30 @@
 
 <form action="../../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre" onsubmit="return validateForm()">
     <h1 class="titre1"> Création d'une offre </h1>
+    <h1 class="erreur-message"></h1>
+
     <p>
-        Nom de l'offre :
+        Nom de l'offre* :
     </p>
     <label for="offre"></label><input type="text" name="Nom" id="offre">
 
     <p>
-        Domaine de l'offre :
+        Domaine de l'offre* :
     </p>
     <label for="domaine"></label><input type="text" name="Domaine" id="domaine">
 
     <p>
-        Mission :
+        Mission* :
     </p>
     <label for="mission"></label><textarea name="Mission" id="mission" class="zoneText"></textarea>
 
     <p>
-        Nombre d'étudiant :
+        Nombre d'étudiant* :
     </p>
     <label for="nbetudiant"></label><input type="text" name="NbEtudiant" id="nbetudiant"><br>
 
-    <p id="message" class="error-message"></p>
 
-    <p class="label-text">Entreprise :</p>
+    <p class="label-text">Entreprise* :</p>
     <label for="entreprise"></label><select name="entreprise" id="entreprise" class="select-field">
         <?php
 
@@ -60,10 +61,9 @@
         }
         ?>
     </select><br>
-    <span class="error-message" id="entreprise-error"></span>
 
     <p class="label-text">
-        Parcours :
+        Parcours* :
     </p>
     <label for="parcours" ></label>
     <select name="Parcours" id="parcours"  class="select-field">
@@ -77,7 +77,6 @@
         <option value="INFO">INFO</option>
         <option value="Mph">Mph</option>
     </select><br>
-    <span class="error-message" id="parcours-error"></span>
 
     <button type="button" id="redirigerVersAjoutEntreprise" class="btn-create-enterprise">Création d'une entreprise</button>
 

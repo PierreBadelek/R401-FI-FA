@@ -6,39 +6,35 @@ function validateForm() {
     var entreprise = document.getElementById("entreprise").value;
     var parcours = document.getElementById("parcours").value;
 
-    // Réinitialiser les messages d'erreur
-    document.getElementById("offre-error").innerHTML = "";
-    document.getElementById("domaine-error").innerHTML = "";
-    document.getElementById("mission-error").innerHTML = "";
-    document.getElementById("nbetudiant-error").innerHTML = "";
-    document.getElementById("entreprise-error").innerHTML = "";
-    document.getElementById("parcours-error").innerHTML = "";
-
     // Vérifier si les champs sont vides
     var isValid = true;
     if (offre.trim() === "") {
-        document.getElementById("offre-error").innerHTML = "Le champ Offre est obligatoire";
+        document.getElementById("offre").style = 'border: solid red 3px';
         isValid = false;
     }
     if (domaine.trim() === "") {
-        document.getElementById("domaine-error").innerHTML = "Le champ Domaine est obligatoire";
+        document.getElementById("domaine").style = 'border: solid red 3px';
         isValid = false;
     }
     if (mission.trim() === "") {
-        document.getElementById("mission-error").innerHTML = "Le champ Mission est obligatoire";
+        document.getElementById("mission").style = 'border: solid red 3px';
         isValid = false;
     }
     if (nbetudiant.trim() === "") {
-        document.getElementById("nbetudiant-error").innerHTML = "Le champ Nombre d'étudiants est obligatoire";
+        document.getElementById("nbetudiant").style = 'border: solid red 3px';
         isValid = false;
     }
     if (entreprise.trim() === "") {
-        document.getElementById("entreprise-error").innerHTML = "Le champ Entreprise est obligatoire";
+        document.getElementById("entreprise").style = 'border: solid red 3px';
         isValid = false;
     }
     if (parcours.trim() === "") {
-        document.getElementById("parcours-error").innerHTML = "Le champ Parcours est obligatoire";
+        document.getElementById("parcours").style = 'border: solid red 3px';
         isValid = false;
+    }
+
+    if (!isValid) {
+        document.querySelector('.erreur-message').innerText = 'Veuillez remplir les champs en rouge';
     }
 
     return isValid;

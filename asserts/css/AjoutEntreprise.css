@@ -134,7 +134,6 @@ h1 {
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 20px;
-    margin-left: 38%;
     border-radius: 45px;
     font-weight: bold;
 
@@ -153,4 +152,12 @@ h1 {
     box-shadow: 0 0 10px #333333;
     transition: box-shadow 0.3s ease;
     font-weight: bold;
+}
+
+.erreur-message {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
 }
