@@ -13,7 +13,7 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
 
         <div class="footer-section contact">
             <h2>Contactez-nous</h2>
-            <p>Email : communication@uphf.fr</p>
+            <p>Email : <a href="mailto:communication@uphf.fr">communication@uphf.fr</a></p>
             <p> Université Polytechnique Hauts-de-France - Campus Mont Houy - 59313 Valenciennes Cedex 9 | +33 (0)3 27 51 12 34</p>
         </div>
 

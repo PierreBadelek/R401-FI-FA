@@ -50,3 +50,8 @@
 .footer-bottom p {
     margin: 0;
 }
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
