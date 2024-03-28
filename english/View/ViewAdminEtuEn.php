@@ -149,5 +149,6 @@
 
 <script src="../../asserts/js/rechercheEtu.js" defer></script>
 
+<?php include("ViewFooterEn.php"); ?>
 </body>
 </html>
