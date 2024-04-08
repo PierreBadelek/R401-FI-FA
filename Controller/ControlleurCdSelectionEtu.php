@@ -47,7 +47,7 @@ $etudiants = $query->fetchAll();
 
         <form action="ControlleurCdSelectionEtu.php?idOffre=<?php echo $idOffre; ?>" method="post">
             <h1>Liste des étudiants</h1>
-            
+
             <table id="dataTable" style="width: 100%">
                 <thead>
                     <tr>
@@ -65,7 +65,10 @@ $etudiants = $query->fetchAll();
                         <th class="colonne"><?= $etu["prenom"] ?></th>
                         <th class="colonne"><?= $etu["ine"] ?></th>
                         <th class="colonne">
-                            <input type="checkbox" name="<?= $etu["idetudiant"] ?>">
+                            <input type="checkbox" name="selectedStudents[]" value="<?= $etu["idetudiant"] ?>">
+                        </th>
+                        <th class="colonne">
+                            <input type="checkbox" name="mailEtus[]" value="<?= $etu["email"] ?>">
                         </th>
                     </tr>
                     <?php
@@ -78,13 +81,15 @@ $etudiants = $query->fetchAll();
             <input type="submit" name="BoutonRetour" value="Retour aux offres">
             <input type="hidden" name="selectedOffer" value="<?php echo $idOffre; ?>">
             <input type="hidden" name="nomOffre" value="<?php echo $idOffre; ?>">
+
         </form>
 
-
 <?php
+include '../Model/ModelMail.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buttonValider'])) {
     if (isset($_POST['selectedStudents']) && is_array($_POST['selectedStudents'])) {
         foreach ($_POST['selectedStudents'] as $selectedStudentId) {
+
             $sqlEtudiant = $conn->prepare('SELECT idetudiant FROM Etudiant WHERE ine = :ine');
             $sqlEtudiant->bindParam(':ine', $selectedStudentIne, PDO::PARAM_STR);
 
@@ -106,7 +111,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buttonValider'])) {
                         if ($sqlRecherceID->execute()) {
                             $resultatSelect = $sqlRecherceID->fetch(PDO::FETCH_ASSOC);
                             if (isset($resultatSelect['identreprise'])) {
+                                echo 'fait';
+                                $staut = "engage";
                                 $identreprise = $resultatSelect['identreprise'];
+                                $sqlRecrute = $conn->prepare('UPDATE recrute set statut = :staut where idetudiant = :idetudiant and identreprise = :identreprise');
+                                $sqlRecrute->bindParam(':staut',$staut , PDO::PARAM_INT);
+                                $sqlRecrute->bindParam(':idetudiant',$selectedStudentId, PDO::PARAM_INT);
+                                $sqlRecrute->bindParam(':identreprise',$identreprise, PDO::PARAM_INT);
+                                $sqlRecrute->execute();
+                                if (isset($_POST['mailEtus']) && is_array($_POST['mailEtus'])) {
+                                    foreach ($_POST['mailEtus'] as $selectedStudentMail) {
+                                        envoieMail($selectedStudentMail, $selectedStudentMail, 'SAE', 'CONTRACT', 'VOUS AVEZ EU VOTRE CONTRACT');
+                                    }
+                                }
+
                             } else {
                                 echo "Aucun résultat trouvé pour 'L entreprise + $resultatSelect";
                             }
@@ -115,15 +133,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buttonValider'])) {
                         }
 
 
-                        // Ajouter le nom et prénom de l'étudiant à la variable de session
                         echo "<br>" . 'Le résumé de l\'élève ou des élèves choisis :' . "<br>";
                         $_SESSION['selectedStudents'][] = $etudiant['nom'] . ' ' . $etudiant['prenom'];
                         echo "-" . $etudiant['nom'] . ' ' . $etudiant['prenom'] . "<br>" ;
                         $sqlInsert = $conn->prepare('insert into recrute values (:idetudiant,:identreprise, current_date)');
                         $sqlInsert->bindParam(':idetudiant', $selectedStudentId, PDO::PARAM_INT);
                         $sqlInsert->bindParam(':identreprise', $identreprise, PDO::PARAM_INT);
-
-                        $sqlInsert->execute();
 
                         $sqlInsert = $conn->prepare('UPDATE offre SET visible = false where idoffre = :idoffre');
                         $sqlInsert->bindParam(':idoffre', $idOffre, PDO::PARAM_INT);
@@ -138,6 +153,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buttonValider'])) {
             } else {
                 echo 'Aucun étudiant sélectionné.';
             }
+
         }
     }
+
+    $selectedStudentIds = isset($_POST['selectedStudents']) ? $_POST['selectedStudents'] : [];
+    $staut = "refuse";
+    $sqlRecherceID = $conn->prepare('SELECT identreprise FROM Offre JOIN poste USING (idoffre) WHERE idoffre = :id');
+    $sqlRecherceID->bindParam(':id', $idOffre);
+    if ($sqlRecherceID->execute()) {
+        $resultatSelect = $sqlRecherceID->fetch(PDO::FETCH_ASSOC);
+        if (isset($resultatSelect['identreprise'])) {
+            $identreprise = $resultatSelect['identreprise'];
+            foreach ($etudiants as $etu) {
+                if (!in_array($etu['idetudiant'], $selectedStudentIds)) {
+                    $sqlRecrute = $conn->prepare('UPDATE recrute SET statut = :staut WHERE idetudiant = :idetudiant AND identreprise = :identreprise');
+                    $sqlRecrute->bindParam(':staut', $staut, PDO::PARAM_INT);
+                    $sqlRecrute->bindParam(':idetudiant', $etu['idetudiant'], PDO::PARAM_INT);
+                    $sqlRecrute->bindParam(':identreprise', $identreprise, PDO::PARAM_INT);
+                    $sqlRecrute->execute();
+                    if (isset($_POST['mailEtus']) && is_array($_POST['mailEtus'])) {
+                        foreach ($_POST['mailEtus'] as $selectedStudentMail) {
+                            envoieMail($etu['email'], $etu['email'], 'SAE', 'CONTRACT', 'VOUS AVEZ ETE REFUSE');
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
+?>
