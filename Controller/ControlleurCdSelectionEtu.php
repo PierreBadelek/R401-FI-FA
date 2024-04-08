@@ -54,6 +54,8 @@ $etudiants = $query->fetchAll();
                         <th class="colonne">Nom</th>
                         <th class="colonne">Prénom</th>
                         <th class="colonne">INE</th>
+                        <th class="colonne">Valider la candidature</th>
+                        <th class="colonne">Envoyer un mail</th>
                     </tr>
                 </thead>
                 <tbody>
