@@ -22,6 +22,7 @@ include "../../Controller/ControllerRechercheNbr.php";
     <link rel="icon" href="../../asserts/img/logo.png" type="image/x-icon">
 
     <script src="../../asserts/js/AdminMain.js"></script>
+    <script src="../../asserts/js/affichageListes.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <script src="../../asserts/js/script.js"></script>

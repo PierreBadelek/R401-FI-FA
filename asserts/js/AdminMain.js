@@ -198,7 +198,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Vous pouvez également ajouter des écouteurs pour les boutons de fermeture
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('closeEtu').addEventListener('click', function () {
         closePopup('popUpEtu');
@@ -213,8 +212,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
-
-// AdminMain.js
 
 // Écouteur d'événements pour le bouton d'ouverture
 document.addEventListener('DOMContentLoaded', function () {

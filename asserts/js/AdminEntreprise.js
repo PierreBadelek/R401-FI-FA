@@ -179,16 +179,6 @@ function afficherPopup() {
 
 }
 
-// Remplacez le script JavaScript existant par celui-ci
-
-
-
-
-
-
-// Ajouter cet écouteur d'événements pour gérer les clics de navigation entre les pages
-
-
 function adjustRectangleHeight() {
     const offreList = document.getElementById('donneesOffre');
     const entrepriseList = document.getElementById('donneesEntreprise');
