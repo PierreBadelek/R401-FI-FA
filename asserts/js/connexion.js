@@ -1,11 +1,21 @@
 // Affichage des messages d'erreur
 document.getElementById('btnConnexion').addEventListener('click', function(event) {
-    var email = document.getElementById('email').value.trim();
-    var mdp = document.getElementById('mdp').value.trim();
+    var email = document.getElementById('email').value;
+    var mdp = document.getElementById('mdp').value;
 
     if (email === '' || mdp === '') {
         event.preventDefault(); // Empêche l'envoi du formulaire
-        alert('Tous les champs doivent être remplis.');
+        document.querySelector('.error-message').innerText = 'Veuillez remplir les champs en rouge';
+    }
+
+    if (email === '') {
+        document.querySelector('.id-rectangle').style = 'border: solid red 3px';
+        erreur = true;
+    }
+
+    if (mdp === '') {
+        document.querySelector('.mdp-rectangle').style = 'border: solid red 3px';
+        erreur = true;
     }
 });
 

@@ -1,6 +1,6 @@
 <?php
-include '../Controller/ControllerVerificationDroit.php';
-include "../Controller/ControllerRechercheNbr.php" ?>
+include '../../Controller/ControllerVerificationDroit.php';
+include "../../Controller/ControllerRechercheNbr.php" ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,6 +20,7 @@ include "../Controller/ControllerRechercheNbr.php" ?>
 
     <script src="../../asserts/js/AdminMain.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../../asserts/js/affichageListes.js" defer></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -119,67 +120,8 @@ include "../Controller/ControllerRechercheNbr.php" ?>
     </div>
 </div>
 
-<header class="header">
-    <div class="logo-container">
-        <img src="../../asserts/img/logo.png" class="logo">
-    </div>
 
-    <div class="menu-container">
-        <nav>
-            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                <ul class="vertical-menu">
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewSecMain.php'" name="accueil" value="Accueil" class="btnCreation">  Acceuil </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewSecEtu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewSecEntreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
-                    </li>
-                    <li id="account-photo">
-                        <img id="photo" src="../../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
-                        <div id="account-dropdown">
-                            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                                <input class="" name="compte" type="submit" value="Mon compte">
-                                <input class="" name="deco" type="submit" value="Se déconnecter">
-                            </form>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="notification">
-                            <div class="icon-bell" onclick="toggleNotifications()">
-                                <span class="badge" id="notificationBadge"> </span>
-                            </div>
-                        </div>
-                        <div class="burger-menu" id="burgerMenu" style="display: none;">
-                            <div class="millieu">
-                                <button type="button" id="showUnreadButton">Notifications non lues</button>
-                                <button type="button" id="showReadButton">Notifications lues</button>
-                            </div>
-
-                            <div>
-                                <h2 id="hnonlu">Notifications non lues</h2>
-                                <ul id="unreadNotificationList" ></ul>
-
-                            </div>
-                            <div>
-                                <h2 id="hlu">Notifications lues</h2>
-                                <ul id="readNotificationList"></ul>
-                            </div>
-
-                            <button type="button" id="validationButton" class="validationButton" ">Valider</button>
-
-                        </div>
-                    </li>
-                </ul>
-            </form>
-        </nav>
-    </div>
-
-</header>
-
+<?php include("ViewHeader.php"); ?>
 
 
 <div class="body-container">
@@ -265,33 +207,7 @@ include "../Controller/ControllerRechercheNbr.php" ?>
         </div>
     </div>
 
-    <footer class="footer" id="footer">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h2>À propos de nous</h2>
-                <p>Le Gestionnaire des Apprentis est une plateforme dédiée à la gestion des étudiants, des offres et des entreprises pour les programmes d'apprentissage.</p>
-            </div>
-
-            <div class="footer-section contact">
-                <h2>Contactez-nous</h2>
-                <p>Email : communication@uphf.fr</p>
-                <p> Université Polytechnique Hauts-de-France - Campus Mont Houy - 59313 Valenciennes Cedex 9 | +33 (0)3 27 51 12 34</p>
-            </div>
-
-            <div class="footer-section links">
-                <h2>Liens rapides</h2>
-                <ul>
-                    <li><a href="ViewSecMain.php">Accueil</a></li>
-                    <li><a href="../Etudiant/ViewSecEtu.php">Etudiant</a></li>
-                    <li><a href="../Entreprise/ViewSecEntreprise.php">Entreprise</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2023 Gestionnaire des Apprentis | Tous droits réservés</p>
-        </div>
-    </footer>
+    <?php include("ViewFooter.php"); ?>
 
 </div>
 </body>

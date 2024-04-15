@@ -12,7 +12,7 @@ if (isset($_POST['deco'])){
     session_unset();
     session_destroy();
 
-    $chemin = '/'.$root.'/View/ViewAvConnexion.html';
+    $chemin = '/'.$root.'/View/Connexion/ViewAvConnexion.html';
     header('Location: '. $chemin);
     exit;
 

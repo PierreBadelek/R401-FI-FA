@@ -6,7 +6,7 @@
     <title>Ajout Personnel</title>
     <link rel="stylesheet" type="text/css" href="../../asserts/css/ajoutAdministration.css">
     <link rel="icon" href="../../asserts/img/logo.png" type="image/x-icon">
-    <script src="../../asserts/js/ajoutAdministration.js"></script>
+    <script src="../../asserts/js/ajoutAdministration.js" defer></script>
 </head>
 <body>
 <button onclick="retourPage()" class="btnRetour">Retour</button>
@@ -20,16 +20,15 @@
 
 <form action="../../Controller/Personnel/ControllerAjoutAdministration.php" method="POST" onsubmit="return validateForm()">
     <h1 class="titre1"> Création d'un membre du personnel </h1>
+    <h1 class="erreur-message"></h1>
     <ul>
         <li>
             <label for="nom">Nom:</label>
             <input type="text" id="nom" name="nom">
-            <span class="error-message" id="nom-error"></span>
         </li>
         <li>
             <label for="prenom">Prenom:</label>
             <input type="text" id="prenom" name="prenom">
-            <span class="error-message" id="prenom-error"></span>
         </li>
         <li>
             <div class="formation-rectangle">
@@ -45,19 +44,16 @@
                     <option value="INFO">INFO</option>
                     <option value="Mph">Mph</option>
                 </select>
-                <span class="error-message" id="formation-error"></span>
 
             </div>
         </li>
         <li>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email">
-            <span class="error-message" id="email-error"></span>
         </li>
         <li>
             <label for="mdp">Mot de passe:</label>
             <input type="password" id="mdp" name="mdp">
-            <span class="error-message" id="mdp-error"></span>
         </li>
         <li>
             <div class="role-rectangle">

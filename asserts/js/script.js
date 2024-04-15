@@ -3,20 +3,26 @@ function toggleNotifications() {
     const burgerMenu = document.getElementById('burgerMenu');
     if (active === false){
         burgerMenu.style.transform = "translateX(0)";
+        try{
+            document.getElementsByClassName("body-container")[0].style.filter = "blur(3px)"
+            document.querySelector("header").style.filter = "blur(3px)"
+        } catch (e){}
+
+
+
         active = true;
     } else {
         burgerMenu.style.transform = "translateX(-100%)";
+        try{
+            document.getElementsByClassName("body-container")[0].style.filter = "blur(0)"
+            document.querySelector("header").style.filter = "blur(0)"
+        } catch (e){}
+
+
         active = false;
 
     }
 
-    /*
-    if (burgerMenu.style.display === 'none') {
-        fetchNotifications();
-        burgerMenu.style.display = 'block';
-    } else {
-        burgerMenu.style.display = 'none';
-    }*/
 }
 
 
@@ -52,6 +58,8 @@ function fetchNotifications() {
                 notificationBadge.classList.remove('red-badge');
             }
 
+            const listItem = document.createElement('li');
+            const checkbox = document.createElement('input');
 
 
             data.notif.forEach(notification => {
