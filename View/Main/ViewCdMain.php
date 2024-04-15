@@ -1,7 +1,7 @@
 <?php use Model\Connexion\Conn;
 
-include '../Controller/ControllerVerificationDroit.php';
-include "../Controller/ControllerRechercheNbr.php" ?>
+include '../../Controller/ControllerVerificationDroit.php';
+include "../../Controller/ControllerRechercheNbr.php" ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,11 +17,12 @@ include "../Controller/ControllerRechercheNbr.php" ?>
     <link rel="stylesheet" type="text/css" href="../../asserts/css/AffichageEntreprise.css">
     <link rel="stylesheet" type="text/css" href="../../asserts/css/Cloche.css">
     <link rel="icon" href="../../asserts/img/logo.png" type="image/x-icon">
-
+    <link rel="icon" href="../../asserts/img/logo.png" type="image/x-icon">
+    <script src="../../asserts/js/AdminMain.js" defer></script>
+    <script src="../../asserts/js/affichageListes.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-    <script src="../../asserts/js/script.js"></script>
-    <script src="../../asserts/js/AdminMain.js"></script>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -36,7 +37,7 @@ include "../Controller/ControllerRechercheNbr.php" ?>
 <div id="popUpOffre" class="popupEtu">
     <div class="popup-content">
 
-        <form action="../../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire">
+        <form action="../../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre">
 
             <p>
                 Nom de l'offre :
@@ -63,7 +64,7 @@ include "../Controller/ControllerRechercheNbr.php" ?>
             <p>Entreprise :</p>
             <label for="entreprise"></label><select name="entreprise" id="entreprise">
                 <?php
-                include_once '../Model/ConnexionBDD.php';
+                include_once '../../Model/Connexion/ConnexionBDD.php';
                 $conn = Conn::getInstance();
                 $sql = "SELECT identreprise, nom FROM entreprise";
                 $result = $conn->query($sql);
@@ -113,66 +114,8 @@ include "../Controller/ControllerRechercheNbr.php" ?>
     </div>
 </div>
 
-<header class="header">
-    <div class="logo-container">
-        <img src="../../asserts/img/logo.png" class="logo">
-    </div>
+<?php include("ViewHeader.php"); ?>
 
-    <div class="menu-container">
-        <nav>
-            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                <ul class="vertical-menu">
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewCdMain.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewCdEtu.php'" name="etudiant" value="Etudiant" class="btnCreation"> Etudiant </button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewCdEntreprise.php'" name="entreprise" value="Entreprise" class="btnCreation"> Entreprise </button>
-                    </li>
-                    <li id="account-photo">
-                        <img id="photo" src="../../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
-                        <div id="account-dropdown">
-                            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                                <input class="" name="compte" type="submit" value="Mon compte">
-                                <input class="" name="deco" type="submit" value="Se déconnecter">
-                            </form>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="notification">
-                            <div class="icon-bell" onclick="toggleNotifications()">
-                                <span class="badge" id="notificationBadge"> </span>
-                            </div>
-                        </div>
-                        <div class="burger-menu" id="burgerMenu" style="display: none;">
-                            <div class="millieu">
-                                <button type="button" id="showUnreadButton">Notifications non lues</button>
-                                <button type="button" id="showReadButton">Notifications lues</button>
-                            </div>
-
-                            <div>
-                                <h2 id="hnonlu">Notifications non lues</h2>
-                                <ul id="unreadNotificationList" ></ul>
-
-                            </div>
-                            <div>
-                                <h2 id="hlu">Notifications lues</h2>
-                                <ul id="readNotificationList"></ul>
-                            </div>
-
-                            <button type="button" id="validationButton" class="validationButton" ">Valider</button>
-
-                        </div>
-                    </li>
-                </ul>
-            </form>
-        </nav>
-    </div>
-
-</header>
 
 
 

@@ -1,18 +1,18 @@
 <?php
 
-use Model\Connexion\Conn;
+use     Model\Connexion\Conn;
 
 include '../Model/Connexion/ConnexionBDD.php';
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-    $conn = Conn::getInstance();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+$conn = Conn::getInstance();
 
-    $req = 'SELECT etudiant.nom as em,  prenom, ine, entreprise.nom as etm, offre.nom from recrute left join etudiant using(idetudiant) left join entreprise using(identreprise) left join poste using(identreprise) left join offre using(idoffre);';
-    $req2 = $conn->prepare($req);
-    $req2->execute();
-    $res = $req2->fetchall(PDO::FETCH_ASSOC);
+$req = 'SELECT etudiant.nom as en,  prenom, ine, entreprise.nom as etn, offre.nom, statut from recrute left join etudiant using(idetudiant) left join entreprise using(identreprise) left join poste using(identreprise) left join offre using(idoffre);';
+$req2 = $conn->prepare($req);
+$req2->execute();
+$res = $req2->fetchall(PDO::FETCH_ASSOC);
 
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -133,33 +133,35 @@ include '../Model/Connexion/ConnexionBDD.php';
     }
 </script>
 <div class="body-container">
-<h1>Acceptation des entreprises</h1>
-<div class="result-container">
-    <table>
-        <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>INE</th>
-            <th>Entreprise</th>
-            <th>Offre</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        foreach ($res as $row) {
-            echo "<tr>";
-            echo "<td>{$row['em']}</td>";
-            echo "<td>{$row['prenom']}</td>";
-            echo "<td>{$row['ine']}</td>";
-            echo "<td>{$row['etm']}</td>";
-            echo "<td>{$row['nom']}</td>";
-            echo "</tr>";
-        }
-        ?>
-        </tbody>
-    </table>
-</div>
+    <h1>Acceptation des entreprises</h1>
+    <div class="result-container">
+        <table>
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>INE</th>
+                <th>Entreprise</th>
+                <th>Offre</th>
+                <th>Statut</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($res as $row) {
+                echo "<tr>";
+                echo "<td>{$row['en']}</td>";
+                echo "<td>{$row['prenom']}</td>";
+                echo "<td>{$row['ine']}</td>";
+                echo "<td>{$row['etn']}</td>";
+                echo "<td>{$row['nom']}</td>";
+                echo "<td>{$row['statut']}</td>";
+                echo "</tr>";
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>
