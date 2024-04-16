@@ -40,7 +40,7 @@
 
 .titlePrinci {
     text-align: center;
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
@@ -64,10 +64,134 @@
     height: 80px;
 }
 
+/* Media Query pour les téléphones */
+@media only screen and (max-width: 768px) {
+    .rectangle-haut {
+        width: 90%; /* Le rectangle du haut prend toute la largeur */
+        height: 90%; /* Hauteur ajustée pour le téléphone */
+    }
+
+    .rectangleNbr{
+        width: 110px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: #0f9bb4;
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .nbrEtu,
+    .nbrEntreprise,
+    .nbrOff,
+    .nbrPers {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: 2;
+        text-align: center;
+        width: 100%;
+        font-size: 12px !important;
+
+
+    }
+
+    .titlePrinci {
+        text-align: center;
+        color: black;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .resNbrEtu{
+
+        margin-top: 40px;
+        font-size: 10px !important;
+
+    }
+
+    .titre {
+        color: black; /* Couleur principale */
+        font-weight: bold;
+        font-size: 14px !important;
+    }
+
+    .description{
+
+        font-size: 14px !important;
+        text-align: center;
+        margin-right: 40px;
+
+    }
+
+    .titre2{
+
+        margin-left: 10px;
+        font-size: 12px;
+
+    }
+
+    .ajoutAdministration{
+
+        font-size: 10px;
+        padding: 7px 12px !important;
+
+    }
+
+    .description2{
+
+        font-size: 11px;
+        margin-left: 10px;
+
+    }
+
+    .compteTous,.nbSecretaire,.nbCD,.nbRP{
+
+        padding: 7px 12px !important;
+        font-size: 10px !important;
+
+    }
+
+    .button-filtre {
+        display: flex; /* Utilisation de flexbox pour aligner les boutons horizontalement */
+        justify-content: center; /* Pour espacer les boutons également sur la ligne */
+        flex-wrap: wrap; /* Permettre l'enroulement des boutons si nécessaire */
+    }
+
+    .button-filtre button {
+        text-decoration: none;
+        background-color: #0f9bb4;
+        border: none;
+        border-radius: 15px;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+        margin: 5px; /* Marge entre les boutons */
+        flex: 1; /* Pour que les boutons s'adaptent à la taille de l'écran */
+    }
+
+    #dataTable th {
+
+        font-size: 12px !important;
+
+    }
+
+    #dataTable td {
+        border: 1px solid #ddd;
+        padding: 7px;
+        text-align: left;
+        font-size: 10px;
+    }
+
+
+
+}
+
+
 .rectangle-mid {
     margin-top: 50px;
     position: relative;
-    top: -40px; /* Ajustez la valeur selon vos besoins */
+    top: -40px;
     z-index: 1;
 }
 
@@ -90,31 +214,42 @@
     position: relative;
     display: inline-block;
     margin-top: 10px;
-    margin-left: 20px;
+
 }
 
 
 
 .nbrEtu,
-.nbrEnt,
+.nbrEntreprise,
 .nbrOff,
 .nbrPers {
     transform: translate(-50%, -50%);
-    font-size: small;
     position: absolute;
     z-index: 2;
     text-align: center;
     width: 100%;
+    font-size: 14px;
+
+
 }
 
-.nbrEtu { left: 10%; }
-.nbrEnt { left: 30%; }
-.nbrOff { left: 50%; }
-.nbrPers { left: 70%; }
+.nbrEntreprise,
+.nbrOff{
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+
+
+
+}
+
+
 
 .rectangleNbr h3 {
     transform: translate(-50%, -50%);
-    font-size: small;
     position: absolute;
     top: 5%; /* Ajustez la valeur selon vos besoins */
     left: 50%;
@@ -123,7 +258,6 @@
 
 
 .titre {
-    padding-left: 50px;
     color: black; /* Couleur principale */
     font-weight: bold;
 }
@@ -142,7 +276,6 @@
     color: white;
     font-weight: bold;
     display: inline; /* Aligne les éléments en ligne */
-    margin-left: 70px; /* Décale tous les boutons de 10 pixels du bord gauche */
 }
 
 .button-filtre button:hover {
@@ -154,7 +287,6 @@
     color: black;
     font-weight: bold;
     display: inline; /* Aligne les éléments en ligne */
-    margin-left: 70px; /* Décale tous les boutons de 10 pixels du bord gauche */
     box-shadow: 0 0 10px #333333;
 }
 
@@ -197,7 +329,7 @@
 #dataTable th,
 #dataTable td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 7px;
     text-align: left;
 }
 
@@ -209,6 +341,7 @@
 .resNbrEtu{
 
     margin-top: 40px;
+    font-size: 14px;
 
 }
 

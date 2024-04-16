@@ -27,7 +27,6 @@ include "../../Controller/ControllerRechercheNbr.php"
 <body class="body">
 
 <div id="popUpEtu" class="popupEtu">
-
     <div class="popup-content" id="formulaireAjoutEtudiant">
         <form action="../../Controller/Etudiant/ControllerAjoutEtudiant.php" method="post" id="formulaireAjoutEtudiant">
             <h1 class="titre1"> Création d'un étudiant </h1>
