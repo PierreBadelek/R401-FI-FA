@@ -17,12 +17,12 @@ include "../../Controller/ControllerRechercheNbr.php" ?>
     <link rel="stylesheet" type="text/css" href="../../asserts/css/AffichageEntreprise.css">
     <link rel="stylesheet" type="text/css" href="../../asserts/css/Cloche.css">
     <link rel="icon" href="../../asserts/img/logo.png" type="image/x-icon">
-
+    <link rel="icon" href="../../asserts/img/logo.png" type="image/x-icon">
+    <script src="../../asserts/js/AdminMain.js" defer></script>
+    <script src="../../asserts/js/affichageListes.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-    <script src="../../asserts/js/script.js"></script>
-    <script src="../../asserts/js/AdminMain.js"></script>
-    <script src="../../asserts/js/affichageListes.js" defer></script>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -37,7 +37,7 @@ include "../../Controller/ControllerRechercheNbr.php" ?>
 <div id="popUpOffre" class="popupEtu">
     <div class="popup-content">
 
-        <form action="../../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire">
+        <form action="../../Controller/Offre/ControllerAjouOffre.php" method="post" id="formulaire" class="form-offre">
 
             <p>
                 Nom de l'offre :
@@ -64,7 +64,7 @@ include "../../Controller/ControllerRechercheNbr.php" ?>
             <p>Entreprise :</p>
             <label for="entreprise"></label><select name="entreprise" id="entreprise">
                 <?php
-                include_once '../Model/ConnexionBDD.php';
+                include_once '../../Model/Connexion/ConnexionBDD.php';
                 $conn = Conn::getInstance();
                 $sql = "SELECT identreprise, nom FROM entreprise";
                 $result = $conn->query($sql);
@@ -114,8 +114,8 @@ include "../../Controller/ControllerRechercheNbr.php" ?>
     </div>
 </div>
 
-
 <?php include("ViewHeader.php"); ?>
+
 
 
 
@@ -202,7 +202,33 @@ include "../../Controller/ControllerRechercheNbr.php" ?>
         </div>
     </div>
 
-    <?php include("ViewFooter.php"); ?>
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>À propos de nous</h2>
+                <p>Le Gestionnaire des Apprentis est une plateforme dédiée à la gestion des étudiants, des offres et des entreprises pour les programmes d'apprentissage.</p>
+            </div>
+
+            <div class="footer-section contact">
+                <h2>Contactez-nous</h2>
+                <p>Email : communication@uphf.fr</p>
+                <p> Université Polytechnique Hauts-de-France - Campus Mont Houy - 59313 Valenciennes Cedex 9 | +33 (0)3 27 51 12 34</p>
+            </div>
+
+            <div class="footer-section links">
+                <h2>Liens rapides</h2>
+                <ul>
+                    <li><a href="ViewCdMain.php">Accueil</a></li>
+                    <li><a href="../Etudiant/ViewCdEtu.php">Etudiant</a></li>
+                    <li><a href="../Entreprise/ViewCdEntreprise.php">Entreprise</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Gestionnaire des Apprentis | Tous droits réservés</p>
+        </div>
+    </footer>
 
 </div>
 </body>
