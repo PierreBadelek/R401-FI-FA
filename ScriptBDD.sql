@@ -64,6 +64,7 @@ create table recrute
     identreprise integer not null
         references entreprise,
     date         date,
+    statut      text,
     primary key (idetudiant, identreprise)
 );
 
