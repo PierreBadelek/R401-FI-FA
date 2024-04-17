@@ -5,22 +5,21 @@ namespace Model\Connexion;
 use PDO;
 use PDOException;
 
-
 class Conn
 {
     private static $instance = null;
     private $connexion;
-    private static $host = 'localhost';
-    private static $dbname = 'postgres';
-    private static $username = 'postgres';
-    private static $password = 'admin';
 
     private function __construct()
     {
-        $dsn = "pgsql:host=" . self::$host . ";port=5432;dbname=" . self::$dbname . ";user=" . self::$username . ";password=" . self::$password;
+        $configFile = file_get_contents('../../config.json');
+        $config = json_decode($configFile, true);
+
+        $dsn = "pgsql:host=" . $config['host'] . ";port=5432;dbname=" . $config['dbname'] . ";user=" . $config['username'] . ";password=" . $config['password'];
 
         try {
             $this->connexion = new PDO($dsn);
+            $this->connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("Erreur de connexion à la base de données : " . $e->getMessage());
         }
