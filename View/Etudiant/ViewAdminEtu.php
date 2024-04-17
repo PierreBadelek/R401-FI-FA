@@ -40,15 +40,14 @@ include '../../Controller/ControllerVerificationDroit.php';
         <p class="test"><span id="infoTypeEntreprise"></span></p>
         <p class="test"><span id="infoTypeMission"></span></p>
         <p class="test"><span id="infoMobile"></span></p>
-        <?php
-        $pdfFileName = '../Controller/CV.pdf';
-        $pdfPath = $pdfFileName;
 
-        if (file_exists($pdfPath)) {
-            echo '<iframe src="' . $pdfPath . '" width="600" height="850" style="border: none; margin-left: 4.5%"></iframe>';
-        } else {
-            echo 'Le fichier PDF n`existe pas.';
-        }
+        <?php
+        echo '<form enctype="multipart/form-data" action="envoyerCV.php" method="post"><input type="text" name="inecv" id="inecv" style="display: none" value="-"><input type="file" class="form-control" name="cvupload" id="cvupload" accept=".pdf"><input type="submit"></form>';
+
+        try{
+            echo '<iframe id="cvView" src="../../CVs/noCV.pdf" width="600" height="850" style="border: none; margin-left: 4.5%"></iframe>';
+        } catch (Exception $e){}
+
         ?>
 
         <hr class="separator-line">
