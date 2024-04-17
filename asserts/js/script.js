@@ -14,6 +14,7 @@ function toggleNotifications() {
         active = true;
     } else {
         burgerMenu.style.transform = "translateX(-100%)";
+        window.location.reload()
         try{
             document.getElementsByClassName("body-container")[0].style.filter = "blur(0)"
             document.querySelector("header").style.filter = "blur(0)"
