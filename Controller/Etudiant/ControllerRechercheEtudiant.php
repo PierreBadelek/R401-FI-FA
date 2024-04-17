@@ -1,9 +1,9 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../../Model/ConnexionBDD.php';
-include '../../Model/ModelRechercheEtu.php';
+include '../../Model/Connexion/ConnexionBDD.php';
+include '../../Model/Etudiant/ModelRechercheEtu.php';
 
 $conn = Conn::getInstance();
 
@@ -21,7 +21,7 @@ $email = $_GET['email'] ?? '';
 $formation = $_GET['formation'] ?? '';
 $adresse = $_GET['adresse'] ?? '';
 $ville = $_GET['ville'] ?? '';
-$codepostal = $_GET['codepostal'] ?? '';
+$codepostal = $_GET['codePostal'] ?? '';
 $anneeetude = $_GET['anneeEtude'] ?? '';
 $typeentreprise = $_GET['typeEntreprise'] ?? '';
 $typemission = $_GET['typeMission'] ?? '';

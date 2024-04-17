@@ -41,7 +41,7 @@ function rechercherEtudiants() {
     }
 
 
-    var apiUrl = '../Controller/Etudiant/ControllerRechercheEtudiant.php?' +
+    var apiUrl = '../../Controller/Etudiant/ControllerRechercheEtudiant.php?' +
         '&nom=' + nom +
         '&prenom=' + prenom +
         '&ine=' + ine +
@@ -241,7 +241,7 @@ function redirectModifierProfil() {
     var urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get('ine');
     if (id !== null) {
-        window.location.href = '../Controller/Etudiant/ControllerModifierProfilEtu.php?ine=' + id;
+        window.location.href = '../../Controller/Etudiant/ControllerModifierProfilEtu.php?ine=' + id;
     }
 }
 

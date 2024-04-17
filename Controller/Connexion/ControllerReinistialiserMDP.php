@@ -1,11 +1,11 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../../Model/ConnexionBDD.php';
-include '../../Model/ModelReinitialiserMdp.php';
-include '../../Model/ModelMail.php';
-include '../../Model/ModelInscriptionEtu.php';
+include '../../Model/Connexion/ConnexionBDD.php';
+include '../../Model/Connexion/ModelReinitialiserMdp.php';
+include '../../Model/Notification/ModelMail.php';
+include '../../Model/Etudiant/ModelInscriptionEtu.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -23,7 +23,7 @@ if(isset($_POST["confirmationCode"])  ){
 if ($_POST['code'] === $codeEtu['codemail']) {
 $nouveauMDP = password_hash($_POST['mdp'],PASSWORD_DEFAULT);
 reinitialiserMDP($db,$nouveauMDP,$_COOKIE['email']);
-header('location: ../   ../View/ViewConnexion.html');
+header('location: ../../View/Connexion/ViewConnexion.html');
 }else {
 echo $codeEtu['codemail'];
 }

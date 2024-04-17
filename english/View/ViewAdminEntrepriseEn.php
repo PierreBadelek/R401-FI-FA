@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,70 +10,7 @@
 </head>
 <body class="body">
 
-
-<header class="header">
-    <div class="logo-container">
-        <img src="../../asserts/img/logo.png" class="logo">
-    </div>
-
-    <div class="menu-container">
-        <nav>
-            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                <ul class="vertical-menu">
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminMainTestEn.php'" name="accueil" value="Accueil" class="btnCreation">Homepage</button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminEtuEn.php'" name="etudiant" value="Etudiant" class="btnCreation">Student</button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminEntrepriseEn.php'" name="entreprise" value="Entreprise" class="btnCreation">Company</button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="window.location.href ='ViewAdminAdministrationEn.php'" name="adminitrsation" class="btnCreation">Administration</button>
-                    </li>
-
-                    <li id="account-photo">
-                        <img id="photo" src="../../asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
-                        <div id="account-dropdown">
-                            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
-                                <input class="" name="compte" type="submit" value="My account">
-                                <input class="" name="deco" type="submit" value="Disconnect">
-
-                            </form>
-
-                        </div>
-                    </li>
-                    <li>
-                        <a><img src="../../asserts/img/notification.png" alt="Description de l'image" class="notification"></a>
-                    </li>
-                </ul>
-            </form>
-        </nav>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var photo = document.getElementById("photo");
-            var dropdown = document.getElementById("account-dropdown");
-
-            photo.addEventListener("click", function (event) {
-                event.stopPropagation(); // Empêche la propagation du clic à d'autres éléments parents
-                dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-            });
-
-            // Ajout d'un écouteur d'événements sur le document pour fermer le menu s'il est ouvert et que l'on clique en dehors
-            document.addEventListener("click", function (event) {
-                if (dropdown.style.display === "block" && !event.target.closest('#account-photo')) {
-                    dropdown.style.display = "none";
-                }
-            });
-        });
-
-
-    </script>
-
-</header>
+<?php include("ViewHeaderEn.php"); ?>
 
 <div class="body-container">
 
@@ -212,34 +146,8 @@
     });
 </script>
 
-<footer class="footer" id="footer">
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h2>About us</h2>
-            <p>The Apprentice Manager is a platform dedicated to the management of students, offers, and companies for apprentice programs.</p>
-        </div>
 
-        <div class="footer-section contact">
-            <h2>Contact us</h2>
-            <p>Email : communication@uphf.fr</p>
-            <p> Université Polytechnique Hauts-de-France - Campus Mont Houy - 59313 Valenciennes Cedex 9 | +33 (0)3 27 51 12 34</p>
-        </div>
-
-        <div class="footer-section links">
-            <h2>Quick links</h2>
-            <ul>
-                <li><a href="../../View/ViewAdminMain.php">Homepage</a></li>
-                <li><a href="../../View/ViewAdminEtu.php">Students</a></li>
-                <li><a href="../../View/ViewAdminEntreprise.php">Companies</a></li>
-                <li><a href="../../View/ViewAdminAdministration.php">Administration</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2023 Apprentice Manager | All rights reserved</p>
-    </div>
-</footer>
+<?php include("ViewFooterEn.php"); ?>
 </body>
 
 </html>

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Fonction pour charger les étudiants via AJAX
 function loadStudents() {
     $.ajax({
-        url: '../../Model/ModelAfficherEtuMain.php',
+        url: '../../Model/Etudiant/ModelAfficherEtuMain.php',
         type: 'GET',
         dataType: 'html',
         data: {
@@ -32,7 +32,7 @@ function loadStudents() {
 // Fonction pour charger les offres via AJAX
 function loadOffers() {
     $.ajax({
-        url: '../../Model/ModelAffichageOffreMain.php',
+        url: '../../Model/Offre/ModelAffichageOffreMain.php',
         type: 'GET',
         dataType: 'html',
         data: {
@@ -51,7 +51,7 @@ function loadOffers() {
 // Fonction pour charger les entreprises via AJAX
 function loadCompanies() {
     $.ajax({
-        url: '../../Model/ModelAfficherEntrepriseMain.php',
+        url: '../../Model/Entreprise/ModelAfficherEntrepriseMain.php',
         type: 'GET',
         dataType: 'html',
         data: {
@@ -88,22 +88,22 @@ function redirectWithAjax(url) {
 document.addEventListener("DOMContentLoaded", function () {
     // Ajoutez un écouteur d'événements au bouton "Afficher Plus" des offres
     document.getElementById('afficherOffres').addEventListener('click', function () {
-        var urlOffres = 'ViewAfficherPlusOffre.php';
+        var urlOffres = '../Offre/ViewAfficherPlusOffre.php';
         redirectWithAjax(urlOffres);
     });
 
     document.getElementById('afficherEtudiants').addEventListener('click', function () {
-        var urlOffres = 'ViewAfficherPlusEtu.php';
+        var urlOffres = '../Etudiant/ViewAfficherPlusEtu.php';
         redirectWithAjax(urlOffres);
     });
 
     document.getElementById('afficherEntreprises').addEventListener('click', function () {
-        var urlOffres = 'ViewAfficherPlusEntreprise.php';
+        var urlOffres = '../Entreprise/ViewAfficherPlusEntreprise.php';
         redirectWithAjax(urlOffres);
     });
 
     document.getElementById('redirigerVersAjoutEntreprise').addEventListener('click', function () {
-        var urlOffres = 'ViewAjoutEntreprise.php';
+        var urlOffres = '../Entreprise/ViewAjoutEntreprise.php';
         redirectWithAjax(urlOffres);
     });
 });

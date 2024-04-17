@@ -1,9 +1,9 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../../Model/ConnexionBDD.php';
-include '../../Model/ModelModifierProfilPerso.php';
+include '../../Model/Connexion/ConnexionBDD.php';
+include '../../Model/Personnel/ModelModifierProfilPerso.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -17,7 +17,7 @@ $email = $_SESSION['email'];
 $id = selectId($conn, $email);
 $perso = selectPersoId($conn, $id);
 
-include("../../View/ViewModifierProfilPerso.php");
+include("../../View/Personnel/ViewModifierProfilPerso.php");
 
 if (isset($_POST['modifier_profil'])){
     $nom = $_POST['nouveau_nom'];

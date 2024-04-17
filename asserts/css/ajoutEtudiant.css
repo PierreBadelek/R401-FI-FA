@@ -1,3 +1,7 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
 #popUpEtu .popup-content {
     max-height: 90vh;
     overflow-y: scroll;
@@ -120,4 +124,12 @@ ul {
 
 .error-message {
     color: red;
+}
+
+.erreur-message {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
 }

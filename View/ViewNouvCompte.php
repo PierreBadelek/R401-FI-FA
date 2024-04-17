@@ -11,37 +11,29 @@
 </head>
 <body class="body">
 
-<button onclick="retourPage()" class="btnRetour">Retour</button>
-
-
-<script>
-    function retourPage() {
-        window.history.back();
-    }
-</script>
+<script src="../asserts/js/messagesErreur.js" defer></script>
 
 <header class="header">
 
+    <button onclick="retourPage()" class="btnRetour">Retour</button>
+
+    <h1 class="erreur-message"></h1>
     <div class="princi-rectangle">
 
         <form action="../Controller/Etudiant/ControllerInscriptionEtu.php" method="post">
-            <div class="nom-rectangle">
 
-                <input type="text" name="nom" class="input-nom" placeholder="NOM">
-
+            <div class="nom-rectangle rectangle">
+                <input type="text" name="nom" class="input-nom input" placeholder="NOM*">
             </div>
 
-            <div class="prenom-rectangle">
+            <div class="prenom-rectangle rectangle">
 
-
-                <input type="text" name="prenom" class="input-prenom" placeholder="Prenom">
-
+                <input type="text" name="prenom" class="input-prenom input" placeholder="Prenom*">
             </div>
 
-            <div class="formation-rectangle">
+            <div class="formation-rectangle rectangle">
 
-                <label for="formation-select"></label>
-                <select id="formation-select" name="formation">
+                <select class="input" id="formation-select" name="formation">
                     <option value="GEII">GEII</option>
                     <option value="GIM">GIM</option>
                     <option value="GMP">GMP</option>
@@ -55,71 +47,52 @@
 
             </div>
 
-            <div class="mail-rectangle">
+            <div class="mail-rectangle rectangle">
 
-                <input type="email" name="email" class="input-mail" placeholder="Email">
-
+                <input type="email" name="email" class="input-mail input" placeholder="Email*">
             </div>
 
-            <div class="mdp-rectangle">
+            <div class="mdp-rectangle rectangle">
 
-                <input type="password" name="mdp" class="input-mdp" placeholder="Mot de Passe">
+                <input type="password" name="mdp" class="input-mdp input" placeholder="Mot de Passe*">
             </div>
 
-            <div class="adresse-rectangle">
+            <div class="adresse-rectangle rectangle">
 
-                <input type="text" name="adresse" class="input-adresse" placeholder="Adresse">
+                <input type="text" name="adresse" class="input-adresse input" placeholder="Adresse*">
             </div>
 
-            <div class="ville-rectangle">
+            <div class="ville-rectangle rectangle">
 
-                <input type="text" name="ville" class="input-ville" placeholder="Ville">
+                <input type="text" name="ville" class="input-ville input" placeholder="Ville*">
             </div>
 
-            <div class="cp-rectangle">
+            <div class="cp-rectangle rectangle">
 
-                <input type="text" name="cp" class="input-cp" placeholder="Code Postal">
+                <input type="text" name="cp" class="input-cp input" placeholder="Code Postal*">
             </div>
 
-            <div class="date-rectangle">
-                <input type="date" name="date" class="input-date" placeholder="Date de naissance">
+            <div class="date-rectangle rectangle">
+                <input type="date" name="date" class="input-date input" placeholder="Date de naissance*">
             </div>
 
-            <div class="anneeetude-rectangle">
+            <div class="anneeetude-rectangle rectangle">
 
-                <input type="number" name="anneeetude" class="input-anneeetude" placeholder="Année d'étude">
+                <input type="number" name="anneeetude" class="input-anneeetude input" placeholder="Année d'étude*">
             </div>
 
-            <div class="ine-rectangle">
+            <div class="ine-rectangle rectangle">
 
-                <input type="text" name="ine" class="input-ine" placeholder="INE">
+                <input type="text" name="ine" class="input-ine input" placeholder="INE*">
             </div>
 
             <div>
-                <input type="submit" name="valider" value="Création" class="btnCreation">
+                <input type="submit" name="valider" id="valider" value="Création" class="btnCreation">
             </div>
-
-
-
-
         </form>
-
     </div>
-
     <p class="info">Si vous possédez déjà un compte veuillez vous connecter en appuyant ici :</p>
-    <a href="ViewConnexion.html" class="lien"><p class="lien-info">Connexion</p></a>
-
-
-
-
-
+    <a href="Connexion/ViewConnexion.html" class="lien"><p class="lien-info">Connexion</p></a>
 </header>
-
-
-
 </body>
-
-
-
-
 </html>
