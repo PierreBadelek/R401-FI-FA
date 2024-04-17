@@ -1,21 +1,19 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include "../../Model/ModelNotifation.php";
-include "../../Model/ConnexionBDD.php";
+include "../../Model/Notification/ModelNotifation.php";
+include "../../Model/Connexion/ConnexionBDD.php";
 
 $conn = Conn::getInstance();
 
-// Ajoutez un bloc try-catch pour capturer les erreurs
 try {
     $nbnotif = nbnotif($conn);
     $notif = notif($conn);
 
-    // Appel de la fonction verifdate
     verifdate($conn);
 
     semaineinsert($conn);

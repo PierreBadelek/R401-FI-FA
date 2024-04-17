@@ -1,8 +1,8 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include_once '../../Model/ConnexionBDD.php';
+include_once '../../Model/Connexion/ConnexionBDD.php';
 
 $conn = Conn::getInstance();
 
@@ -38,7 +38,7 @@ if (isset($_POST["SubmitForm2"])) {
     $updateOffre->bindParam(':nom', $_POST['nomOffre'], PDO::PARAM_STR);
 
         if ($updateOffre->execute()) {
-            header('Location: ../../View/ViewAdminEntreprise.php');
+            header('Location: ../../View/Entreprise/ViewAdminEntreprise.php');
             exit;
         } else {
             // Gérer une éventuelle erreur de mise à jour

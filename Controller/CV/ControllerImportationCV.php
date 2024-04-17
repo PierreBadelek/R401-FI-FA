@@ -1,10 +1,10 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
-include '../../Model/ModelMail.php';
-include '../../Model/ConnexionBDD.php';
-include '../../Model/ModelInscriptionEtu.php';
+include '../../Model/Notification/ModelMail.php';
+include '../../Model/Connexion/ConnexionBDD.php';
+include '../../Model/Etudiant/ModelInscriptionEtu.php';
 
 session_start();
 
@@ -13,7 +13,7 @@ $db = Conn::getInstance();
 $email = $_SESSION['email'];
 $id = selectidWhereEmail($db, $email);
 
-include '../../View/ViewImportationCV.php';
+include '../../View/Etudiant/ViewImportationCV.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['Importer'])) {
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     if (isset($_POST['NePasImporter'])){
-        header('Location: ../../View/ViewEtuMain.php');
+        header('Location: ../../View/Etudiant/ViewEtuMain.php');
     }
 }
 ?>

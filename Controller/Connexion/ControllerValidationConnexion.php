@@ -2,7 +2,7 @@
 
 if (isset($_POST["connectionEtu"])) {
 
-    header('Location: ../../View/ViewConnexion.html');
+    header('Location: ../../View/Connexion/ViewConnexion.html');
     exit();
 
 }
@@ -13,7 +13,7 @@ if (isset($_POST["creationEtu"])) {
 }
 if(isset($_POST["connectionAdmin"])){
 
-    header('Location: ../../View/ViewConnexionAdmin.php');
+    header('Location: ../../View/Connexion/ViewConnexionAdmin.php');
     exit();
 }
 if(isset($_POST["btnRetour"])){

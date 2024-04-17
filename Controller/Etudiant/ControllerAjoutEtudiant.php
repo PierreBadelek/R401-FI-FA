@@ -1,12 +1,12 @@
 <?php
 
-use Model\Conn;
+use Model\Connexion\Conn;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include '../../Model/ModelMail.php';
-include '../../Model/ConnexionBDD.php';
+include '../../Model/Notification/ModelMail.php';
+include '../../Model/Connexion/ConnexionBDD.php';
 include '../../Model/ModelAjout.php';
 
 $db = Conn::getInstance();
@@ -48,7 +48,7 @@ if(isset($_POST["ajoutEtudiant"])) {
         $erreur = "Adresse mail déjà utilisée !";
     }
 
-    header('Location: ../../View/ViewAdminEtu.php');
+    header('Location: ../../View/Etudiant/ViewAdminEtu.php');
 }
 
 ?>

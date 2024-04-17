@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Oubli Mot De Passe</title>
+  <link rel="stylesheet" type="text/css" href="../../asserts/css/OubliMDP.css">
+  <link rel="icon" href="../../asserts/img/logo.png" type="image/x-icon">
+</head>
+<body>
+<form action="../../Controller/Connexion/ControllerModifierMdp.php?id=1" method="POST">
+  <ul>
+    <li>
+      <label for="mdpnow">Mot de passe actuel :</label>
+      <input type="password" id="mdpnow" name="mdpnow" required> </li>
+    <span class="error" id="mdpnowError"></span>
+
+    <script>
+      document.getElementById("mdpnow").addEventListener("invalid", function(event) {
+        document.getElementById("mdpnowError").textContent = "Ce champ est obligatoire.";
+      });
+    </script>
+    <li>
+      <label for="mdpafter">Votre nouveau mot de passe :</label>
+      <input type="password" id="mdpafter" name="mdpafter" required> </li>
+    <span class="error" id="mdpafterError"></span>
+
+    <script>
+      document.getElementById("mdpafter").addEventListener("invalid", function(event) {
+        document.getElementById("mdpafterError").textContent = "Ce champ est obligatoire.";
+      });
+    </script>
+  </ul>
+
+  <div class="button">
+    <button type="submit" id="envoieCode" name="envoieCode"> Sauvegarder  </button>
+  </div>
+</form>
+</body>
+</html>

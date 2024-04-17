@@ -164,7 +164,7 @@ function afficherPopup() {
 }
 
     document.getElementById('redirigerVersAjoutEntreprise').addEventListener('click', function() {
-    window.location.href = '../View/ViewAjoutEntreprise.php';
+    window.location.href = '../../View/Entreprise/ViewAjoutEntreprise.php';
 });
 
 
@@ -178,16 +178,6 @@ function afficherPopup() {
     }, 3000); // La popup disparaîtra automatiquement après 3 secondes (3000 millisecondes)
 
 }
-
-// Remplacez le script JavaScript existant par celui-ci
-
-
-
-
-
-
-// Ajouter cet écouteur d'événements pour gérer les clics de navigation entre les pages
-
 
 function adjustRectangleHeight() {
     const offreList = document.getElementById('donneesOffre');
