@@ -86,7 +86,7 @@ foreach ($resultat2 as $res2):
     <link rel="stylesheet" type="text/css" href="../../asserts/css/Cloche.css">
     <script src="../../asserts/js/script.js"></script>
 
-    <form action="../../Controller/ControlleurCdSelectionEtu.php?idOffre=<?php echo $idOffre;?> " method="post" name="formAjoutEtu_<?php echo $count; ?>">
+    <form action="../Controller/ControlleurCdSelectionEtu.php?idOffre=<?php echo $idOffre;?> " method="post" name="formAjoutEtu_<?php echo $count; ?>">
         <ul class="offres-container">
             <li class="offre">
                 <strong>Nom :</strong> <?php echo $res2['nom']; ?><br>

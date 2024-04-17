@@ -3,6 +3,7 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
 ?>
 
 <link rel="stylesheet" href="/<?php echo $root ?>/asserts/css/header.css">
+
 <div class="burger-menu" id="burgerMenu" style="display: none;">
 
     <h1 class="titlenotif" style="margin-left: 5rem">NOTIFICATIONS</h1>
@@ -27,7 +28,7 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
         <ul id="readNotificationList"></ul>
     </div>
 
-    <li class="notification-unread"><div><p>Pas d'entreprise</p><p>Nom: null</p><p>Prénom: null</p><p>Offre: null</p><p>Entreprise: null</p></div><input type="date" id="notificationDate"><input type="checkbox" data-notification-id="40"></li><li class="notification-unread"><div><p>Pas d'entreprise</p><p>Nom: DUPONT</p><p>Prénom: Emma</p><p>Offre: null</p><p>Entreprise: null</p></div><input type="date" id="notificationDate"><input type="checkbox" data-notification-id="35"></li><li class="notification-unread"><div><p>Pas d'entreprise</p><p>Nom: null</p><p>Prénom: null</p><p>Offre: null</p><p>Entreprise: null</p></div><input type="date" id="notificationDate"><input type="checkbox" data-notification-id="39"></li><li class="notification-unread"><div><p>Pas d'entreprise</p><p>Nom: DUPONT</p><p>Prénom: Gaspard</p><p>Offre: null</p><p>Entreprise: null</p></div><input type="date" id="notificationDate"><input type="checkbox" data-notification-id="42"></li>
+
 
 </div>
 <header class="header">

@@ -10,12 +10,10 @@ include "../../Model/Connexion/ConnexionBDD.php";
 
 $conn = Conn::getInstance();
 
-// Ajoutez un bloc try-catch pour capturer les erreurs
 try {
     $nbnotif = nbnotif($conn);
     $notif = notif($conn);
 
-    // Appel de la fonction verifdate
     verifdate($conn);
 
     semaineinsert($conn);

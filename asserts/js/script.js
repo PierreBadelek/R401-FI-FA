@@ -3,6 +3,7 @@ function toggleNotifications() {
     const burgerMenu = document.getElementById('burgerMenu');
     if (active === false){
         burgerMenu.style.transform = "translateX(0)";
+        fetchNotifications();
         try{
             document.getElementsByClassName("body-container")[0].style.filter = "blur(3px)"
             document.querySelector("header").style.filter = "blur(3px)"
@@ -42,9 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function fetchNotifications() {
+
     fetch('../../Controller/Notification/ControlleurNotif.php')
         .then(response => response.json())
         .then(data => {
+console.log(data)
             const unreadNotificationList = document.getElementById('unreadNotificationList');
             unreadNotificationList.innerHTML = '';
             const readNotificationList = document.getElementById('readNotificationList');
@@ -66,31 +69,18 @@ function fetchNotifications() {
 
                 const listItem = document.createElement('li');
                 const checkbox = document.createElement('input');
+                const Details = document.createElement('div');
 
-                if (notification.nom === null) {
-                    const noResponseDetails = document.createElement('div');
 
-                    // Crée un élément de paragraphe pour chaque détail et les ajoute au conteneur
-                    ["Pas d'entreprise",'Nom: ' + notification.em, 'Prénom: ' + notification.ep, 'Offre: ' + notification.om, 'Entreprise: ' + notification.nom]
+                ['Nom: ' + notification.em, 'Prénom: ' + notification.ep, 'Offre: ' + notification.om, 'Entreprise: '+ notification.nom , 'Description :  '+ notification.texte,'Date: '+notification.jour + '\\'+ notification.mois+'\\'+ notification.annee+ ' ' +notification.heure+":"+notification.minutes]
                         .forEach(detail => {
                             const detailElement = document.createElement('p');
                             detailElement.textContent = detail;
-                            noResponseDetails.appendChild(detailElement);
-                        });
+                            Details.appendChild(detailElement);
 
-                    listItem.appendChild(noResponseDetails);
-                } else {
-                    const noResponseDetails = document.createElement('div');
 
-                    // Crée un élément de paragraphe pour chaque détail et les ajoute au conteneur
-                    ["Pas de réponse" ,'Nom: ' + notification.em, 'Prénom: ' + notification.ep, 'Offre: ' + notification.om, 'Entreprise: ' + notification.nom]
-                        .forEach(detail => {
-                            const detailElement = document.createElement('p');
-                            detailElement.textContent = detail;
-                            noResponseDetails.appendChild(detailElement);
-                        });
-
-                    listItem.appendChild(noResponseDetails);                }
+                        })
+                listItem.appendChild(Details)
 
                 const dateInput = document.createElement('input');
                 dateInput.type = 'date';
@@ -172,7 +162,7 @@ function fetchNotifications() {
 
 function updateNotification(params, listItem, checkbox, rappel,className) {
 
-    fetch('../Controller/Notification/ControllerUpdateNotification.php', {
+    fetch('../../../Controller/Notification/ControllerUpdateNotification.php', {
         method: 'POST',
         body: params
     })
@@ -192,7 +182,7 @@ function fermerMenuBurger(data) {
     // Cacher le menu burger
     var menuBurger = document.getElementById('burgerMenu');
     menuBurger.style.display = 'none';
-    fetch('../../Controller/Notification/ControlleurNotif.php')
+    fetch('../../../Controller/Notification/ControlleurNotif.php')
         .then(response => response.json())
         .then(data => {
             const notificationBadge = document.getElementById('notificationBadge');

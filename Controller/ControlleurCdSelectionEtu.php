@@ -122,6 +122,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buttonValider'])) {
                                 $sqlRecrute->bindParam(':idetudiant',$selectedStudentId, PDO::PARAM_INT);
                                 $sqlRecrute->bindParam(':identreprise',$identreprise, PDO::PARAM_INT);
                                 $sqlRecrute->execute();
+                                $sqlInsert = $conn->prepare("INSERT INTO notification (idetudiant, date, texte) VALUES (?, CURRENT_TIMESTAMP, 'l''étudiant à été accepté')");
+                                $sqlInsert->bindParam(1, $selectedStudentId, PDO::PARAM_INT);
+                                $sqlInsert->execute();
+
+                                echo $selectedStudentId;
+
+
+
+
                                 if (isset($_POST['mailEtus']) && is_array($_POST['mailEtus'])) {
                                     foreach ($_POST['mailEtus'] as $selectedStudentMail) {
                                         envoieMail($selectedStudentMail, $selectedStudentMail, 'SAE', 'CONTRACT', 'VOUS AVEZ EU VOTRE CONTRACT');
@@ -146,6 +155,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buttonValider'])) {
                         $sqlInsert = $conn->prepare('UPDATE offre SET visible = false where idoffre = :idoffre');
                         $sqlInsert->bindParam(':idoffre', $idOffre, PDO::PARAM_INT);
                         $sqlInsert->execute();
+
+
+
+
 
                     } else {
                         echo "Étudiant non trouvé.";
@@ -175,6 +188,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buttonValider'])) {
                     $sqlRecrute->bindParam(':idetudiant', $etu['idetudiant'], PDO::PARAM_INT);
                     $sqlRecrute->bindParam(':identreprise', $identreprise, PDO::PARAM_INT);
                     $sqlRecrute->execute();
+
+                    $sqlInsert = $conn->prepare("INSERT INTO notification (idetudiant, date,texte) values (:idetudiant,current_timestamp, 'l''étudiant à été refusé')");
+                    $sqlInsert->bindParam(':idetudiant', $etu['idetudiant'], PDO::PARAM_INT);
+                    $sqlInsert->execute();
+
                     if (isset($_POST['mailEtus']) && is_array($_POST['mailEtus'])) {
                         foreach ($_POST['mailEtus'] as $selectedStudentMail) {
                             envoieMail($etu['email'], $etu['email'], 'SAE', 'CONTRACT', 'VOUS AVEZ ETE REFUSE');
@@ -184,6 +202,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buttonValider'])) {
             }
         }
     }
-    header('location: ControlleurCdEtuOffre.php');
+    //header('location: ControlleurCdEtuOffre.php');
 }
 ?>

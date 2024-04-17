@@ -66,7 +66,7 @@ include $root.'/View/Main/ViewHeader.php';
                     <select name="nouveau_role" class="editableRole">
                         <option value="admin" <?= ($perso['role'] === 'Admin') ? 'selected' : '' ?>>Administrateur</option>
                         <option value="rp" <?= ($perso['role'] === 'rp') ? 'selected' : '' ?>>Responsable pédagogique</option>
-                        <option value="cd" <?= ($perso['role'] === 'cd') ? 'selected' : '' ?>>Chargés de développement</option>
+                        <option value="cd" <?= ($perso['role'] === 'cd') ? 'selected' : '' ?>>Chargé de développement</option>
                         <option value="rs" <?= ($perso['role'] === 'rs') ? 'selected' : '' ?>>Responsable du service</option>
                         <option value="sec" <?= ($perso['role'] === 'sec') ? 'selected' : '' ?>>Secrétaire</option>
                     </select>
