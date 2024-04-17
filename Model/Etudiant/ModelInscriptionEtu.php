@@ -1,7 +1,7 @@
 <?php
 
 function generationToken(){
-    $token = bin2hex(random_bytes(50));
+    $token = bin2hex(random_bytes(4));
     return $token;
 }
 
