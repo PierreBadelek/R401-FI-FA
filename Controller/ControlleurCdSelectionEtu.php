@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if (isset($_POST['BoutonRetour'])) {
-    header('Location: ../View/ViewAfficherPlusOffre.php');
+    header('Location: ../Controller/ControlleurCdEtuOffre.php');
     exit();
 }
 
@@ -202,6 +202,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buttonValider'])) {
             }
         }
     }
-    //header('location: ControlleurCdEtuOffre.php');
+    header('location: ControlleurCdEtuOffre.php');
 }
 ?>
