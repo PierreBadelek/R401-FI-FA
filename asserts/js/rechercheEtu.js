@@ -84,7 +84,9 @@ function rechercherEtudiants() {
                             cell1.innerHTML = etudiant.nom || '';
                             cell2.innerHTML = etudiant.prenom || '';
                             cell3.innerHTML = etudiant.ine || '';
-
+                            try {
+                                document.getElementById("inecv").value = etudiant.ine || ''
+                            } catch (e){console.log(e)}
                             // Bouton "Voir Profil"
                             var btnVoirProfil = document.createElement('button');
                             btnVoirProfil.style.textDecoration = "none";
@@ -104,8 +106,12 @@ function rechercherEtudiants() {
                                 ouvrirMenuBurger(etudiant);
                                 if (etudiant != null) {
                                     var studentId = etudiant.ine;
+
                                     var nouvelleURL = window.location.href.split('?')[0]
                                     console.log("ID de l'étudiant:", studentId);
+                                    document.getElementById("inecv").value = studentId
+                                    document.getElementById("cvView").src = "../../CVs/" + studentId + ".pdf"
+
                                     nouvelleURL += '?ine=' + studentId;
                                     history.pushState({}, '', nouvelleURL);
 
@@ -240,6 +246,9 @@ function obtenirTousLesEtudiants(ine) {
 function redirectModifierProfil() {
     var urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get('ine');
+    try {
+        document.getElementById("inecv").value = etudiant.ine || ''
+    } catch (e){console.log(e)}
     if (id !== null) {
         window.location.href = '../../Controller/Etudiant/ControllerModifierProfilEtu.php?ine=' + id;
     }
@@ -266,6 +275,9 @@ function ouvrirMenuBurger(etudiant) {
 
     var ineInfo = document.getElementById('infoIne');
     ineInfo.innerHTML = '<strong style="color: #0f9bb4;">INE:</strong> ' + (etudiant.ine || '');
+    try {
+        document.getElementById("inecv").value = etudiant.ine || ''
+    } catch (e){console.log(e)}
 
     var dateInfo = document.getElementById('infoDate');
     dateInfo.innerHTML = '<strong style="color: #0f9bb4;">Date de naissance:</strong> ' + (etudiant.datedenaissance || '');
