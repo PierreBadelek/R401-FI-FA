@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-fetch("../Controller/Connexion/ControllerVerifCode.php", {
+fetch("../../Controller/Connexion/ControllerVerifCode.php", {
     method: "POST",
     body: JSON.stringify({
     }),
