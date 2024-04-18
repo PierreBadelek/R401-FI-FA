@@ -10,4 +10,5 @@ if ($FileType == ".pdf"){
         move_uploaded_file($_FILES["cvupload"]["tmp_name"], $target_file);
     }
 }
+header('location: ViewadminEtu.php?ine=211522FF');
 ?>

@@ -64,6 +64,7 @@ create table recrute
     identreprise integer not null
         references entreprise,
     date         date,
+    statut   text,
     primary key (idetudiant, identreprise)
 );
 
@@ -116,7 +117,8 @@ create table notification
     idetudiant integer,
     lu         boolean default false,
     date       timestamp,
-    rappel     date
+    rappel     date,
+    texte text
 );
 
 alter table notification

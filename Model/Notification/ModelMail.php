@@ -3,11 +3,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 /* Classe de traitement des exceptions et des erreurs */
-require 'C:\PHPMailer\PHPMailer\src\Exception.php';
+require '../../phpmailer/src/Exception.php';
 /* Classe-PHPMailer */
-require 'C:\PHPMailer\PHPMailer\src\PHPMailer.php';
+require '../../phpmailer/src/PHPMailer.php';
 /* Classe SMTP nécessaire pour établir la connexion avec un serveur SMTP */
-require 'C:\PHPMailer\PHPMailer\src\SMTP.php';
+require '../../phpmailer/src/SMTP.php';
 $mail = new PHPMailer(TRUE);
 try {
     // Tentative de création d’une nouvelle instance de la classe PHPMailer
